@@ -1773,14 +1773,37 @@
     flex-shrink: 0;
   }
 
+  @property --chat-border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes chatBorderSpin {
+    to { --chat-border-angle: 360deg; }
+  }
+
   .chat-avatar {
     width: 42px; height: 42px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    padding: 3px;
+    background: conic-gradient(
+      from var(--chat-border-angle),
+      #1B3A6B 0%,
+      #2A5298 12%,
+      #F5A623 30%,
+      #FFD166 42%,
+      #FFFDE7 50%,
+      #FFD166 58%,
+      #F5A623 70%,
+      #2A5298 88%,
+      #1B3A6B 100%
+    );
+    animation: chatBorderSpin 2s linear infinite;
     display: flex; align-items: center; justify-content: center;
     font-size: 1.3rem;
     flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2), 0 0 12px rgba(245,166,35,0.4);
   }
 
   .chat-header-info { flex: 1; }
