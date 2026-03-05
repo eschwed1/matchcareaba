@@ -120,7 +120,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
-    padding: 132px 60px 80px;
+    padding: 185px 60px 80px;
     position: relative;
     z-index: 1;
   }
@@ -812,7 +812,7 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     .nav-hamburger.open span { background: white; }
-    .hero { grid-template-columns: 1fr; padding: 132px 24px 60px; }
+    .hero { grid-template-columns: 1fr; padding: 185px 24px 60px; }
     .hero-visual { display: flex; margin-top: 32px; }
     .hero-photo { height: 300px; }
     .signs { padding: 60px 24px; }
@@ -829,7 +829,9 @@
 
   .nav-hamburger { display: none; }
 
-  
+  #signs, #how, #match, #about, #providers {
+    scroll-margin-top: 185px;
+  }
 
   ::placeholder {
     color: #c5cfe0 !important;
