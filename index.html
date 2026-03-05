@@ -376,7 +376,7 @@
 
     .bg-heart-1 {
     width: 680px; height: 680px;
-    top: -60px; left: -140px;
+    top: 100px; left: -140px;
     animation: heartPulse 6s ease-in-out infinite;
   }
 
@@ -830,7 +830,7 @@
   .nav-hamburger { display: none; }
 
   #signs, #how, #match, #about, #providers {
-    scroll-margin-top: 185px;
+    scroll-margin-top: 120px;
   }
 
   ::placeholder {
@@ -1526,9 +1526,15 @@
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
       e.preventDefault();
-      const t = document.querySelector(this.getAttribute('href'));
-      if (t) t.scrollIntoView({ behavior: 'smooth' });
+      const t = document.querySelector(href);
+      if (t) {
+        const navH = document.querySelector('nav').offsetHeight;
+        const top = t.getBoundingClientRect().top + window.scrollY - navH - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
     });
   });
 
