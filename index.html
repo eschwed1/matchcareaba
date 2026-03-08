@@ -1785,12 +1785,6 @@
 
   <div id="chat-messages"></div>
 
-  <div class="after-hours-banner" id="after-hours-banner" style="display:none;">
-    🌙 After hours? No problem — we respond 24/7!
-  </div>
-
-  <div class="quick-replies" id="quick-replies"></div>
-
   <div class="chat-input-area">
     <textarea id="chat-input" placeholder="Type a message…" rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
     <button id="chat-send" onclick="sendUserMessage()">➤</button>
@@ -1842,15 +1836,8 @@ Rules:
 
   // ── INIT ────────────────────────────────────────────────────
   function initChat() {
-    const hour = new Date().getHours();
-    if (hour < 9 || hour >= 18) {
-      document.getElementById('after-hours-banner').style.display = 'flex';
-    }
     setTimeout(() => {
       addAIMessage("Hi there! 👋 Welcome to Match Care ABA! I help families find the right ABA therapy provider — completely free. What brings you here today?");
-      setTimeout(() => {
-        showQuickReplies(["I'm looking for ABA therapy", "How does this work?", "Is this really free?", "I have a question"]);
-      }, 600);
     }, 400);
     startAbandonTimer();
   }
@@ -2030,9 +2017,8 @@ Rules:
   async function sendMessage(text) {
     if (isTyping) return;
     addUserMessage(text);
-    showQuickReplies([]);
     isTyping = true;
-    await delay(300);
+    await delay(400);
     showTyping();
 
     try {
@@ -2046,7 +2032,8 @@ Rules:
       let reply = (data.content && data.content[0] && data.content[0].text) || "I'm here to help! Could you share a bit more?";
       reply = reply.replace(/\*\*/g, '').replace(/\*/g, '');
 
-      await delay(600);
+      // 2–3 second typing delay before showing the message
+      await delay(2000 + Math.random() * 1000);
       removeTyping();
 
       // Show upload card when asking about documents
@@ -2061,8 +2048,6 @@ Rules:
 
       addAIMessage(reply, wantsUpload);
       if (showIntakeForm) showChatIntakeForm();
-
-      showQuickReplies(getQuickReplies(reply));
     } catch (err) {
       removeTyping();
       addAIMessage("I'm here to help! Please type your message and I'll respond right away.");
