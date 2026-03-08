@@ -852,7 +852,7 @@
     <li><a href="#how">How It Works</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#providers">For Providers</a></li>
-    <li><a href="#match" class="nav-cta">Get Matched Now</a></li>
+    <li><a href="https://form.jotform.com/260662279796069" target="_blank" rel="noopener noreferrer" class="nav-cta">Get Matched Now</a></li>
   </ul>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -888,7 +888,7 @@
     <h1>Skip the 6-Month Wait. Match with an ABA Provider <span class="highlight">Today.</span></h1>
     <p>We connect families with trusted ABA therapy providers nearby — verified, insurance-friendly, and ready to help your child grow and thrive.</p>
     <div class="hero-actions">
-      <a href="#match" class="btn-primary">🔍 Start Your Free Match Now</a>
+      <a href="https://form.jotform.com/260662279796069" target="_blank" rel="noopener noreferrer" class="btn-primary">🔍 Start Your Free Match Now</a>
       <a href="#signs" class="btn-secondary">Is ABA right for us?</a>
     </div>
     <div class="hero-stats">
@@ -1047,227 +1047,6 @@
   </div>
 </section>
 
-<section class="form-section" id="match">
-  <div class="form-inner">
-    <div class="section-tag" style="background: rgba(245,166,35,0.12); border-color: rgba(245,166,35,0.3); color: var(--gold); margin-bottom: 20px;">🎯 Get Matched Today</div>
-    <h2>Start Your Free Match Now</h2>
-    <p>Free for families. No insurance hassle. A specialist will reach out within 24–48 hours.</p>
-
-    <div class="lead-form">
-      <div id="form-content">
-
-        <!-- STEPPER -->
-        <div class="phase-stepper" id="stepper">
-          <div class="phase-step active" id="step-dot-1">
-            <div class="phase-dot">1</div>
-            <div class="phase-label">The Hook</div>
-          </div>
-          <div class="phase-spacer" id="spacer-1"></div>
-          <div class="phase-step" id="step-dot-2">
-            <div class="phase-dot">2</div>
-            <div class="phase-label">Clinical</div>
-          </div>
-          <div class="phase-spacer" id="spacer-2"></div>
-          <div class="phase-step" id="step-dot-3">
-            <div class="phase-dot">3</div>
-            <div class="phase-label">Insurance</div>
-          </div>
-          <div class="phase-spacer" id="spacer-3"></div>
-          <div class="phase-step" id="step-dot-4">
-            <div class="phase-dot">4</div>
-            <div class="phase-label">Timing</div>
-          </div>
-        </div>
-
-        <!-- PHASE 1: THE HOOK -->
-        <div class="phase-panel active" id="phase-1">
-          <div class="phase-title">
-            🛡️ <span>Let's find the right care for your child</span>
-            <span class="phase-badge">Step 1 of 4</span>
-          </div>
-
-          <!-- Trust signals -->
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
-            <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(107,203,119,0.1); border:1.5px solid rgba(107,203,119,0.3); border-radius:50px; padding:6px 14px; font-size:0.75rem; font-weight:800; color:#3a8a44;">
-              🔒 HIPAA-Compliant & Private
-            </div>
-            <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(245,166,35,0.1); border:1.5px solid rgba(245,166,35,0.3); border-radius:50px; padding:6px 14px; font-size:0.75rem; font-weight:800; color:var(--gold);">
-              ❤️ Connecting families across New York, New Jersey & North Carolina
-            </div>
-          </div>
-
-          <!-- Value prop -->
-          <p style="font-size:0.9rem; color:var(--muted); font-weight:600; line-height:1.6; margin-bottom:20px; padding:14px 16px; background:rgba(27,58,107,0.04); border-radius:14px; border-left:3px solid var(--gold);">
-            We'll match you with top-rated ABA centers that accept your insurance — at no cost to your family.
-          </p>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>👤 Parent / Guardian Name</label>
-              <input type="text" placeholder="Jane Smith" id="name">
-            </div>
-            <div class="form-group">
-              <label>📧 Email Address</label>
-              <input type="email" placeholder="jane@email.com" id="email">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>📱 Phone Number</label>
-              <input type="tel" placeholder="(555) 000-0000" id="phone">
-            </div>
-            <div class="form-group">
-              <label>📍 City & Zip Code</label>
-              <input type="text" placeholder="City" id="city" style="margin-bottom:8px;">
-              <input type="text" placeholder="Zip Code (e.g. 27601)" id="zip" maxlength="5">
-              <span style="font-size:0.75rem; color:var(--muted); font-weight:600; margin-top:2px;">To find therapists available in your neighborhood</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>🎂 What is your child's age?</label>
-            <div class="option-group" id="age-group">
-              <button class="opt-btn" onclick="selectOpt('age-group', this, '2–3 years')">2–3 years</button>
-              <button class="opt-btn" onclick="selectOpt('age-group', this, '4–6 years')">4–6 years</button>
-              <button class="opt-btn" onclick="selectOpt('age-group', this, '7–10 years')">7–10 years</button>
-              <button class="opt-btn" onclick="selectOpt('age-group', this, '11–14 years')">11–14 years</button>
-              <button class="opt-btn" onclick="selectOpt('age-group', this, '15–18 years')">15–18 years</button>
-            </div>
-          </div>
-
-          <div class="form-nav">
-            <button class="btn-next" onclick="validatePhase1()">See My Matches →</button>
-          </div>
-        </div>
-
-        <!-- PHASE 2: CLINICAL -->
-        <div class="phase-panel" id="phase-2">
-          <div class="phase-title">
-            🧩 <span>About your child</span>
-            <span class="phase-badge">Step 2 of 4</span>
-          </div>
-
-          <div class="form-group">
-            <label>Has your child received a formal autism diagnosis?</label>
-            <div class="option-group" id="diagnosis-group">
-              <button class="opt-btn" onclick="selectOpt('diagnosis-group', this, 'Yes — formal diagnosis')">✅ Yes — formal diagnosis</button>
-              <button class="opt-btn" onclick="selectOpt('diagnosis-group', this, 'No — seeking one now')">🔍 No — seeking one now</button>
-              <button class="opt-btn" onclick="selectOpt('diagnosis-group', this, 'Not sure')">🤔 Not sure</button>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Preferred therapy setting</label>
-            <div class="option-group" id="services-group">
-              <button class="opt-btn" onclick="selectOpt('services-group', this, 'Home-based')">🏠 Home-based</button>
-              <button class="opt-btn" onclick="selectOpt('services-group', this, 'Center-based')">🏢 Center-based</button>
-              <button class="opt-btn" onclick="selectOpt('services-group', this, 'Either works')">✅ Either works</button>
-            </div>
-          </div>
-
-          <div class="form-nav">
-            <button class="btn-back" onclick="prevPhase(2)">← Back</button>
-            <button class="btn-next" onclick="nextPhase(2)">Find Care Now →</button>
-          </div>
-        </div>
-
-        <!-- PHASE 3: INSURANCE -->
-        <div class="phase-panel" id="phase-3">
-          <div class="phase-title">
-            💳 <span>Insurance information</span>
-            <span class="phase-badge">Step 3 of 4</span>
-          </div>
-
-          <div class="form-group">
-            <label>💳 Primary Insurance Provider</label>
-            <select id="insurance">
-              <option value="">Select your insurance…</option>
-              <option>Aetna</option>
-              <option>Blue Cross Blue Shield (BCBS)</option>
-              <option>UnitedHealthcare</option>
-              <option>Cigna</option>
-              <option>Humana</option>
-              <option>Medicaid</option>
-              <option>Tricare</option>
-              <option>Kaiser Permanente</option>
-              <option>Anthem</option>
-              <option>Molina Healthcare</option>
-              <option>Oscar Health</option>
-              <option>Other PPO/Commercial</option>
-              <option>No Insurance / Self-pay</option>
-            </select>
-            <span style="font-size:0.75rem; color:var(--muted); font-weight:600; margin-top:4px; display:block;">We use this only to match you with providers that accept your plan.</span>
-          </div>
-
-          <div class="form-nav">
-            <button class="btn-back" onclick="prevPhase(3)">← Back</button>
-            <button class="btn-next" onclick="nextPhase(3)">Almost Done →</button>
-          </div>
-        </div>
-
-        <!-- PHASE 4: URGENCY -->
-        <div class="phase-panel" id="phase-4">
-          <div class="phase-title">
-            ⚡ <span>Timing & availability</span>
-            <span class="phase-badge">Step 4 of 4</span>
-          </div>
-
-          <div class="form-group">
-            <label>How soon are you looking to start services?</label>
-            <div class="option-group" id="urgency-group">
-              <button class="opt-btn" onclick="selectOpt('urgency-group', this, 'Immediately')">🔥 Immediately</button>
-              <button class="opt-btn" onclick="selectOpt('urgency-group', this, 'Within 1 month')">📅 Within 1 month</button>
-              <button class="opt-btn" onclick="selectOpt('urgency-group', this, 'Just researching')">🔍 Just researching</button>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>What is your child's general availability?</label>
-            <div class="option-group" id="avail-group">
-              <button class="opt-btn" onclick="selectOpt('avail-group', this, 'Mornings')">🌅 Mornings</button>
-              <button class="opt-btn" onclick="selectOpt('avail-group', this, 'Afternoons')">☀️ Afternoons</button>
-              <button class="opt-btn" onclick="selectOpt('avail-group', this, 'Full day')">🌞 Full day</button>
-            </div>
-          </div>
-
-          <div class="form-group" style="margin-top:4px;">
-            <label>💬 Anything else we should know? (optional)</label>
-            <textarea placeholder="e.g. My son is 4 and was recently diagnosed. We're looking for in-home support and mornings work best…" id="notes"></textarea>
-          </div>
-
-          <div style="background:#f0f4ff; border:2px solid #d0d9f0; border-radius:14px; padding:16px 18px; margin-bottom:16px;">
-            <label style="display:flex; align-items:flex-start; gap:12px; cursor:pointer;">
-              <input type="checkbox" id="auth-consent" style="width:20px; height:20px; margin-top:2px; flex-shrink:0; cursor:pointer; accent-color:#1B3A6B;">
-              <span style="font-size:0.82rem; font-weight:600; color:#333; line-height:1.6;">I authorize MatchCare to use and disclose the information provided above to Partner ABA Providers for the purpose of referral and treatment. I understand that MatchCare may receive compensation for this referral. I can revoke this at any time.</span>
-            </label>
-          </div>
-
-          <div class="form-nav">
-            <button class="btn-back" onclick="prevPhase(4)">← Back</button>
-            <button class="form-submit" onclick="submitFormWithConsent()">Submit My Request →</button>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="success-msg" id="success">
-        <!-- Warm icon -->
-        <div style="width:90px; height:90px; background:linear-gradient(135deg,#F5A623,#FFD166); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; box-shadow:0 12px 30px rgba(245,166,35,0.35);">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-            <path d="M22 38C22 38 8 30 8 20C8 15 11.5 12 16 12C18.8 12 21 13.8 22 16C23 13.8 25.2 12 28 12C32.5 12 36 15 36 20C36 30 22 38 22 38Z" fill="white" opacity="0.95"/>
-          </svg>
-        </div>
-        <h3 style="font-size:1.7rem; font-weight:900; color:var(--navy); margin-bottom:14px;">You're in Good Hands 💛</h3>
-        <p style="color:var(--text); font-size:1rem; line-height:1.8; font-weight:600; max-width:400px; margin:0 auto 20px;">We know how important this is for your family. A dedicated member of our team will personally review your request and reach out within <strong style="color:var(--navy);">24–48 hours</strong> to find the best match for your child.</p>
-        <div style="background:linear-gradient(135deg,rgba(245,166,35,0.08),rgba(78,205,196,0.08)); border:2px solid rgba(245,166,35,0.2); border-radius:16px; padding:18px 24px; max-width:380px; margin:0 auto 16px;">
-          <p style="font-size:0.9rem; color:var(--navy); font-weight:700; margin:0; line-height:1.7;">💙 You took the first step — we'll take it from here. Please keep an eye on your phone and email. You are not alone in this journey.</p>
-        </div>
-        <p style="font-size:0.8rem; color:var(--muted); font-weight:600;">🔒 Your information is safe and will only be used to find your match.</p>
-      </div>
-      <p class="form-note" id="form-note-bottom">🔒 Your information is private and HIPAA-compliant. We never sell your data.</p>
-    </div>
-  </div>
-</section>
 
 <section style="background: white; padding: 80px 60px; position: relative; z-index: 1;" id="about">
   <div style="max-width: 760px; margin: 0 auto; text-align: center;">
@@ -1429,100 +1208,7 @@
 </footer>
 
 <script>
-  const formData = {};
 
-  function selectOpt(groupId, btn, value) {
-    const group = document.getElementById(groupId);
-    group.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    formData[groupId] = value;
-  }
-
-  // Checkbox groups — style selected state
-  document.querySelectorAll('.check-item input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', function() {
-      this.closest('.check-item').classList.toggle('selected', this.checked);
-    });
-  });
-
-  function nextPhase(current) {
-    // Validate phase 1
-    if (current === 1) {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const zip = document.getElementById('zip').value.trim();
-      if (!name || !email || !phone || !zip) {
-        alert('Please fill in your name, email, phone, and zip code.');
-        return;
-      }
-      if (!formData['age-group']) {
-        alert('Please select your child\'s age range.');
-        return;
-      }
-    }
-
-    if (current === 2) {
-      if (!formData['diagnosis-group']) {
-        alert('Please select a diagnosis option.');
-        return;
-      }
-    }
-
-    if (current === 3) {
-      const ins = document.getElementById('insurance').value;
-      if (!ins) {
-        alert('Please select your insurance provider.');
-        return;
-      }
-    }
-
-    document.getElementById('phase-' + current).classList.remove('active');
-    document.getElementById('phase-' + (current + 1)).classList.add('active');
-
-    // Update stepper
-    const stepDot = document.getElementById('step-dot-' + current);
-    stepDot.classList.remove('active');
-    stepDot.classList.add('done');
-    stepDot.querySelector('.phase-dot').innerHTML = '✓';
-
-    const spacer = document.getElementById('spacer-' + current);
-    if (spacer) spacer.classList.add('done');
-
-    document.getElementById('step-dot-' + (current + 1)).classList.add('active');
-  }
-
-  function prevPhase(current) {
-    document.getElementById('phase-' + current).classList.remove('active');
-    document.getElementById('phase-' + (current - 1)).classList.add('active');
-
-    const stepDot = document.getElementById('step-dot-' + current);
-    stepDot.classList.remove('active');
-
-    const prevDot = document.getElementById('step-dot-' + (current - 1));
-    prevDot.classList.remove('done');
-    prevDot.classList.add('active');
-    prevDot.querySelector('.phase-dot').innerHTML = (current - 1);
-
-    const spacer = document.getElementById('spacer-' + (current - 1));
-    if (spacer) spacer.classList.remove('done');
-  }
-
-  async function submitForm() {
-    const consent = document.getElementById('auth-consent');
-    if (consent && !consent.checked) {
-      alert('Please check the authorization box before submitting.');
-      return;
-    }
-    const urgency = formData['urgency-group'];
-    const avail = formData['avail-group'];
-    if (!urgency) { alert('Please select how soon you\'re looking to start.'); return; }
-    if (!avail) { alert('Please select your child\'s availability.'); return; }
-
-    document.getElementById('form-content').style.display = 'none';
-    document.getElementById('form-note-bottom').style.display = 'none';
-    document.getElementById('success').classList.add('show');
-  }
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -1569,11 +1255,6 @@
       alert('Please fill in all required fields.');
       return;
     }
-    await fetch('https://formspree.io/f/matchcareaba@gmail.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ org, name, email, phone, license, states, insurance, notes, formType: 'Provider Application' })
-    }).catch(err => console.log('Provider form error:', err));
     document.getElementById('provider-form').style.opacity = '0.4';
     document.getElementById('provider-success').style.display = 'block';
   }
@@ -1583,11 +1264,6 @@
     const email = document.getElementById('contact-email').value;
     const message = document.getElementById('contact-message').value;
     if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
-    await fetch('https://formspree.io/f/matchcareaba@gmail.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message, formType: 'Contact Form' })
-    }).catch(e => console.log(e));
     document.getElementById('contact-success').style.display = 'block';
   }
 
@@ -1634,18 +1310,7 @@
     }
   }, 3000);
 
-  function validatePhase1() {
-    nextPhase(1);
-  }
 
-  function submitFormWithConsent() {
-    const authCheckbox = document.getElementById('auth-checkbox') || document.querySelector('input[type="checkbox"][id*="auth"]') || document.querySelector('input[type="checkbox"][id*="consent"]');
-    if (authCheckbox && !authCheckbox.checked) {
-      alert('Please check the authorization box to confirm you agree before submitting.');
-      return;
-    }
-    submitForm();
-  }
 
   function toggleMenu() {
     const hamburger = document.getElementById('hamburger');
@@ -2227,7 +1892,7 @@ Geographic coverage:
 - If someone mentions a different state or area, respond warmly: "Oh, we don't currently serve that area — but we'd love to help point you in the right direction! Reach out and we'll do our best to connect you with what you need. 💛"
 
 Intake form & getting started:
-- If someone asks about the intake form, how to sign up, how to get started, or how to apply, say: "You can click the 'Get Matched Now' button in the top right corner of this page — it only takes about 2 minutes! Or I can grab your info right here if that's easier 😊" — and include the exact token [SHOW_INTAKE_FORM] at the very end of your message (no punctuation after it). This is required — it triggers a quick form in the chat.
+- If someone asks about the intake form, how to sign up, how to get started, or how to apply, say: "You can click the 'Get Matched Now' button in the top right corner of this page — it takes about 2 minutes and is completely free! 😊"
 
 Rules:
 - Ask ONE question at a time. Never pile on.
@@ -2552,61 +2217,7 @@ Rules:
 
   function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-  // ── FORM SUBMIT → ZAPIER ─────────────────────────────────────
-  // Override the original submitForm to also fire Zapier
-  const _origSubmit = window.submitForm;
-  window.submitFormWithWebhook = async function() {
-    // Check consent checkbox first
-    const consent = document.getElementById('auth-consent');
-    if (consent && !consent.checked) {
-      alert('Please check the authorization box before submitting.');
-      return;
-    }
-    const urgency = formData['urgency-group'];
-    const avail = formData['avail-group'];
-    if (!urgency) { alert("Please select how soon you're looking to start."); return; }
-    if (!avail) { alert("Please select your child's availability."); return; }
 
-    // Collect all form fields
-    const lead = {
-      type: 'completed_form',
-      name: document.getElementById('name')?.value || '',
-      email: document.getElementById('email')?.value || '',
-      phone: document.getElementById('phone')?.value || '',
-      zip: document.getElementById('zip')?.value || '',
-      childAge: formData['age-group'] || '',
-      diagnosis: formData['diagnosis-group'] || '',
-      serviceType: [...document.querySelectorAll('#services-group input:checked')].map(i => i.value).join(', '),
-      insurance: document.getElementById('insurance')?.value || '',
-      benefitsVerification: formData['verification-group'] || '',
-      urgency: formData['urgency-group'] || '',
-      availability: formData['avail-group'] || '',
-      notes: document.getElementById('notes')?.value || '',
-      source: 'form',
-      timestamp: new Date().toISOString()
-    };
-
-    // Fire Zapier webhook
-    if (ZAPIER_WEBHOOK !== 'YOUR_ZAPIER_WEBHOOK_URL') {
-      try {
-        await fetch(ZAPIER_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(lead)
-        });
-      } catch (e) { console.log('Webhook error:', e); }
-    }
-
-    document.getElementById('form-content').style.display = 'none';
-    document.getElementById('form-note-bottom').style.display = 'none';
-    document.getElementById('success').classList.add('show');
-  };
-
-  // Wire up form submit button
-  document.addEventListener('DOMContentLoaded', () => {
-    const submitBtn = document.querySelector('.form-submit');
-    if (submitBtn) submitBtn.setAttribute('onclick', 'submitFormWithWebhook()');
-  });
 </script>
 
 <!-- PRIVACY POLICY MODAL -->
