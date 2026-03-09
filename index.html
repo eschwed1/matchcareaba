@@ -1904,10 +1904,27 @@ Rules:
 - Keep the tone hopeful, real, and human.`;
 
   // ── INIT ────────────────────────────────────────────────────
-  function initChat() {
-    setTimeout(() => {
-      addAIMessage("Hi there! 👋 Welcome to Match Care ABA! I help families find the right ABA therapy provider — completely free. What brings you here today?");
-    }, 400);
+  async function initChat() {
+    showTyping();
+    try {
+      const response = await fetch('https://white-brook-0697.matchcareaba.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: [] })
+      });
+      const data = await response.json();
+      let reply = data.content && data.content[0] && data.content[0].text;
+      if (reply) {
+        reply = reply.replace(/\*\*/g, '').replace(/\*/g, '');
+        await delay(400);
+        removeTyping();
+        addAIMessage(reply);
+      } else {
+        removeTyping();
+      }
+    } catch (err) {
+      removeTyping();
+    }
     startAbandonTimer();
   }
 
@@ -2098,7 +2115,8 @@ Rules:
       });
 
       const data = await response.json();
-      let reply = (data.content && data.content[0] && data.content[0].text) || "I'm here to help! Could you share a bit more?";
+      let reply = data.content && data.content[0] && data.content[0].text;
+      if (!reply) { removeTyping(); isTyping = false; return; }
       reply = reply.replace(/\*\*/g, '').replace(/\*/g, '');
 
       // 2–3 second typing delay before showing the message
@@ -2119,7 +2137,6 @@ Rules:
       if (showIntakeForm) showChatIntakeForm();
     } catch (err) {
       removeTyping();
-      addAIMessage("I'm here to help! Please type your message and I'll respond right away.");
     }
 
     isTyping = false;
