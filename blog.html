@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Match Care ABA – ABA Therapy Resources for Families</title>
+<meta name="description" content="ABA therapy guides, tips, and resources for families in New York, New Jersey, and North Carolina. Learn how to find providers, navigate insurance, and spot early signs.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://matchcareaba.com/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matchcareaba.com/blog.html">
+<meta property="og:title" content="Blog | Match Care ABA – ABA Therapy Resources for Families">
+<meta property="og:description" content="ABA therapy guides, tips, and resources for families in New York, New Jersey, and North Carolina.">
+<meta property="og:image" content="https://matchcareaba.com/family-hero.jpeg">
+<meta property="og:site_name" content="Match Care ABA">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-37F7PCXW57"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-37F7PCXW57');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #EEF6FF;
+    --white: #FFFFFF;
+    --navy: #1B3A6B;
+    --navy-mid: #2A5298;
+    --gold: #F5A623;
+    --gold-light: #FFD166;
+    --coral: #FF6B6B;
+    --mint: #4ECDC4;
+    --lavender: #A78BFA;
+    --soft-green: #6BCB77;
+    --text: #1B3A6B;
+    --muted: #6B7FA3;
+    --card-bg: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--sky);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(245,166,35,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(78,205,196,0.07) 0%, transparent 35%),
+      radial-gradient(circle at 80% 80%, rgba(167,139,250,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 20% 90%, rgba(107,203,119,0.06) 0%, transparent 35%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid rgba(245,166,35,0.2);
+    box-shadow: 0 2px 20px rgba(27,58,107,0.06);
+  }
+
+  .nav-main-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 60px;
+  }
+
+  .nav-serving-bar {
+    background: linear-gradient(90deg, #1B3A6B, #2A5298);
+    padding: 7px 0;
+    text-align: center;
+  }
+
+  .nav-serving-bar p {
+    color: white; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px; margin: 0;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; background: transparent;
+  }
+
+  .nav-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 1.2rem;
+    font-weight: 800;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a.active { color: var(--navy); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid)) !important;
+    color: #F5A623 !important;
+    padding: 11px 26px;
+    border-radius: 50px;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 14px rgba(27,58,107,0.25);
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,58,107,0.35) !important; }
+
+  /* ===== HERO ===== */
+  .blog-hero {
+    padding: 160px 60px 80px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blog-hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(245,166,35,0.12);
+    border: 2px solid rgba(245,166,35,0.35);
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .blog-hero h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 16px;
+    animation: fadeUp 0.5s 0.1s ease both;
+  }
+
+  .blog-hero h1 .highlight {
+    color: var(--gold);
+    position: relative;
+    display: inline-block;
+  }
+
+  .blog-hero h1 .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 4px;
+    background: var(--gold-light);
+    border-radius: 4px;
+    opacity: 0.5;
+  }
+
+  .blog-hero p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto;
+    font-weight: 600;
+    animation: fadeUp 0.5s 0.2s ease both;
+  }
+
+  /* ===== BLOG GRID ===== */
+  .blog-section {
+    padding: 20px 60px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .blog-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(27,58,107,0.08);
+    border: 2px solid rgba(245,166,35,0.12);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(27,58,107,0.14);
+  }
+
+  .blog-card:nth-child(1) { animation-delay: 0.1s; }
+  .blog-card:nth-child(2) { animation-delay: 0.2s; }
+  .blog-card:nth-child(3) { animation-delay: 0.3s; }
+
+  .blog-card-header {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    padding: 32px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -20px;
+    width: 100px; height: 100px;
+    background: rgba(245,166,35,0.15);
+    border-radius: 50%;
+  }
+
+  .blog-card:nth-child(2) .blog-card-header {
+    background: linear-gradient(135deg, #1e4d87, #2A5298);
+  }
+
+  .blog-card:nth-child(3) .blog-card-header {
+    background: linear-gradient(135deg, var(--navy), #1e4d87);
+  }
+
+  .blog-tag {
+    display: inline-block;
+    background: rgba(245,166,35,0.2);
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 50px;
+    border: 1px solid rgba(245,166,35,0.3);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blog-card-header h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blog-card-body {
+    padding: 24px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 14px;
+  }
+
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .blog-meta .dot {
+    width: 4px; height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .blog-excerpt {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--muted);
+    font-weight: 600;
+    flex: 1;
+  }
+
+  .btn-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(245,166,35,0.35);
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+
+  .btn-read-more:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(245,166,35,0.48);
+  }
+
+  .btn-read-more svg {
+    transition: transform 0.2s;
+  }
+
+  .btn-read-more:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* ===== CTA SECTION ===== */
+  .blog-cta {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-radius: 28px;
+    padding: 56px 60px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .blog-cta::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: rgba(245,166,35,0.1);
+    border-radius: 50%;
+  }
+
+  .blog-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 280px; height: 280px;
+    background: rgba(78,205,196,0.08);
+    border-radius: 50%;
+  }
+
+  .blog-cta h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 14px;
+    position: relative; z-index: 1;
+  }
+
+  .blog-cta h2 span { color: var(--gold); }
+
+  .blog-cta p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+    position: relative; z-index: 1;
+  }
+
+  .blog-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(245,166,35,0.4);
+    transition: all 0.25s;
+    position: relative; z-index: 1;
+  }
+
+  .blog-cta a:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(245,166,35,0.5);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    padding: 44px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: relative; z-index: 1;
+    flex-wrap: wrap; gap: 20px;
+  }
+
+  .footer-logo {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem; font-weight: 900;
+    color: white;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    max-width: 360px;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .footer-links { display: flex; gap: 24px; }
+
+  .footer-links a {
+    font-size: 0.82rem; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ===== MOBILE NAV ===== */
+  .nav-hamburger { display: none; }
+
+  @media (max-width: 900px) {
+    .nav-main-row { padding: 10px 24px; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(27,58,107,0.97);
+      z-index: 200; align-items: center; justify-content: center; gap: 28px;
+    }
+    .nav-links.open a { font-size: 1.3rem; color: white !important; }
+    .nav-hamburger {
+      display: flex; flex-direction: column;
+      gap: 5px; cursor: pointer; z-index: 300; padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 3px;
+      background: var(--navy); border-radius: 3px; transition: all 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-hamburger.open span { background: white; }
+    .nav-serving-bar p { font-size: 0.72rem; }
+    .blog-hero { padding: 140px 24px 60px; }
+    .blog-section { padding: 20px 24px 80px; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-cta { padding: 44px 28px; margin: 0 24px 80px; }
+    footer { flex-direction: column; text-align: center; padding: 36px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  @media (max-width: 480px) {
+    .blog-hero h1 { font-size: 2rem; }
+    footer { padding: 28px 16px; }
+    .footer-links { gap: 12px; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-main-row">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpeg" alt="Match Care ABA Logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#signs">Signs to Watch</a></li>
+      <li><a href="index.html#how">How It Works</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#providers">For Providers</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="nav-serving-bar">
+    <p>CURRENTLY SERVING: 🗽 <span style="color:#FFD166;">New York</span> &nbsp;•&nbsp; 🌿 <span style="color:#6BCB77;">New Jersey</span> &nbsp;•&nbsp; 🌲 <span style="color:#FFD166;">North Carolina</span> &nbsp;•&nbsp; <span style="color:rgba(255,255,255,0.7);">&amp; Expanding Nationwide</span></p>
+  </div>
+</nav>
+
+<!-- Blog Hero -->
+<section class="blog-hero">
+  <div class="blog-hero-badge">📚 Resources &amp; Guides</div>
+  <h1>The Match Care <span class="highlight">Blog</span></h1>
+  <p>Helpful guides for families navigating ABA therapy — from finding providers to understanding insurance and spotting early signs.</p>
+</section>
+
+<!-- Blog Posts -->
+<section class="blog-section">
+  <div class="blog-grid">
+
+    <!-- Post 1 -->
+    <article class="blog-card">
+      <div class="blog-card-header">
+        <div class="blog-tag">📍 Finding Providers</div>
+        <h2>How to Find ABA Therapy in New York, New Jersey &amp; North Carolina</h2>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span>March 5, 2025</span>
+          <span class="dot"></span>
+          <span>5 min read</span>
+        </div>
+        <p class="blog-excerpt">Searching for ABA therapy can feel overwhelming — long waitlists, unclear pricing, and too many providers to compare. This guide walks you through exactly how to find a trusted, insurance-accepted ABA provider in NY, NJ, or NC without the stress.</p>
+        <a href="#" class="btn-read-more">
+          Read More
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Post 2 -->
+    <article class="blog-card">
+      <div class="blog-card-header">
+        <div class="blog-tag">👶 Early Signs</div>
+        <h2>5 Early Signs Your Child May Benefit from ABA Therapy</h2>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span>February 18, 2025</span>
+          <span class="dot"></span>
+          <span>4 min read</span>
+        </div>
+        <p class="blog-excerpt">Every child develops differently, but certain patterns may signal that ABA therapy could help. From communication delays to repetitive behaviors, learn the five signs parents and pediatricians commonly look for — and what to do next.</p>
+        <a href="#" class="btn-read-more">
+          Read More
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Post 3 -->
+    <article class="blog-card">
+      <div class="blog-card-header">
+        <div class="blog-tag">💳 Insurance</div>
+        <h2>How to Get ABA Therapy Covered by Insurance</h2>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span>January 30, 2025</span>
+          <span class="dot"></span>
+          <span>6 min read</span>
+        </div>
+        <p class="blog-excerpt">Most insurance plans are required to cover ABA therapy for children with autism — but knowing how to navigate the process can save you months of delays. This step-by-step guide covers referrals, prior authorization, and what to do if you're denied.</p>
+        <a href="#" class="btn-read-more">
+          Read More
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding: 0 60px; position: relative; z-index: 1;">
+  <div class="blog-cta">
+    <h2>Ready to Find the <span>Right Provider?</span></h2>
+    <p>Skip the waitlists and the guesswork. Match Care ABA connects your family with verified ABA providers — for free.</p>
+    <a href="https://form.jotform.com/260662279796069">
+      Get Matched for Free
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo.jpeg" alt="Match Care ABA">
+    <span>Match Care <span style="color:var(--gold);">ABA</span></span>
+  </div>
+  <div style="max-width: 480px; text-align: center;">
+    <p class="footer-text">Match Care is an independent referral service and does not provide medical advice, diagnosis, or therapy services. All services are provided directly by licensed professionals.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#providers">For Providers</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
