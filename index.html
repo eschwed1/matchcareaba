@@ -811,7 +811,8 @@
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
   @media (max-width: 900px) {
-    .nav-main-row { padding: 14px 20px; }
+    .nav-main-row { padding: 10px 20px; }
+    .nav-logo img { height: 70px !important; }
     .nav-links { display: none; }
     .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(27,58,107,0.97); z-index: 200; align-items: center; justify-content: center; gap: 28px; }
     .nav-links.open a { font-size: 1.3rem; color: white !important; }
@@ -821,24 +822,69 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     .nav-hamburger.open span { background: white; }
-    .hero { grid-template-columns: 1fr; padding: 185px 24px 60px; }
+    .hero { grid-template-columns: 1fr; padding: 140px 20px 56px; }
     .hero-visual { display: flex; margin-top: 32px; }
-    .hero-photo { height: 300px; }
+    .hero-photo { height: 340px; }
+    .floating-badge { font-size: 0.75rem; padding: 8px 12px; }
+    .hero-stats { gap: 10px; }
     .signs { padding: 60px 24px; }
     .signs-grid { grid-template-columns: 1fr 1fr; }
     .how { padding: 60px 24px; }
     .steps-grid { grid-template-columns: 1fr; gap: 28px; }
     .steps-grid::before { display: none; }
+    #consultation { padding: 48px 24px !important; }
+    .consultation-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    #about { padding: 48px 24px !important; }
+    .story-box { padding: 24px 20px !important; }
+    #providers { padding: 48px 24px !important; }
+    #providers h2 { font-size: 1.8rem !important; }
+    .providers-benefits-grid { grid-template-columns: 1fr !important; }
     .form-section { padding: 60px 24px; }
     .lead-form { padding: 28px 20px; }
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; text-align: center; padding: 36px 24px; }
-    .trust-strip { padding: 24px 20px; gap: 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .trust-strip { padding: 24px 20px; gap: 20px; }
+    #chat-window { width: calc(100vw - 48px) !important; right: 16px !important; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-logo img { height: 56px !important; }
+    .nav-serving-bar p { font-size: 0.72rem; }
+    .hero { padding: 120px 16px 48px; }
+    .hero-badge { font-size: 0.72rem; padding: 6px 12px; letter-spacing: 0.5px; }
+    .hero p { font-size: 1rem; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-actions a { text-align: center; justify-content: center; }
+    .btn-primary { padding: 14px 24px; }
+    .btn-secondary { padding: 12px 20px; }
+    .hero-stats { flex-direction: column; gap: 10px; }
+    .stat-item { width: 100%; }
+    .hero-photo { height: 260px; }
+    .floating-badge { display: none; }
+    .kid-card { left: 8px; bottom: 40px; }
+    .signs-grid { grid-template-columns: 1fr; }
+    .sign-card { padding: 20px; }
+    .trust-strip { flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 16px; }
+    .how { padding: 48px 16px; }
+    .signs { padding: 48px 16px; }
+    #consultation { padding: 36px 16px !important; }
+    #about { padding: 36px 16px !important; }
+    #providers { padding: 36px 16px !important; }
+    .form-section { padding: 48px 16px; }
+    .lead-form { padding: 20px 16px; }
+    .phase-stepper { gap: 0; }
+    .phase-label { font-size: 0.58rem; max-width: 54px; }
+    .phase-spacer { width: 20px; }
+    #chat-window { width: calc(100vw - 32px) !important; right: 16px !important; bottom: 90px !important; }
+    #chat-bubble { right: 16px !important; bottom: 16px !important; }
+    footer { padding: 28px 16px; }
+    .footer-links { gap: 12px; }
   }
 
   .nav-hamburger { display: none; }
 
-  #signs, #how, #match, #about, #providers {
+  #signs, #how, #match, #about, #providers, #consultation {
     scroll-margin-top: 120px;
   }
 
@@ -987,8 +1033,8 @@
   <div class="trust-item"><div class="trust-icon ti4">⚡</div> Matched In Days, Not Months</div>
 </div>
 
-<section style="background: white; padding: 80px 60px; position: relative; z-index: 1;">
-  <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;">
+<section id="consultation" style="background: white; padding: 80px 60px; position: relative; z-index: 1;">
+  <div class="consultation-grid" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;">
     
     <!-- Photo left -->
     <div  style="border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(27,58,107,0.15);">
@@ -1059,7 +1105,7 @@
   <div style="max-width: 760px; margin: 0 auto; text-align: center;">
     <div class="section-tag">💛 Our Story</div>
     <h2 style="font-size: 2rem; font-weight: 900; color: var(--navy); margin-bottom: 24px;">Why We Built Match Care</h2>
-    <div style="text-align: left; background: var(--sky); border-radius: 24px; padding: 40px; border-left: 4px solid var(--gold);">
+    <div class="story-box" style="text-align: left; background: var(--sky); border-radius: 24px; padding: 40px; border-left: 4px solid var(--gold);">
       <p style="font-size: 1rem; color: var(--text); font-weight: 600; line-height: 1.8; margin-bottom: 20px;">
         Every family we've heard from says the same thing: <em>"We knew something was different about our child, but we had no idea where to start."</em> The search for ABA therapy can be overwhelming — long waitlists, confusing insurance questions, and providers who aren't the right fit.
       </p>
@@ -1106,7 +1152,7 @@
       <!-- Left: Benefits -->
       <div style="width:100%; max-width:900px;">
         <h3 style="color:#FFD166; font-size:1.2rem; font-weight:800; margin-bottom:24px; text-align:center;">Why Join Our Network?</h3>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+        <div class="providers-benefits-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
           <div style="display:flex; gap:14px; align-items:flex-start;">
             <div style="width:36px; height:36px; border-radius:50%; background:rgba(255,209,102,0.15); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1rem;">🎯</div>
             <div><p style="color:white; font-weight:800; margin:0 0 4px;">Pre-matched families</p><p style="color:rgba(255,255,255,0.65); font-size:0.88rem; font-weight:600; margin:0;">We send you families already matched to your location, insurance, and availability</p></div>
