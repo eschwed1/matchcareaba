@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free ABA Therapy Matching Service | Match Care ABA</title>
+<meta name="description" content="Match Care ABA is a free ABA therapy matching service for families. We connect parents with verified, insurance-accepted ABA providers in NY, NJ, and NC — no cost, no waitlist guesswork.">
+<meta name="keywords" content="free ABA therapy matching service, ABA therapy matching, find ABA provider free, autism provider matching, ABA therapy referral service, free autism therapy search, match ABA therapy">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://matchcareaba.com/free-aba-therapy-matching-service.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matchcareaba.com/free-aba-therapy-matching-service.html">
+<meta property="og:title" content="Free ABA Therapy Matching Service | Match Care ABA">
+<meta property="og:description" content="Match Care ABA is a free ABA therapy matching service for families. We connect parents with verified, insurance-accepted ABA providers in NY, NJ, and NC — no cost, no waitlist guesswork.">
+<meta property="og:image" content="https://matchcareaba.com/family-hero.jpeg">
+<meta property="og:site_name" content="Match Care ABA">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://matchcareaba.com/free-aba-therapy-matching-service.html">
+<meta name="twitter:title" content="Free ABA Therapy Matching Service | Match Care ABA">
+<meta name="twitter:description" content="Match Care ABA is a free ABA therapy matching service. We connect families with verified, insurance-accepted ABA providers in NY, NJ, and NC.">
+<meta name="twitter:image" content="https://matchcareaba.com/family-hero.jpeg">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-37F7PCXW57"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-37F7PCXW57');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #EEF6FF;
+    --white: #FFFFFF;
+    --navy: #1B3A6B;
+    --navy-mid: #2A5298;
+    --gold: #F5A623;
+    --gold-light: #FFD166;
+    --coral: #FF6B6B;
+    --mint: #4ECDC4;
+    --lavender: #A78BFA;
+    --soft-green: #6BCB77;
+    --text: #1B3A6B;
+    --muted: #6B7FA3;
+    --card-bg: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--sky);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(245,166,35,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(78,205,196,0.07) 0%, transparent 35%),
+      radial-gradient(circle at 80% 80%, rgba(167,139,250,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 20% 90%, rgba(107,203,119,0.06) 0%, transparent 35%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid rgba(245,166,35,0.2);
+    box-shadow: 0 2px 20px rgba(27,58,107,0.06);
+  }
+
+  .nav-main-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 60px;
+  }
+
+  .nav-serving-bar {
+    background: linear-gradient(90deg, #1B3A6B, #2A5298);
+    padding: 7px 0;
+    text-align: center;
+  }
+
+  .nav-serving-bar p {
+    color: white; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px; margin: 0;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; background: transparent;
+  }
+
+  .nav-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 1.2rem;
+    font-weight: 800;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--navy); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid)) !important;
+    color: #F5A623 !important;
+    padding: 11px 26px;
+    border-radius: 50px;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 14px rgba(27,58,107,0.25);
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,58,107,0.35) !important; }
+
+  /* ===== ARTICLE HERO ===== */
+  .article-hero {
+    padding: 160px 60px 60px;
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: var(--navy); }
+
+  .article-tag {
+    display: inline-block;
+    background: rgba(245,166,35,0.12);
+    border: 2px solid rgba(245,166,35,0.35);
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+  }
+
+  .article-hero h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .article-meta .dot {
+    width: 4px; height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .article-intro {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 2px solid rgba(245,166,35,0.18);
+  }
+
+  /* ===== ARTICLE BODY ===== */
+  .article-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 60px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .article-body h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin: 52px 0 16px;
+    line-height: 1.3;
+  }
+
+  .article-body h2::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+
+  .article-body h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 30px 0 10px;
+  }
+
+  .article-body p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #3D5280;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .article-body ul, .article-body ol {
+    margin: 4px 0 20px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .article-body ul li, .article-body ol li {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #3D5280;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-left: 28px;
+    position: relative;
+  }
+
+  .article-body ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 900;
+    font-size: 1rem;
+  }
+
+  .article-body ol {
+    counter-reset: list-counter;
+  }
+
+  .article-body ol li {
+    counter-increment: list-counter;
+  }
+
+  .article-body ol li::before {
+    content: counter(list-counter);
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    border-radius: 50%;
+    font-size: 0.72rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 3px;
+    line-height: 1;
+    text-align: center;
+    padding-top: 1px;
+  }
+
+  /* Sign cards */
+  .sign-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 34px;
+    margin: 20px 0 32px;
+    box-shadow: 0 4px 20px rgba(27,58,107,0.07);
+    border-left: 5px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sign-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -20px;
+    width: 120px; height: 120px;
+    background: rgba(245,166,35,0.05);
+    border-radius: 50%;
+  }
+
+  .sign-card.sign-2 { border-left-color: var(--coral); }
+  .sign-card.sign-3 { border-left-color: var(--lavender); }
+  .sign-card.sign-4 { border-left-color: var(--mint); }
+  .sign-card.sign-5 { border-left-color: var(--soft-green); }
+
+  .sign-card .sign-number {
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .sign-card.sign-2 .sign-number { color: var(--coral); }
+  .sign-card.sign-3 .sign-number { color: var(--lavender); }
+  .sign-card.sign-4 .sign-number { color: var(--mint); }
+  .sign-card.sign-5 .sign-number { color: var(--soft-green); }
+
+  .sign-card h3 {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin: 0 0 14px;
+  }
+
+  .sign-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #3D5280;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .sign-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .sign-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+  }
+
+  .sign-card ul li {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #3D5280;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding-left: 24px;
+    position: relative;
+  }
+
+  .sign-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 900;
+  }
+
+  .sign-card.sign-2 ul li::before { color: var(--coral); }
+  .sign-card.sign-3 ul li::before { color: var(--lavender); }
+  .sign-card.sign-4 ul li::before { color: var(--mint); }
+  .sign-card.sign-5 ul li::before { color: var(--soft-green); }
+
+  /* Step badge for how-it-works cards */
+  .step-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.05rem;
+    font-weight: 900;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    box-shadow: 0 2px 10px rgba(245,166,35,0.3);
+  }
+
+  .sign-card.sign-2 .step-badge {
+    background: linear-gradient(135deg, var(--coral), #ff9a9a);
+    color: white;
+    box-shadow: 0 2px 10px rgba(255,107,107,0.3);
+  }
+
+  .sign-card.sign-3 .step-badge {
+    background: linear-gradient(135deg, var(--lavender), #c4b5fd);
+    color: white;
+    box-shadow: 0 2px 10px rgba(167,139,250,0.3);
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin: 40px 0;
+    color: white;
+  }
+
+  .highlight-box h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+  }
+
+  .highlight-box p {
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 600;
+  }
+
+  .highlight-box strong {
+    color: var(--gold-light);
+  }
+
+  /* Testimonial cards inside highlight box */
+  .testimonial {
+    background: rgba(255,255,255,0.07);
+    border-left: 4px solid var(--gold-light);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+
+  .testimonial:last-child { margin-bottom: 0; }
+
+  .testimonial p {
+    font-size: 0.97rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.75;
+    margin-bottom: 8px;
+  }
+
+  .testimonial cite {
+    font-size: 0.8rem;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+  }
+
+  /* Reassurance box */
+  .reassurance-box {
+    background: rgba(78,205,196,0.08);
+    border: 2px solid rgba(78,205,196,0.25);
+    border-radius: 18px;
+    padding: 26px 30px;
+    margin: 32px 0;
+  }
+
+  .reassurance-box p {
+    margin-bottom: 12px;
+    color: #2a5d59;
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 600;
+  }
+
+  .reassurance-box p:last-child { margin-bottom: 0; }
+
+  .reassurance-box strong {
+    color: var(--navy);
+  }
+
+  /* ===== INLINE CTA ===== */
+  .inline-cta {
+    background: linear-gradient(135deg, rgba(245,166,35,0.1), rgba(255,209,102,0.15));
+    border: 2px solid rgba(245,166,35,0.35);
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin: 44px 0;
+    text-align: center;
+  }
+
+  .inline-cta p {
+    font-size: 1.05rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .inline-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(245,166,35,0.38);
+    transition: all 0.25s;
+  }
+
+  .inline-cta a:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(245,166,35,0.48);
+  }
+
+  /* ===== BOTTOM CTA ===== */
+  .blog-cta {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-radius: 28px;
+    padding: 56px 60px;
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 100px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .blog-cta::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: rgba(245,166,35,0.1);
+    border-radius: 50%;
+  }
+
+  .blog-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 280px; height: 280px;
+    background: rgba(78,205,196,0.08);
+    border-radius: 50%;
+  }
+
+  .blog-cta h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 14px;
+    position: relative; z-index: 1;
+  }
+
+  .blog-cta h2 span { color: var(--gold); }
+
+  .blog-cta p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+    position: relative; z-index: 1;
+  }
+
+  .blog-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(245,166,35,0.4);
+    transition: all 0.25s;
+    position: relative; z-index: 1;
+  }
+
+  .blog-cta a:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(245,166,35,0.5);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    padding: 44px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: relative; z-index: 1;
+    flex-wrap: wrap; gap: 20px;
+  }
+
+  .footer-logo {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem; font-weight: 900;
+    color: white;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .footer-logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    max-width: 360px;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .footer-links { display: flex; gap: 24px; }
+
+  .footer-links a {
+    font-size: 0.82rem; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ===== MOBILE NAV ===== */
+  .nav-hamburger { display: none; }
+
+  @media (max-width: 900px) {
+    .nav-main-row { padding: 10px 24px; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(27,58,107,0.97);
+      z-index: 200; align-items: center; justify-content: center; gap: 28px;
+    }
+    .nav-links.open a { font-size: 1.3rem; color: white !important; }
+    .nav-hamburger {
+      display: flex; flex-direction: column;
+      gap: 5px; cursor: pointer; z-index: 300; padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 3px;
+      background: var(--navy); border-radius: 3px; transition: all 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-hamburger.open span { background: white; }
+    .nav-serving-bar p { font-size: 0.72rem; }
+    .article-hero { padding: 140px 24px 40px; }
+    .article-body { padding: 0 24px 80px; }
+    .sign-card { padding: 24px 22px; }
+    .highlight-box { padding: 26px 28px; }
+    .reassurance-box { padding: 22px 24px; }
+    .inline-cta { padding: 28px 24px; }
+    .blog-cta { padding: 44px 28px; margin: 0 24px 80px; }
+    footer { flex-direction: column; text-align: center; padding: 36px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  @media (max-width: 480px) {
+    .article-hero h1 { font-size: 1.9rem; }
+    .article-body h2 { font-size: 1.4rem; }
+    footer { padding: 28px 16px; }
+    .footer-links { gap: 12px; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Q&A inside sign-card */
+  .qa-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(27,58,107,0.08);
+  }
+
+  .qa-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .qa-q {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .qa-a {
+    font-size: 0.97rem;
+    line-height: 1.78;
+    color: #3D5280;
+    font-weight: 600;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-main-row">
+    <a href="index.html" class="nav-logo"><img src="logo.jpeg" alt="Match Care ABA Logo"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#signs">Signs to Watch</a></li>
+      <li><a href="index.html#how">How It Works</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#providers">For Providers</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav-serving-bar">
+    <p>CURRENTLY SERVING: 🗽 <span style="color:#FFD166;">New York</span> &nbsp;•&nbsp; 🌿 <span style="color:#6BCB77;">New Jersey</span> &nbsp;•&nbsp; 🌲 <span style="color:#FFD166;">North Carolina</span> &nbsp;•&nbsp; <span style="color:rgba(255,255,255,0.7);">&amp; Expanding Nationwide</span></p>
+  </div>
+</nav>
+
+<!-- Article Hero -->
+<div class="article-hero">
+  <a href="index.html" class="back-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Home
+  </a>
+  <div class="article-tag">💚 Free Matching Service</div>
+  <h1>Free ABA Therapy Matching — Because Every Family Deserves Better Than a Waitlist</h1>
+  <div class="article-meta">
+    <span>By Match Care ABA Team</span>
+    <span class="dot"></span>
+    <span>8 min read</span>
+    <span class="dot"></span>
+    <span>Updated March 2026</span>
+  </div>
+  <p class="article-intro">
+    Finding ABA therapy shouldn't feel like a second job. Match Care ABA is a free matching service that does the hard work for you — verifying providers, confirming insurance acceptance, and connecting your family directly with ABA therapy providers who are actually taking new clients. No cold calls. No dead ends. No guessing.
+  </p>
+</div>
+
+<!-- Article Body -->
+<article class="article-body">
+
+  <h2>Why We Built This Service</h2>
+
+  <p>If you've tried to find ABA therapy on your own, you already know how it goes. You search online, compile a list of providers in your area, and start making calls. Provider one doesn't answer. Provider two has a 12-month waitlist. Provider three doesn't accept your insurance — a fact you only learn after driving across town for an intake appointment. Provider four offers services, but only in a clinic 45 minutes away. You start over.</p>
+
+  <div class="sign-card">
+    <div class="sign-number">The Problem We Solve</div>
+    <h3>ABA Therapy Is Hard to Find. That Needs to Change.</h3>
+    <p>This is the reality for most families seeking ABA therapy in the United States. ABA therapy waitlists average 6 to 12 months in high-demand metro areas. In some regions, families wait longer. Meanwhile, the research is unambiguous: early intervention produces the best outcomes. Every month a child waits for therapy is a month of opportunity that cannot be recovered.</p>
+    <p>The families who get connected to services quickly are often the ones who know the system, have time to make dozens of phone calls, and have the resources to navigate a fragmented and opaque market. That is not fair. Every family — regardless of income, familiarity with the autism therapy system, or ability to spend hours on hold — deserves access to the information they need to get their child help.</p>
+    <p>Match Care ABA was built to change that. We believe the barrier between a family and the therapy their child needs should be information and access — not confusion, phone trees, and outdated provider directories.</p>
+  </div>
+
+  <h2>What "Free" Actually Means</h2>
+
+  <div class="reassurance-box">
+    <p><strong>Match Care ABA is completely free for families. Always.</strong></p>
+    <p>We are funded by ABA therapy providers who pay to be included in our verified network. Providers value the connection to families who are ready to enroll, whose insurance has already been confirmed, and whose geographic and service-type needs match the provider's availability. That value is what makes our model work — and it means you will never be charged for our matching service, asked for a credit card, or surprised by a hidden fee at any point in the process.</p>
+    <p>We are transparent about this because we believe you deserve to know exactly how the service works. Our incentive is to make the best possible match for your family — because happy families and successful matches are what keep providers engaged with our network.</p>
+  </div>
+
+  <h2>How the Matching Service Works</h2>
+
+  <p>The process is simple. You share a little information about your child and family, and we do the rest.</p>
+
+  <div class="sign-card">
+    <div class="step-badge">1</div>
+    <div class="sign-number">Step One</div>
+    <h3>Tell Us About Your Family</h3>
+    <p>Fill out our short intake form — it takes about three minutes. We ask for the basics: your child's age, your general location, any existing diagnosis or developmental concerns, your insurance plan, and what type of ABA therapy setting you are looking for (clinic, home, school, or a combination).</p>
+    <p>You do not need a diagnosis to get started. Many families come to us with developmental concerns but no formal diagnosis yet — and we can still help connect you with providers who accept referrals at that stage.</p>
+  </div>
+
+  <div class="sign-card sign-2">
+    <div class="step-badge">2</div>
+    <div class="sign-number">Step Two</div>
+    <h3>We Do the Work</h3>
+    <p>Once we have your information, our team gets to work. We cross-reference your family's needs against our verified provider network — checking real-time availability, confirming that providers currently accept new clients (not just in theory, but actually), and verifying that your specific insurance plan is accepted.</p>
+    <p>We also match on service type, location, and any specific circumstances your family has shared. The goal is a match that works — not just a name and phone number to add to your list.</p>
+    <ul>
+      <li>Current enrollment availability confirmed directly with the provider</li>
+      <li>Insurance verification for your specific plan, not just "most insurances"</li>
+      <li>Location matching within a practical distance for your family</li>
+      <li>Service type alignment (clinic, home-based, school-based)</li>
+      <li>BCBA supervision verified</li>
+    </ul>
+  </div>
+
+  <div class="sign-card sign-3">
+    <div class="step-badge">3</div>
+    <div class="sign-number">Step Three</div>
+    <h3>Connect with Your Match</h3>
+    <p>When we have a confirmed match, the provider reaches out to your family directly to schedule an intake consultation. No middleman. No repeated re-telling of your child's story to multiple layers of staff. You go straight to a provider who is ready to meet you.</p>
+    <p>If for any reason the initial match doesn't work out — the timing changes, your family's needs shift, or it just isn't the right fit — contact us and we will find alternatives. Our relationship with your family doesn't end at the first referral.</p>
+  </div>
+
+  <h2>What We Verify Before Making a Match</h2>
+
+  <p>Not all "provider directories" are created equal. Many list providers who haven't updated their availability in months — or years. Match Care ABA verifies the things that actually matter to your family before any referral is made.</p>
+
+  <ul>
+    <li><strong>Currently accepting new clients</strong> — Not just listed as "open" on paper, but verified to have actual availability for new enrollments in a reasonable timeframe.</li>
+    <li><strong>Accepts your specific insurance plan</strong> — We verify in-network status for your particular carrier and plan, not just generic insurance acceptance.</li>
+    <li><strong>Licensed and BCBA-supervised</strong> — All matched providers employ Board Certified Behavior Analysts who design and oversee treatment programs. We do not refer to programs without qualified BCBA oversight.</li>
+    <li><strong>Located within a practical distance</strong> — We consider realistic travel time and commute, not just straight-line geography.</li>
+    <li><strong>Offers the service type your family needs</strong> — Whether you need clinic-based, home-based, or school-based ABA, we match to providers who offer the specific setting that works for your child and schedule.</li>
+  </ul>
+
+  <h2>Who We Serve</h2>
+
+  <div class="sign-card sign-4">
+    <div class="sign-number">Currently Serving</div>
+    <h3>Families in New York, New Jersey, and North Carolina</h3>
+    <p>Match Care ABA currently serves families across three states, with a growing network of verified providers in each region.</p>
+    <ul>
+      <li><strong>New York:</strong> All five boroughs of New York City, Long Island (Nassau and Suffolk counties), Westchester, and surrounding areas.</li>
+      <li><strong>New Jersey:</strong> Statewide coverage across northern, central, and southern New Jersey, including Bergen, Essex, Hudson, Middlesex, Monmouth, Morris, and Ocean counties.</li>
+      <li><strong>North Carolina:</strong> Charlotte metro, the Raleigh-Durham-Chapel Hill Triangle, Greensboro, and additional communities throughout the state.</li>
+    </ul>
+    <p>We are actively expanding to additional states. If you are in another state and want to be notified when we launch in your area, submit our intake form and let us know your location — we will reach out as we expand.</p>
+  </div>
+
+  <div class="inline-cta">
+    <p>Ready to stop searching and start getting answers? Fill out our short form and let us find your match.</p>
+    <a href="https://form.jotform.com/260662279796069">Get Matched for Free &#8594;</a>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="sign-card sign-5">
+    <div class="sign-number">FAQs</div>
+    <h3>Your Questions, Answered</h3>
+
+    <div class="qa-item">
+      <p class="qa-q">Do I need a formal autism diagnosis to use the service?</p>
+      <p class="qa-a">No. Many families come to us with developmental concerns but no formal diagnosis yet. While some providers do require a diagnosis before starting ABA therapy, others accept referrals based on developmental concerns alone — particularly for early intervention. We will match your family with providers who are appropriate for your specific situation.</p>
+    </div>
+
+    <div class="qa-item">
+      <p class="qa-q">What age children do you serve?</p>
+      <p class="qa-a">We serve families of children of all ages. The majority of ABA therapy providers in our network serve children ages 2 through 21, though individual provider age ranges vary. Some providers specialize in early intervention (ages 2–5), others in school-age children, and some serve adolescents and young adults. We match based on your child's age and the provider's specific focus.</p>
+    </div>
+
+    <div class="qa-item">
+      <p class="qa-q">How long does matching take?</p>
+      <p class="qa-a">We aim to provide match results within 2–5 business days of receiving your completed intake form. In some cases — particularly in high-demand areas or for families with specialized insurance plans — it may take a few additional days to confirm availability. We will always keep you updated on where we are in the process.</p>
+    </div>
+
+    <div class="qa-item">
+      <p class="qa-q">What if I don't like the match or it doesn't work out?</p>
+      <p class="qa-a">Contact us and we will look for alternative providers. Our goal is to find you a connection that actually works — not just to close a referral. If circumstances change or the initial match isn't the right fit for your family, we want to hear about it so we can help find a better option.</p>
+    </div>
+
+    <div class="qa-item">
+      <p class="qa-q">Is this really free? What's the catch?</p>
+      <p class="qa-a">It is genuinely free for families. Match Care ABA is funded by providers in our network who pay to receive qualified, pre-verified referrals. You will never be charged, asked for payment information, or surprised by a fee at any stage of the process.</p>
+    </div>
+  </div>
+
+  <h2>What Parents Say About Working With Us</h2>
+
+  <div class="highlight-box">
+    <h3>From Families We Have Helped</h3>
+
+    <div class="testimonial">
+      <p>"I spent three months calling ABA providers and getting put on waitlists or told they didn't take our insurance. Match Care ABA connected me with a provider who could actually see my son within two weeks. I wish I had found them first."</p>
+      <cite>— Parent in New York City</cite>
+    </div>
+
+    <div class="testimonial">
+      <p>"I was completely overwhelmed after my daughter's diagnosis. I didn't know where to start. The Match Care team walked me through what to expect and found us a clinic close to our home that takes our Medicaid plan. It was genuinely the easiest part of this whole process."</p>
+      <cite>— Parent in New Jersey</cite>
+    </div>
+
+    <div class="testimonial">
+      <p>"We had been on three different waitlists for almost a year. Match Care found a home-based provider who had just opened a spot and accepted our BCBS plan. My son started therapy within the month. I can't recommend them enough."</p>
+      <cite>— Parent in North Carolina</cite>
+    </div>
+  </div>
+
+</article>
+
+<!-- Bottom CTA -->
+<div class="blog-cta">
+  <h2>Get Matched for <span>Free</span> Today</h2>
+  <p>Fill out our short form and let Match Care ABA connect your family with verified, insurance-accepted ABA therapy providers near you — at no cost, and without the waitlist guesswork.</p>
+  <a href="https://form.jotform.com/260662279796069">Start Your Free Match &#8594;</a>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="logo.jpeg" alt="Match Care ABA"><span>Match Care <span style="color:var(--gold);">ABA</span></span></div>
+  <div style="max-width: 480px; text-align: center;"><p class="footer-text">Match Care is an independent referral service and does not provide medical advice, diagnosis, or therapy services. All services are provided directly by licensed professionals.</p></div>
+  <div class="footer-links"><a href="index.html">Home</a><a href="blog.html">Blog</a><a href="index.html#providers">For Providers</a></div>
+</footer>
+<script>
+  function toggleMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
