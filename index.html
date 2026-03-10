@@ -1576,15 +1576,27 @@
     background: linear-gradient(135deg, var(--gold), var(--gold-light));
     display: flex; align-items: center; justify-content: center;
     font-size: 0.85rem; flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .msg-avatar img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+
+  .msg > div {
+    min-width: 0;
+    max-width: 78%;
   }
 
   .msg-bubble {
-    max-width: 78%;
     padding: 10px 14px;
     border-radius: 18px;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.5;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
   }
 
   .msg.ai .msg-bubble {
@@ -1870,6 +1882,13 @@
   // ── ZAPIER WEBHOOK — set your webhook URL here after Step 3 in DEPLOY.md ──
   const ZAPIER_WEBHOOK = 'YOUR_ZAPIER_WEBHOOK_URL';
 
+  const JULIE_AVATAR_SRC = document.querySelector('.chat-avatar img')?.src || '';
+  function julieAvatarHTML() {
+    return JULIE_AVATAR_SRC
+      ? `<div class="msg-avatar"><img src="${JULIE_AVATAR_SRC}" alt="Julie"></div>`
+      : `<div class="msg-avatar">J</div>`;
+  }
+
   const SYSTEM_PROMPT = `You are Julie, a warm and knowledgeable care coordinator at Match Care ABA. Think of yourself as a caring, knowledgeable friend — someone who happens to know everything about ABA therapy and how to navigate it, and genuinely wants to help. Your vibe is real, warm, and encouraging. Never formal or stiff.
 
 Your job is to chat naturally with parents to help them find the right ABA provider for their child — completely free. Keep messages SHORT and conversational (1–2 sentences). Be genuinely warm and supportive — parents reaching out are often stressed and overwhelmed, and that deserves kindness.
@@ -2008,7 +2027,7 @@ Rules:
     }
 
     div.innerHTML = `
-      <div class="msg-avatar">J</div>
+      ${julieAvatarHTML()}
       <div>
         <div class="msg-bubble">${text}</div>
         ${extra}
@@ -2047,7 +2066,7 @@ Rules:
     const msgs = document.getElementById('chat-messages');
     const div = document.createElement('div');
     div.className = 'msg ai'; div.id = 'typing-msg';
-    div.innerHTML = `<div class="msg-avatar">🧩</div>
+    div.innerHTML = `${julieAvatarHTML()}
       <div class="typing-indicator">
         <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
       </div>`;
@@ -2132,7 +2151,7 @@ Rules:
     const div = document.createElement('div');
     div.className = 'msg ai';
     div.innerHTML = `
-      <div class="msg-avatar">J</div>
+      ${julieAvatarHTML()}
       <div>
         <div class="mini-intake-card" id="chat-mini-intake">
           <div class="intake-title">✨ Quick Info — Let's Get You Matched!</div>
