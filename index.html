@@ -2038,6 +2038,10 @@ Rules:
   }
 
   // ── ADD MESSAGES ────────────────────────────────────────────
+  function linkifyText(text) {
+    return text.replace(/(https?:\/\/[^\s<>"']+)/g, '<a href="$1" style="color:inherit;text-decoration:underline;">$1</a>');
+  }
+
   function addAIMessage(text, showUploadCard = false) {
     const msgs = document.getElementById('chat-messages');
     const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -2060,7 +2064,7 @@ Rules:
     div.innerHTML = `
       ${julieAvatarHTML()}
       <div>
-        <div class="msg-bubble">${text}</div>
+        <div class="msg-bubble">${linkifyText(text)}</div>
         ${extra}
         <div class="msg-time">${now}</div>
       </div>`;
