@@ -1,123 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core Pages -->
   <url>
     <loc>https://matchcareaba.com/</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://matchcareaba.com/blog.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://matchcareaba.com/blog-find-aba-therapy-ny-nj-nc.html</loc>
-    <lastmod>2025-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/blog-early-signs-aba-therapy.html</loc>
-    <lastmod>2025-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/blog-aba-therapy-insurance-coverage.html</loc>
-    <lastmod>2025-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-new-york.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-new-jersey.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-north-carolina.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-new-york-city.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-brooklyn.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-queens.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-bronx.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-long-island.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-newark-nj.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-charlotte-nc.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- High-Priority Informational Pages -->
   <url>
     <loc>https://matchcareaba.com/find-aba-therapist-near-me.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://matchcareaba.com/aba-therapy-covered-by-insurance.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/autism-therapy-for-children.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://matchcareaba.com/applied-behavior-analysis-therapy.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://matchcareaba.com/free-aba-therapy-matching-service.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://matchcareaba.com/autism-therapy-for-children.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/applied-behavior-analysis-therapy.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- State-Level Landing Pages -->
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-new-york.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-new-jersey.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-north-carolina.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-new-york-city.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- New York City Boroughs -->
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-manhattan.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-brooklyn.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-queens.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-bronx.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-staten-island.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- New York Suburbs & Regions -->
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-long-island.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-westchester-ny.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-nassau-county-ny.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-suffolk-county-ny.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- New Jersey Cities & Counties -->
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-newark-nj.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-jersey-city-nj.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-hoboken-nj.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-trenton-nj.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-bergen-county-nj.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-essex-county-nj.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- North Carolina Cities -->
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-charlotte-nc.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-raleigh-nc.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-durham-nc.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-greensboro-nc.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-fayetteville-nc.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://matchcareaba.com/blog-aba-therapy-activities-at-home.html</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/blog-aba-therapy-at-school-daycare.html</loc>
+    <lastmod>2024-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/blog-why-does-aba-therapy-work.html</loc>
+    <lastmod>2024-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/blog-how-long-does-aba-therapy-take.html</loc>
+    <lastmod>2024-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/blog-aba-therapy-medicaid-providers.html</loc>
+    <lastmod>2024-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/blog-aba-therapy-insurance-coverage.html</loc>
+    <lastmod>2024-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/blog-early-signs-aba-therapy.html</loc>
+    <lastmod>2024-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/blog-find-aba-therapy-ny-nj-nc.html</loc>
+    <lastmod>2024-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
