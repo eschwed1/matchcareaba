@@ -1387,7 +1387,15 @@
     border-radius: 50%;
     overflow: hidden;
   }
-  .chat-launcher-inner img, .chat-avatar img, #chat-greeting img {
+  .chat-launcher-inner img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.8);
+    transform-origin: center center;
+    image-rendering: -webkit-optimize-contrast;
+  }
+  .chat-avatar img, #chat-greeting img {
     width: 100%; height: 100%;
     object-fit: cover;
     object-position: 60% 10%;
