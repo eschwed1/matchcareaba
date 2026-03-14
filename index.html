@@ -906,8 +906,8 @@
     .phase-stepper { gap: 0; }
     .phase-label { font-size: 0.58rem; max-width: 54px; }
     .phase-spacer { width: 20px; }
-    #chat-window { width: calc(100vw - 32px) !important; right: 16px !important; bottom: 90px !important; }
-    #chat-bubble { right: 16px !important; bottom: 16px !important; }
+    #chat-window { width: calc(100vw - 32px) !important; right: 16px !important; bottom: 144px !important; }
+    #chat-bubble { right: 16px !important; bottom: 42px !important; }
     footer { padding: 28px 16px; }
     .footer-links { gap: 12px; }
   }
@@ -1427,7 +1427,7 @@
   }
 
   .chat-launcher-ring {
-    width: 74px; height: 74px;
+    width: 88px; height: 88px;
     border-radius: 50%;
     position: relative;
     background: conic-gradient(
@@ -1448,9 +1448,9 @@
   .chat-launcher-inner img {
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: center 18%;
-    transform: scale(2.6);
-    transform-origin: center 18%;
+    object-position: 60% 10%;
+    transform: scale(1.8);
+    transform-origin: 60% 10%;
     image-rendering: -webkit-optimize-contrast;
   }
   .chat-avatar img, #chat-greeting img {
@@ -1516,7 +1516,7 @@
   /* CHAT WINDOW */
   #chat-window {
     position: fixed;
-    bottom: 100px; right: 24px;
+    bottom: 152px; right: 24px;
     z-index: 99999;
     width: 360px;
     max-height: calc(100vh - 130px);
@@ -1921,7 +1921,7 @@
 </style>
 
 <!-- CHAT BUBBLE -->
-<div id="chat-bubble" onclick="toggleChat()" style="position:fixed; bottom:24px; right:24px; z-index:99999; cursor:pointer; display:flex; flex-direction:column; align-items:flex-end; gap:10px;">
+<div id="chat-bubble" onclick="toggleChat()" style="position:fixed; bottom:50px; right:24px; z-index:99999; cursor:pointer; display:flex; flex-direction:column; align-items:flex-end; gap:10px;">
   <!-- Pop-up greeting card -->
   <div id="chat-greeting" style="background:white; border-radius:16px; padding:14px 18px; box-shadow:0 8px 32px rgba(27,58,107,0.2); max-width:240px; border:2px solid rgba(245,166,35,0.3); animation: greetPop 0.5s 1.5s cubic-bezier(0.175,0.885,0.32,1.275) both;">
     <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
