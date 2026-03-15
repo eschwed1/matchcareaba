@@ -1430,20 +1430,30 @@
     width: 90px; height: 90px;
     border-radius: 50%;
     position: relative;
-    background: conic-gradient(
-      from var(--chat-border-angle),
-      #1B3A6B 0%, #2A5298 12%, #F5A623 30%, #FFD166 42%, #FFFDE7 50%, #FFD166 58%, #F5A623 70%, #2A5298 88%, #1B3A6B 100%
-    );
-    animation: chatBorderSpin 2s linear infinite;
+    overflow: hidden;
     box-shadow: 0 4px 20px rgba(27,58,107,0.4);
     flex-shrink: 0;
   }
-  .chat-launcher-ring-bg { display: none; }
+  .chat-launcher-ring-bg {
+    display: block;
+    position: absolute;
+    width: 200%; height: 200%;
+    top: -50%; left: -50%;
+    background: conic-gradient(
+      #1B3A6B 0deg,
+      #D4A843 90deg,
+      #1B3A6B 180deg,
+      #D4A843 270deg,
+      #1B3A6B 360deg
+    );
+    animation: spinBorder 2s linear infinite;
+  }
   .chat-launcher-inner {
     position: absolute;
-    inset: 4px;
+    inset: 5px;
     border-radius: 50%;
     overflow: hidden;
+    z-index: 1;
   }
   .chat-launcher-inner img {
     width: 100%; height: 100%;
@@ -1515,6 +1525,7 @@
     bottom: 152px; right: 24px;
     z-index: 99999;
     width: 360px;
+    height: 620px;
     max-height: calc(100vh - 130px);
     background:
       linear-gradient(#ffffff, #ffffff) padding-box,
@@ -1630,7 +1641,7 @@
     display: flex; flex-direction: column;
     gap: 12px;
     scroll-behavior: smooth;
-    min-height: 320px;
+    min-height: 440px;
   }
 
   #chat-messages::-webkit-scrollbar { width: 4px; }
@@ -1649,7 +1660,7 @@
   .msg.user { flex-direction: row-reverse; }
 
   .msg-avatar {
-    width: 28px; height: 28px;
+    width: 36px; height: 36px;
     border-radius: 50%;
     background: conic-gradient(
       from var(--chat-border-angle),
@@ -2091,6 +2102,8 @@ Rules:
     chatOpen = !chatOpen;
     const win = document.getElementById('chat-window');
     win.classList.toggle('open', chatOpen);
+    const bubble = document.getElementById('chat-bubble');
+    if (bubble) bubble.style.display = chatOpen ? 'none' : 'flex';
     const greeting = document.getElementById('chat-greeting');
     if (greeting) greeting.style.display = 'none';
     if (chatOpen && chatHistory.length === 0) initChat();
