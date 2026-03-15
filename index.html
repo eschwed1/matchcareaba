@@ -1441,7 +1441,7 @@
   .chat-launcher-ring-bg { display: none; }
   .chat-launcher-inner {
     position: absolute;
-    inset: 5px;
+    inset: 4px;
     border-radius: 50%;
     overflow: hidden;
   }
@@ -1516,12 +1516,18 @@
     z-index: 99999;
     width: 360px;
     max-height: calc(100vh - 130px);
-    background: white;
+    background:
+      linear-gradient(#ffffff, #ffffff) padding-box,
+      linear-gradient(160deg, #1B3A6B 0%, #2A5298 30%, #F5A623 72%, #FFD166 100%) border-box;
+    border: 2px solid transparent;
     border-radius: 24px;
-    box-shadow: 0 20px 60px rgba(27,58,107,0.2);
+    box-shadow:
+      0 4px 12px rgba(27,58,107,0.06),
+      0 16px 48px rgba(27,58,107,0.16),
+      0 32px 80px rgba(27,58,107,0.10),
+      0 2px 6px rgba(245,166,35,0.10);
     display: flex; flex-direction: column;
     overflow: hidden;
-    border: 2px solid rgba(245,166,35,0.2);
     transform: scale(0.85) translateY(20px);
     opacity: 0;
     pointer-events: none;
@@ -1537,10 +1543,11 @@
 
   /* CHAT HEADER */
   .chat-header {
-    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-    padding: 16px 18px;
+    background: white;
+    padding: 14px 16px;
     display: flex; align-items: center; gap: 12px;
     flex-shrink: 0;
+    border-bottom: 1px solid rgba(27,58,107,0.07);
   }
 
   @property --chat-border-angle {
@@ -1587,12 +1594,12 @@
   .chat-header-info { flex: 1; }
 
   .chat-agent-name {
-    font-size: 0.95rem; font-weight: 900; color: white;
+    font-size: 0.95rem; font-weight: 900; color: var(--navy);
   }
 
   .chat-status {
     display: flex; align-items: center; gap: 5px;
-    font-size: 0.72rem; color: rgba(255,255,255,0.7); font-weight: 600;
+    font-size: 0.72rem; color: #8a98ae; font-weight: 600;
   }
 
   .status-dot {
@@ -1603,16 +1610,17 @@
   }
 
   .chat-close {
-    background: rgba(255,255,255,0.15);
+    background: rgba(27,58,107,0.06);
     border: none; cursor: pointer;
     width: 30px; height: 30px;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 1rem;
+    color: var(--navy); font-size: 0.9rem;
     transition: background 0.2s;
+    flex-shrink: 0;
   }
 
-  .chat-close:hover { background: rgba(255,255,255,0.25); }
+  .chat-close:hover { background: rgba(27,58,107,0.12); }
 
   /* CHAT MESSAGES */
   #chat-messages {
