@@ -1127,7 +1127,7 @@
     div.innerHTML = bcAvatarHTML() +
       '<div><div class="bc-bubble">' + text + '</div><div class="bc-time">' + now + '</div></div>';
     msgs.appendChild(div);
-    div.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    msgs.scrollTop = msgs.scrollHeight;
     bcHistory.push({ role: 'assistant', content: text });
   }
 
