@@ -1632,6 +1632,18 @@
 
   .chat-close:hover { background: rgba(27,58,107,0.12); }
 
+  /* CHAT DISCLAIMER BAR */
+  .chat-disclaimer {
+    background: #f4f6f9;
+    color: #5a6a80;
+    font-size: 0.68rem;
+    line-height: 1.4;
+    text-align: center;
+    padding: 6px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    flex-shrink: 0;
+  }
+
   /* CHAT MESSAGES */
   #chat-messages {
     flex: 1;
@@ -1963,6 +1975,8 @@
     </div>
     <button class="chat-close" onclick="toggleChat()">✕</button>
   </div>
+
+  <div class="chat-disclaimer">By using this chat, you agree to our Terms and acknowledge our Privacy Policy. Your chat may be recorded and stored securely.</div>
 
   <div id="chat-messages"></div>
 
