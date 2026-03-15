@@ -1456,7 +1456,7 @@
   }
   .chat-launcher-inner img {
     width: 100%; height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
     image-rendering: -webkit-optimize-contrast;
   }
@@ -1521,11 +1521,11 @@
   /* CHAT WINDOW */
   #chat-window {
     position: fixed;
-    bottom: 128px; right: 24px;
+    bottom: 130px; right: 24px;
     z-index: 99999;
     width: 400px;
     height: 680px;
-    max-height: calc(100vh - 118px);
+    max-height: calc(100vh - 150px);
     background:
       linear-gradient(#ffffff, #ffffff) padding-box,
       linear-gradient(160deg, #1B3A6B 0%, #D4A843 100%) border-box;
@@ -1634,13 +1634,15 @@
 
   /* CHAT DISCLAIMER BAR */
   .chat-disclaimer {
-    background: #f4f6f9;
-    color: #5a6a80;
+    background: white;
+    color: #bec8d6;
     font-size: 0.68rem;
     line-height: 1.4;
     text-align: center;
     padding: 6px 14px;
-    border-bottom: 1px solid #e2e8f0;
+    border: 1px solid #e5eaf0;
+    margin: 0 12px 4px;
+    border-radius: 6px;
     flex-shrink: 0;
   }
 
