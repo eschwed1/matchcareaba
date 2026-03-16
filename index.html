@@ -283,6 +283,24 @@
   .stat-num { font-size: 1.7rem; font-weight: 900; color: var(--navy); display: block; line-height: 1; }
   .stat-label { font-size: 0.75rem; color: var(--muted); font-weight: 700; margin-top: 3px; display: block; }
 
+  .trust-checklist {
+    list-style: none; margin: 10px 0 0; padding: 0;
+    border-top: 1px solid rgba(27,58,107,0.08); padding-top: 10px;
+  }
+  .trust-checklist li {
+    font-size: 0.75rem; font-weight: 700; color: var(--navy);
+    padding: 3px 0; display: flex; align-items: center; gap: 6px;
+  }
+  .trust-checklist li::before {
+    content: "✔"; color: var(--gold); font-size: 0.8rem; flex-shrink: 0;
+  }
+  .secure-badge {
+    margin-top: 10px; font-size: 0.7rem; font-weight: 700;
+    color: #2d7a4f; background: #edf7f1; border-radius: 8px;
+    padding: 5px 10px; display: inline-block;
+    border: 1px solid rgba(45,122,79,0.2);
+  }
+
   .hero-visual {
     display: flex; justify-content: center; align-items: center;
     animation: fadeIn 0.8s 0.3s ease both;
@@ -1026,6 +1044,13 @@
       <div class="stat-item">
         <span class="stat-num">100%</span>
         <span class="stat-label">Free to Families</span>
+        <ul class="trust-checklist">
+          <li>Network of ABA providers across multiple states</li>
+          <li>Insurance-friendly providers</li>
+          <li>Secure intake process</li>
+          <li>Personalized provider matching</li>
+        </ul>
+        <div class="secure-badge">🔒 Secure intake – your information is protected</div>
       </div>
       <div class="stat-item">
         <span class="stat-label">Currently serving</span>
