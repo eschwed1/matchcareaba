@@ -599,15 +599,14 @@
   .how-step h3 { font-size: 1.1rem; font-weight: 900; color: var(--navy); margin-bottom: 10px; }
   .how-step p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; font-weight: 600; }
 
-  .form-section { padding: 120px 60px; background: linear-gradient(160deg, #EEF6FF 0%, #E8F2FF 50%, #F5F0FF 100%); position: relative; z-index: 1; }
+  .form-section { padding: 90px 60px; background: var(--sky); position: relative; z-index: 1; }
 
   .form-inner { max-width: 100%; margin: 0 auto; text-align: center; }
 
   .form-inner h2 {
     font-family: 'Nunito', sans-serif;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    font-weight: 900; color: var(--navy); margin-bottom: 14px;
-    line-height: 1.15;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 900; color: var(--navy); margin-bottom: 10px;
   }
 
   .form-inner > p { color: var(--muted); font-size: 1rem; margin-bottom: 40px; line-height: 1.6; font-weight: 600; }
@@ -925,469 +924,6 @@
   }
   :-ms-input-placeholder { color: #c5cfe0 !important; }
   ::-ms-input-placeholder { color: #c5cfe0 !important; }
-
-  /* ===== HOMEPAGE MODERNIZATION — BOLD REDESIGN ===== */
-
-  /* ---- Hero: gradient background with depth + dot pattern ---- */
-  .hero {
-    background:
-      radial-gradient(ellipse at 18% 55%, rgba(27,58,107,0.08) 0%, transparent 55%),
-      radial-gradient(ellipse at 72% 18%, rgba(212,168,67,0.07) 0%, transparent 48%),
-      radial-gradient(ellipse at 90% 80%, rgba(78,205,196,0.05) 0%, transparent 40%),
-      linear-gradient(145deg, #DCE9FF 0%, #EEF6FF 40%, #FFF9F2 100%);
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(27,58,107,0.065) 1.5px, transparent 1.5px);
-    background-size: 28px 28px;
-    pointer-events: none;
-    z-index: 0;
-    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 55%);
-    mask-image: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 55%);
-  }
-
-  /* ---- Hero heading — larger & more impactful ---- */
-  .hero h1 {
-    font-size: clamp(2.8rem, 5.2vw, 4.4rem);
-    line-height: 1.12;
-  }
-
-  /* ---- Hero stats — elevated cards ---- */
-  .stat-item {
-    border-radius: 20px;
-    padding: 16px 24px;
-    box-shadow: 0 6px 28px rgba(27,58,107,0.10);
-    border: 2px solid rgba(212,168,67,0.18);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .stat-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 40px rgba(27,58,107,0.14);
-  }
-
-  .stat-num { font-size: 2rem; }
-
-  /* ---- Hero photo ---- */
-  .hero-photo-wrap {
-    border-radius: 32px;
-    box-shadow: 0 40px 90px rgba(27,58,107,0.22), 0 0 0 1px rgba(255,255,255,0.5);
-  }
-
-  /* ---- Floating badges ---- */
-  .floating-badge {
-    border-radius: 22px;
-    box-shadow: 0 12px 36px rgba(27,58,107,0.16);
-    backdrop-filter: blur(6px);
-  }
-
-  /* ---- Signs section — richer gradient ---- */
-  .signs {
-    background: linear-gradient(155deg, #0E2044 0%, #1B3A6B 45%, #2558A8 100%);
-    padding: 110px 60px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Subtle grid overlay on signs section */
-  .signs::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 52px 52px;
-    pointer-events: none;
-  }
-
-  /* Glow accent in signs section */
-  .signs::after {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(212,168,67,0.1) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .signs-inner { position: relative; z-index: 1; }
-
-  /* ---- Signs heading — larger ---- */
-  .signs h2 {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    line-height: 1.15;
-    margin-bottom: 16px;
-  }
-
-  .signs-subtitle {
-    font-size: 1.05rem;
-    margin-bottom: 56px;
-  }
-
-  /* ---- Sign cards — polished glassmorphism ---- */
-  .sign-card {
-    border-radius: 24px;
-    padding: 32px 28px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-    transition: all 0.35s ease;
-    border: 1.5px solid rgba(255,255,255,0.12);
-  }
-
-  .sign-card:hover {
-    background: rgba(255,255,255,0.16);
-    border-color: rgba(212,168,67,0.6);
-    transform: translateY(-8px);
-    box-shadow: 0 24px 56px rgba(0,0,0,0.2);
-  }
-
-  .sign-emoji { font-size: 2.6rem; margin-bottom: 16px; }
-  .sign-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 10px; }
-
-  /* ---- Trust strip — premium dark banner ---- */
-  .trust-strip {
-    background: linear-gradient(90deg, #0D1E3D 0%, #1B3A6B 25%, #2558A8 50%, #1B3A6B 75%, #0D1E3D 100%);
-    padding: 42px 60px;
-    border-top: 3px solid rgba(212,168,67,0.35);
-    border-bottom: 3px solid rgba(212,168,67,0.35);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .trust-strip::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(212,168,67,0.07) 0%, transparent 65%);
-    pointer-events: none;
-  }
-
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.95rem;
-    font-weight: 800;
-    color: white;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.2s ease;
-    cursor: default;
-  }
-
-  .trust-item:hover { transform: translateY(-2px); }
-
-  .trust-icon {
-    width: 46px; height: 46px;
-    border-radius: 13px;
-    font-size: 1.2rem;
-  }
-
-  .ti1 { background: rgba(245,166,35,0.22); }
-  .ti2 { background: rgba(78,205,196,0.22); }
-  .ti3 { background: rgba(107,203,119,0.22); }
-  .ti4 { background: rgba(167,139,250,0.22); }
-
-  .trust-divider {
-    width: 1px; height: 40px;
-    background: rgba(255,255,255,0.15);
-    flex-shrink: 0;
-  }
-
-  /* ---- Section headings — larger ---- */
-  .how h2 {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    line-height: 1.15;
-  }
-
-  /* Gold accent divider under how heading */
-  .how h2::after {
-    content: '';
-    display: block;
-    width: 64px;
-    height: 5px;
-    background: linear-gradient(90deg, var(--gold), var(--gold-light));
-    border-radius: 4px;
-    margin-top: 18px;
-  }
-
-  /* ---- Section tag / eyebrow ---- */
-  .section-tag {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    padding: 8px 20px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 16px rgba(245,166,35,0.12);
-  }
-
-  /* ---- How section — card redesign ---- */
-  .how {
-    background: linear-gradient(180deg, #ffffff 0%, #F2F7FF 100%);
-    padding: 120px 60px;
-  }
-
-  .how-subtitle {
-    font-size: 1.08rem;
-    margin-bottom: 68px;
-    max-width: 560px;
-  }
-
-  .steps-grid {
-    gap: 28px;
-    position: relative;
-  }
-
-  /* Remove old connector line */
-  .steps-grid::before { display: none; }
-
-  /* Steps as full cards */
-  .how-step {
-    background: white;
-    border-radius: 28px;
-    padding: 48px 36px 44px;
-    box-shadow: 0 8px 48px rgba(27,58,107,0.09);
-    border: 2px solid rgba(212,168,67,0.1);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  }
-
-  /* Top accent bar on card — shows on hover */
-  .how-step::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--gold), var(--gold-light));
-    border-radius: 4px 4px 0 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .how-step:hover::before { opacity: 1; }
-
-  .how-step:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 28px 70px rgba(27,58,107,0.14);
-    border-color: rgba(212,168,67,0.3);
-  }
-
-  /* Ghost step number */
-  .step-num {
-    position: absolute;
-    top: 12px; right: 18px;
-    font-size: 5.5rem;
-    font-weight: 900;
-    color: var(--navy);
-    opacity: 0.04;
-    line-height: 1;
-    pointer-events: none;
-    font-family: 'Nunito', sans-serif;
-    user-select: none;
-  }
-
-  .step-circle {
-    width: 90px; height: 90px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2.2rem;
-    margin: 0 auto 26px;
-    position: relative; z-index: 1;
-    box-shadow: 0 12px 36px rgba(0,0,0,0.12);
-    border: 3px solid rgba(255,255,255,0.95);
-  }
-
-  .c1 { background: linear-gradient(135deg, #FFF0CC, #FFD166); }
-  .c2 { background: linear-gradient(135deg, #CCF0EE, #4ECDC4); }
-  .c3 { background: linear-gradient(135deg, #E8E0FF, #A78BFA); }
-
-  .how-step h3 {
-    font-size: 1.3rem;
-    font-weight: 900;
-    color: var(--navy);
-    margin-bottom: 14px;
-    line-height: 1.3;
-  }
-
-  .how-step p {
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 1.78;
-    font-weight: 600;
-  }
-
-  /* ---- Consultation section ---- */
-  #consultation {
-    background: linear-gradient(175deg, #ffffff 0%, #F4F9FF 100%) !important;
-    padding: 120px 60px !important;
-  }
-
-  /* ---- Benefit items as mini-cards ---- */
-  .benefits-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 0;
-  }
-
-  .benefit-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background: #F6FAFF;
-    border: 2px solid rgba(27,58,107,0.06);
-    border-radius: 18px;
-    padding: 18px 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-
-  .benefit-item:hover {
-    transform: translateX(4px);
-    box-shadow: 0 6px 24px rgba(27,58,107,0.08);
-    border-color: rgba(212,168,67,0.25);
-    background: #FAFCFF;
-  }
-
-  .benefit-icon-circle {
-    width: 40px; height: 40px;
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-    font-weight: 900;
-  }
-
-  .benefit-text strong {
-    display: block;
-    font-size: 0.97rem;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 3px;
-  }
-
-  .benefit-text span {
-    font-size: 0.88rem;
-    color: var(--muted);
-    font-weight: 600;
-    line-height: 1.5;
-  }
-
-  /* ---- About section ---- */
-  #about {
-    background: linear-gradient(155deg, #EEF6FF 0%, #F4F9FF 55%, #FFF9F2 100%) !important;
-    padding: 110px 60px !important;
-  }
-
-  .story-box {
-    box-shadow: 0 12px 48px rgba(27,58,107,0.09);
-    border-left: 5px solid var(--gold) !important;
-  }
-
-  /* ---- Footer gradient ---- */
-  footer {
-    background: linear-gradient(155deg, #0A1A35 0%, #1B3A6B 100%);
-  }
-
-  /* ---- Buttons — shimmer gradient polish ---- */
-  .btn-primary {
-    background: linear-gradient(120deg, #D4A843 0%, #F5C842 40%, #FFD166 70%, #D4A843 100%);
-    background-size: 200% auto;
-    color: var(--navy);
-    padding: 18px 44px;
-    font-size: 1.05rem;
-    font-weight: 900;
-    letter-spacing: 0.4px;
-    box-shadow: 0 8px 32px rgba(212,168,67,0.45);
-    transition: background-position 0.5s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .btn-primary:hover {
-    background-position: right center;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 16px 48px rgba(212,168,67,0.58);
-  }
-
-  .btn-secondary {
-    transition: all 0.25s ease;
-    box-shadow: 0 2px 10px rgba(27,58,107,0.07);
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--navy);
-    color: var(--navy);
-    box-shadow: 0 4px 18px rgba(27,58,107,0.12);
-    transform: translateY(-1px);
-  }
-
-  /* ---- Lead form ---- */
-  .lead-form {
-    border-radius: 32px;
-    box-shadow: 0 24px 72px rgba(27,58,107,0.12);
-  }
-
-  /* ---- Form submit ---- */
-  .form-submit {
-    background: linear-gradient(120deg, #D4A843 0%, #F5C842 40%, #FFD166 70%, #D4A843 100%);
-    background-size: 200% auto;
-    letter-spacing: 0.3px;
-    transition: background-position 0.5s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .form-submit:hover {
-    background-position: right center;
-    transform: translateY(-3px);
-    box-shadow: 0 14px 40px rgba(212,168,67,0.52);
-  }
-
-  .btn-next { letter-spacing: 0.2px; }
-
-  /* ---- Nav polish ---- */
-  nav { box-shadow: 0 2px 24px rgba(27,58,107,0.09); }
-
-  /* ---- Scroll-in animations ---- */
-  .animate-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .animate-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .animate-up-delay-1 { transition-delay: 0.1s; }
-  .animate-up-delay-2 { transition-delay: 0.2s; }
-  .animate-up-delay-3 { transition-delay: 0.3s; }
-
-  /* ---- Section tag ---- */
-  .section-tag {
-    box-shadow: 0 2px 16px rgba(245,166,35,0.12);
-  }
-
-  /* ---- Mobile overrides ---- */
-  @media (max-width: 900px) {
-    .signs { padding: 72px 24px !important; }
-    .how { padding: 80px 24px !important; }
-    #consultation { padding: 72px 24px !important; }
-    #about { padding: 72px 24px !important; }
-    .trust-strip { padding: 32px 24px; gap: 24px; }
-    .trust-divider { display: none; }
-  }
-
-  @media (max-width: 480px) {
-    .signs { padding: 56px 16px !important; }
-    .how { padding: 60px 16px !important; }
-    #consultation { padding: 56px 16px !important; }
-    #about { padding: 56px 16px !important; }
-    .trust-strip { padding: 28px 16px; }
-    .how-step { padding: 36px 24px 32px; }
-  }
 </style>
 <script type="application/ld+json">
 {
@@ -1519,44 +1055,44 @@
 
 <section class="signs" id="signs">
   <div class="signs-inner">
-    <div class="section-tag animate-up">🔍 Signs to Watch For</div>
-    <h2 class="animate-up animate-up-delay-1">Your child may benefit from ABA therapy if you notice…</h2>
-    <p class="signs-subtitle animate-up animate-up-delay-2">Every child develops differently. These signs don't mean something is wrong — they mean your child may thrive with the right specialized support.</p>
+    <div class="section-tag">🔍 Signs to Watch For</div>
+    <h2 >Your child may benefit from ABA therapy if you notice…</h2>
+    <p class="signs-subtitle">Every child develops differently. These signs don't mean something is wrong — they mean your child may thrive with the right specialized support.</p>
 
     <div class="signs-grid">
-      <div class="sign-card animate-up">
+      <div class="sign-card">
         <span class="sign-emoji">🗣️</span>
         <div class="sign-title">Delayed Speech or Language</div>
         <div class="sign-desc">Limited words for their age, difficulty expressing needs, or loss of language skills they previously had.</div>
       </div>
-      <div class="sign-card animate-up animate-up-delay-1">
+      <div class="sign-card">
         <span class="sign-emoji">👁️</span>
         <div class="sign-title">Limited Eye Contact</div>
         <div class="sign-desc">Avoids looking at people, doesn't respond to their name, or seems unaware of social interactions.</div>
       </div>
-      <div class="sign-card animate-up animate-up-delay-2">
+      <div class="sign-card">
         <span class="sign-emoji">🔄</span>
         <div class="sign-title">Repetitive Behaviors</div>
         <div class="sign-desc">Hand-flapping, rocking, lining up objects, or insisting on strict routines and becoming upset at changes.</div>
       </div>
-      <div class="sign-card animate-up">
+      <div class="sign-card">
         <span class="sign-emoji">🤝</span>
         <div class="sign-title">Social Challenges</div>
         <div class="sign-desc">Difficulty playing with other children, limited interest in sharing experiences, or trouble reading social cues.</div>
       </div>
-      <div class="sign-card animate-up animate-up-delay-1">
+      <div class="sign-card">
         <span class="sign-emoji">😤</span>
         <div class="sign-title">Behavioral Outbursts</div>
         <div class="sign-desc">Intense reactions to sensory input, frequent meltdowns, or difficulty transitioning between activities.</div>
       </div>
-      <div class="sign-card animate-up animate-up-delay-2">
+      <div class="sign-card">
         <span class="sign-emoji">📋</span>
         <div class="sign-title">Recent Autism Diagnosis</div>
         <div class="sign-desc">Your child has been diagnosed with ASD and you're looking for the right next step toward therapy and support.</div>
       </div>
     </div>
 
-    <div class="signs-cta animate-up">
+    <div class="signs-cta">
       <p>"If any of these sound familiar, a free consultation is the right first step."</p>
       <a href="https://form.jotform.com/260662279796069" class="btn-primary">✨ Get a Free Match Now</a>
     </div>
@@ -1571,62 +1107,47 @@
 
 <div class="trust-strip">
   <div class="trust-item"><div class="trust-icon ti1">🛡️</div> HIPAA-Compliant &amp; Private</div>
-  <div class="trust-divider"></div>
   <div class="trust-item"><div class="trust-icon ti2">💳</div> Insurance Verified</div>
-  <div class="trust-divider"></div>
   <div class="trust-item"><div class="trust-icon ti3">🆓</div> Always Free for Families</div>
-  <div class="trust-divider"></div>
   <div class="trust-item"><div class="trust-icon ti4">⚡</div> Matched In Days, Not Months</div>
 </div>
 
-<section id="consultation" style="position: relative; z-index: 1;">
+<section id="consultation" style="background: white; padding: 80px 60px; position: relative; z-index: 1;">
   <div class="consultation-grid" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;">
     
     <!-- Photo left -->
-    <div class="animate-up" style="border-radius: 28px; overflow: hidden; box-shadow: 0 32px 80px rgba(27,58,107,0.18), 0 0 0 1px rgba(212,168,67,0.12);">
+    <div  style="border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(27,58,107,0.15);">
       <img src="consultation.jpeg" alt="BCBA therapist meeting with a parent to discuss ABA therapy options for their child with autism" style="width:100%; height:auto; object-fit:contain; display:block; background:#f8f8f8;">
     </div>
 
     <!-- Text right -->
     <div >
-      <div class="animate-up" style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.1); border:2px solid rgba(245,166,35,0.3); border-radius:50px; padding:6px 16px; font-size:0.78rem; font-weight:800; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:20px;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.1); border:2px solid rgba(245,166,35,0.3); border-radius:50px; padding:6px 16px; font-size:0.78rem; font-weight:800; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:20px;">
         💙 Why Families Trust Us
       </div>
-      <h2 style="font-size:clamp(2rem,3.8vw,3.2rem); font-weight:900; color:var(--navy); line-height:1.15; margin-bottom:18px;">Your Family Deserves Better Than <span style="color:#4ECDC4;">a Waitlist.</span></h2>
-      <p style="font-size:1.1rem; color:var(--muted); font-weight:600; line-height:1.8; margin-bottom:32px;">Finding ABA therapy shouldn't feel like a second job. We take the burden off your plate — so you can spend less time searching and more time with your child.</p>
-
-      <div class="benefits-list">
-        <div class="benefit-item">
-          <div class="benefit-icon-circle" style="background:rgba(107,203,119,0.15); color:#6BCB77;">✓</div>
-          <div class="benefit-text">
-            <strong>We do the searching for you</strong>
-            <span>No more calling clinic after clinic — we handle it all.</span>
-          </div>
+      <h2 style="font-size:2.8rem; font-weight:900; color:var(--navy); line-height:1.2; margin-bottom:16px;">Your Family Deserves Better Than <span style="color:#4ECDC4;">a Waitlist.</span></h2>
+      <p style="font-size:1.1rem; color:var(--muted); font-weight:600; line-height:1.8; margin-bottom:28px;">Finding ABA therapy shouldn't feel like a second job. We take the burden off your plate — so you can spend less time searching and more time with your child.</p>
+      
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:flex-start; gap:14px;">
+          <div style="width:12px; height:12px; border-radius:50%; background:#6BCB77; margin-top:5px; flex-shrink:0;"></div>
+          <p style="font-size:1.05rem; color:var(--text); font-weight:700; margin:0;"><strong>We do the searching for you:</strong> <span style="font-weight:600; color:var(--muted);">No more calling clinic after clinic</span></p>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon-circle" style="background:rgba(78,205,196,0.15); color:#4ECDC4;">💳</div>
-          <div class="benefit-text">
-            <strong>Insurance-friendly matches only</strong>
-            <span>We only connect you with providers that accept your plan.</span>
-          </div>
+        <div style="display:flex; align-items:flex-start; gap:14px;">
+          <div style="width:12px; height:12px; border-radius:50%; background:#4ECDC4; margin-top:5px; flex-shrink:0;"></div>
+          <p style="font-size:1.05rem; color:var(--text); font-weight:700; margin:0;"><strong>Insurance-friendly matches only:</strong> <span style="font-weight:600; color:var(--muted);">We only connect you with providers that accept your plan</span></p>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon-circle" style="background:rgba(255,107,107,0.12); color:#FF6B6B;">🏅</div>
-          <div class="benefit-text">
-            <strong>Qualified &amp; vetted providers</strong>
-            <span>Every provider in our network is licensed and experienced.</span>
-          </div>
+        <div style="display:flex; align-items:flex-start; gap:14px;">
+          <div style="width:12px; height:12px; border-radius:50%; background:#FF6B6B; margin-top:5px; flex-shrink:0;"></div>
+          <p style="font-size:1.05rem; color:var(--text); font-weight:700; margin:0;"><strong>Qualified & vetted providers:</strong> <span style="font-weight:600; color:var(--muted);">Every provider in our network is licensed and experienced</span></p>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-icon-circle" style="background:rgba(212,168,67,0.15); color:#D4A843;">🆓</div>
-          <div class="benefit-text">
-            <strong>Zero cost to families</strong>
-            <span>Our service is completely free — always. Funded by our provider partners.</span>
-          </div>
+        <div style="display:flex; align-items:flex-start; gap:14px;">
+          <div style="width:12px; height:12px; border-radius:50%; background:var(--gold); margin-top:5px; flex-shrink:0;"></div>
+          <p style="font-size:1.05rem; color:var(--text); font-weight:700; margin:0;"><strong>Zero cost to families:</strong> <span style="font-weight:600; color:var(--muted);">Our service is completely free — always. We're funded by our provider partners, not by the families we serve.</span></p>
         </div>
       </div>
 
-      <a href="https://form.jotform.com/260662279796069" class="btn-primary" style="display:inline-flex; align-items:center; gap:10px; margin-top:36px; text-decoration:none;">
+      <a href="https://form.jotform.com/260662279796069" style="display:inline-flex; align-items:center; gap:8px; margin-top:32px; background:linear-gradient(135deg,#F5A623,#FFD166); color:var(--navy); font-weight:900; font-size:0.95rem; padding:14px 28px; border-radius:50px; text-decoration:none; box-shadow:0 8px 24px rgba(245,166,35,0.3);">
         💛 Get Matched Today →
       </a>
     </div>
@@ -1635,24 +1156,21 @@
 
 <section class="how" id="how">
   <div class="how-inner">
-    <div class="section-tag animate-up" style="background: rgba(78,205,196,0.12); border-color: rgba(78,205,196,0.3); color: var(--mint);">💡 How It Works</div>
-    <h2 class="animate-up animate-up-delay-1">Getting matched is as simple as 1, 2, 3!</h2>
-    <p class="how-subtitle animate-up animate-up-delay-2">We handle the hard part so you can focus on your family. No waiting rooms, no confusion — just the right match, fast.</p>
+    <div class="section-tag" style="background: rgba(78,205,196,0.12); border-color: rgba(78,205,196,0.3); color: var(--mint);">💡 How It Works</div>
+    <h2>Getting matched is as simple as 1, 2, 3!</h2>
+    <p class="how-subtitle">We handle the hard part so you can focus on your family. No waiting rooms, no confusion — just the right match, fast.</p>
     <div class="steps-grid">
-      <div class="how-step animate-up">
-        <div class="step-num">01</div>
+      <div class="how-step">
         <div class="step-circle c1">📝</div>
         <h3>Tell Us About Your Child</h3>
         <p>Fill out a quick form with your location, your child's age, and what you're noticing. It takes under 3 minutes and is completely free.</p>
       </div>
-      <div class="how-step animate-up animate-up-delay-1">
-        <div class="step-num">02</div>
+      <div class="how-step">
         <div class="step-circle c2">🔍</div>
         <h3>We Find Your Match</h3>
         <p>Our team reviews your information and connects you with a verified ABA therapy provider that accepts your insurance and meets your specific requirements.</p>
       </div>
-      <div class="how-step animate-up animate-up-delay-2">
-        <div class="step-num">03</div>
+      <div class="how-step">
         <div class="step-circle c3">📞</div>
         <h3>Get Your Free Consultation</h3>
         <p>A qualified BCBA will reach out to schedule a free consultation and create a personalized care plan for your child.</p>
@@ -1662,11 +1180,11 @@
 </section>
 
 
-<section style="position: relative; z-index: 1;" id="about">
+<section style="background: white; padding: 80px 60px; position: relative; z-index: 1;" id="about">
   <div style="max-width: 760px; margin: 0 auto; text-align: center;">
-    <div class="section-tag animate-up">💛 Our Story</div>
-    <h2 class="animate-up animate-up-delay-1" style="font-size: clamp(2rem,3.5vw,3rem); font-weight: 900; color: var(--navy); margin-bottom: 28px;">Why We Built Match Care ABA</h2>
-    <div class="story-box animate-up" style="text-align: left; background: white; border-radius: 28px; padding: 44px; border-left: 5px solid var(--gold);">
+    <div class="section-tag">💛 Our Story</div>
+    <h2 style="font-size: 2rem; font-weight: 900; color: var(--navy); margin-bottom: 24px;">Why We Built Match Care ABA</h2>
+    <div class="story-box" style="text-align: left; background: var(--sky); border-radius: 24px; padding: 40px; border-left: 4px solid var(--gold);">
       <p style="font-size: 1rem; color: var(--text); font-weight: 600; line-height: 1.8; margin-bottom: 20px;">
         Every family we've heard from says the same thing: <em>"We knew something was different about our child, but we had no idea where to start."</em> The search for ABA therapy can be overwhelming — long waitlists, confusing insurance questions, and providers who aren't the right fit.
       </p>
@@ -1735,10 +1253,10 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.stat-item, .trust-item').forEach(el => {
+  document.querySelectorAll('.sign-card, .how-step, .stat-item, .trust-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
   });
 
@@ -1815,18 +1333,6 @@
       document.body.style.overflow = '';
     });
   });
-
-  // Scroll-in animations
-  const animObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        animObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.animate-up').forEach(el => animObserver.observe(el));
 
 </script>
 
