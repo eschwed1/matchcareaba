@@ -924,6 +924,158 @@
   }
   :-ms-input-placeholder { color: #c5cfe0 !important; }
   ::-ms-input-placeholder { color: #c5cfe0 !important; }
+
+  /* ===== HOMEPAGE MODERNIZATION POLISH ===== */
+
+  /* Section backgrounds — subtle gradient depth */
+  .how {
+    background: linear-gradient(180deg, #ffffff 0%, #F4F8FF 100%);
+  }
+
+  .trust-strip {
+    background: linear-gradient(180deg, #ffffff 0%, #F9FBFF 100%);
+  }
+
+  #consultation {
+    background: linear-gradient(180deg, #ffffff 0%, #F8FBFF 100%) !important;
+  }
+
+  #about {
+    background: linear-gradient(180deg, #F8FBFF 0%, #EFF5FF 100%) !important;
+  }
+
+  footer {
+    background: linear-gradient(180deg, var(--navy) 0%, #132C52 100%);
+  }
+
+  /* Section heading accent divider */
+  .how h2::after {
+    content: '';
+    display: block;
+    width: 52px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 4px;
+    margin-top: 14px;
+  }
+
+  /* Sign cards — more refined */
+  .sign-card {
+    border-radius: 24px;
+    box-shadow: 0 2px 14px rgba(255,255,255,0.06);
+    transition: all 0.3s ease;
+  }
+
+  .sign-card:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(245,166,35,0.55);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.16);
+  }
+
+  /* Stat items — refined with hover lift */
+  .stat-item {
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(27,58,107,0.09);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(27,58,107,0.14);
+  }
+
+  /* Hero photo — deeper, polished shadow */
+  .hero-photo-wrap {
+    border-radius: 32px;
+    box-shadow: 0 32px 80px rgba(27,58,107,0.22);
+  }
+
+  /* Floating badges — refined radius & shadow */
+  .floating-badge {
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(27,58,107,0.15);
+  }
+
+  /* Step circles — refined border & shadow */
+  .step-circle {
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    border: 3px solid rgba(255,255,255,0.9);
+  }
+
+  /* How steps — subtle hover lift */
+  .how-step {
+    transition: transform 0.25s ease;
+  }
+
+  .how-step:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Buttons — polished hover & letter-spacing */
+  .btn-primary {
+    letter-spacing: 0.3px;
+    box-shadow: 0 8px 28px rgba(245,166,35,0.42);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 42px rgba(245,166,35,0.56);
+  }
+
+  .btn-secondary {
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 10px rgba(27,58,107,0.07);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--navy);
+    color: var(--navy);
+    box-shadow: 0 4px 18px rgba(27,58,107,0.12);
+    transform: translateY(-1px);
+  }
+
+  /* Lead form — elevated radius & shadow */
+  .lead-form {
+    border-radius: 32px;
+    box-shadow: 0 20px 64px rgba(27,58,107,0.11);
+  }
+
+  /* Form submit & next — letter-spacing */
+  .form-submit {
+    letter-spacing: 0.3px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .btn-next {
+    letter-spacing: 0.2px;
+  }
+
+  /* Nav — slightly stronger shadow */
+  nav {
+    box-shadow: 0 2px 24px rgba(27,58,107,0.09);
+  }
+
+  /* About story box — subtle elevation */
+  .story-box {
+    box-shadow: 0 4px 24px rgba(27,58,107,0.07);
+  }
+
+  /* Trust items — subtle hover */
+  .trust-item {
+    transition: transform 0.2s ease;
+    cursor: default;
+  }
+
+  .trust-item:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Section tag — subtle glow */
+  .section-tag {
+    box-shadow: 0 2px 12px rgba(245,166,35,0.1);
+  }
 </style>
 <script type="application/ld+json">
 {
