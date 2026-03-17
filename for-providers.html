@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For ABA Providers | Match Care ABA — Join Our Network</title>
+<meta name="description" content="ABA therapy providers: get matched with families actively searching for services in NY, NJ, and NC. No long onboarding, no obligation — simply review and accept cases that fit your availability.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://matchcareaba.com/for-providers.html">
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-192.png">
+<meta name="theme-color" content="#1B3A6B">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matchcareaba.com/for-providers.html">
+<meta property="og:title" content="For ABA Providers | Match Care ABA — Join Our Network">
+<meta property="og:description" content="Get matched with families actively searching for ABA therapy in NY, NJ, and NC. No long onboarding, no obligation — simply review and accept.">
+<meta property="og:image" content="https://matchcareaba.com/family-hero.jpeg">
+<meta property="og:site_name" content="Match Care ABA">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-37F7PCXW57"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-37F7PCXW57');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #EEF6FF;
+    --white: #FFFFFF;
+    --navy: #1B3A6B;
+    --navy-dark: #0D2247;
+    --navy-mid: #2A5298;
+    --gold: #D4A843;
+    --gold-light: #E8C06A;
+    --gold-pale: #FDF5E0;
+    --text: #1B3A6B;
+    --muted: #6B7FA3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+    background: #fff;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(7px); opacity: 1; }
+  }
+
+  .animate-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .animate-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid rgba(212,168,67,0.2);
+    box-shadow: 0 2px 20px rgba(27,58,107,0.06);
+  }
+
+  .nav-main-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 60px;
+  }
+
+  .nav-serving-bar {
+    background: linear-gradient(90deg, #1B3A6B, #2A5298);
+    padding: 7px 0;
+    text-align: center;
+  }
+
+  .nav-serving-bar p {
+    color: white; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px; margin: 0;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 1.2rem;
+    font-weight: 800;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a.active { color: var(--navy); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid)) !important;
+    color: #D4A843 !important;
+    padding: 11px 26px;
+    border-radius: 50px;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 14px rgba(27,58,107,0.25);
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(27,58,107,0.35) !important;
+  }
+
+  .nav-hamburger { display: none; }
+
+  /* ===== STICKY CTA ===== */
+  .sticky-cta-bar {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 90;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+  }
+
+  .sticky-cta-bar.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .sticky-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: var(--gold) !important;
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(27,58,107,0.38);
+    transition: transform 0.25s, box-shadow 0.25s;
+    white-space: nowrap;
+    border: 2px solid rgba(212,168,67,0.25);
+  }
+
+  .sticky-cta-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 14px 44px rgba(27,58,107,0.48);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 55%, #1E4A8A 100%);
+    padding: 180px 60px 120px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-bg-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 20% 60%, rgba(212,168,67,0.09) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 25%, rgba(255,255,255,0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 55% 85%, rgba(212,168,67,0.06) 0%, transparent 40%);
+  }
+
+  .hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(212,168,67,0.14);
+    border: 2px solid rgba(212,168,67,0.38);
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 9px 22px;
+    border-radius: 50px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-badge .dot {
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+  }
+
+  .hero h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.9rem);
+    font-weight: 900;
+    line-height: 1.13;
+    color: white;
+    margin-bottom: 26px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 .gold { color: var(--gold); }
+
+  .hero-sub {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.72;
+    color: rgba(255,255,255,0.72);
+    max-width: 610px;
+    margin: 0 auto 48px;
+    font-weight: 600;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-cta-wrap {
+    animation: fadeUp 0.6s 0.3s ease both;
+    margin-bottom: 56px;
+  }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy-dark) !important;
+    padding: 19px 48px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 8px 36px rgba(212,168,67,0.42);
+    transition: transform 0.25s, box-shadow 0.25s;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 48px rgba(212,168,67,0.58);
+  }
+
+  .hero-scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.38);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    animation: fadeIn 1s 0.9s ease both;
+  }
+
+  .scroll-chevron {
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+
+  .hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    line-height: 0;
+  }
+
+  /* ===== SECTIONS ===== */
+  .content-section {
+    padding: 100px 60px;
+    position: relative;
+  }
+
+  .section-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  .section-divider {
+    width: 56px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 3px;
+    margin: 18px auto 52px;
+  }
+
+  /* ===== HOW IT WORKS ===== */
+  .how-section { background: white; }
+  .how-section .section-header { text-align: center; }
+
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 8px;
+  }
+
+  .steps-row::before {
+    content: '';
+    position: absolute;
+    top: 39px;
+    left: calc(12.5% + 2px);
+    right: calc(12.5% + 2px);
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(212,168,67,0.5) 20%, var(--gold) 50%, rgba(212,168,67,0.5) 80%, transparent);
+    z-index: 0;
+  }
+
+  .step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: var(--gold);
+    font-size: 1.75rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    border: 5px solid white;
+    box-shadow: 0 6px 28px rgba(27,58,107,0.22);
+    flex-shrink: 0;
+    letter-spacing: -1px;
+  }
+
+  .step-title {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .step-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.65;
+    font-weight: 600;
+  }
+
+  /* ===== WHAT YOU'LL RECEIVE ===== */
+  .receive-section {
+    background: linear-gradient(180deg, #F2F7FF 0%, #EBF2FF 100%);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .receive-card {
+    background: white;
+    border-radius: 22px;
+    padding: 36px 32px;
+    box-shadow: 0 4px 24px rgba(27,58,107,0.07);
+    border: 2px solid rgba(212,168,67,0.13);
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .receive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 40px rgba(27,58,107,0.12);
+  }
+
+  .card-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(212,168,67,0.1), rgba(212,168,67,0.22));
+    border: 2px solid rgba(212,168,67,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .receive-card h3 {
+    font-size: 1.02rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+
+  .receive-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.68;
+    font-weight: 600;
+  }
+
+  /* ===== NO EXTRA WORK ===== */
+  .no-work-section { background: white; }
+
+  .no-work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .no-work-card {
+    background: linear-gradient(135deg, #F4F8FF, #EDF4FF);
+    border-radius: 18px;
+    padding: 32px 28px;
+    border: 2px solid rgba(27,58,107,0.07);
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .no-work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(27,58,107,0.09);
+  }
+
+  .check-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+    font-size: 1.15rem;
+    font-weight: 900;
+    box-shadow: 0 4px 14px rgba(27,58,107,0.2);
+  }
+
+  .no-work-card h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .no-work-card p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.65;
+    font-weight: 600;
+  }
+
+  /* ===== WHY MATCH CARE ===== */
+  .why-section {
+    background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 60%, #1E4A8A 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(212,168,67,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 75%, rgba(255,255,255,0.03) 0%, transparent 45%);
+    pointer-events: none;
+  }
+
+  .why-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 56px 56px;
+    pointer-events: none;
+  }
+
+  .why-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .why-quote-mark {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 6rem;
+    line-height: 0.7;
+    color: var(--gold);
+    opacity: 0.35;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .why-text {
+    font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.68;
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+
+  .why-source {
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* ===== DIVIDER ===== */
+  .bold-divider {
+    height: 5px;
+    background: linear-gradient(90deg, var(--navy-dark), var(--navy-mid), var(--gold), var(--navy-mid), var(--navy-dark));
+    border: none;
+    margin: 0;
+  }
+
+  /* ===== SERVING ===== */
+  .serving-section {
+    background: var(--sky);
+  }
+
+  .states-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+
+  .state-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px 44px;
+    text-align: center;
+    box-shadow: 0 4px 22px rgba(27,58,107,0.08);
+    border: 2px solid rgba(212,168,67,0.15);
+    min-width: 180px;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .state-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(27,58,107,0.12);
+  }
+
+  .state-flag {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .state-name {
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .state-abbr {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+  }
+
+  .expanding-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: white;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--muted);
+    box-shadow: 0 2px 12px rgba(27,58,107,0.06);
+    border: 1px solid rgba(27,58,107,0.08);
+    margin-bottom: 28px;
+  }
+
+  .pulse-dot {
+    width: 9px;
+    height: 9px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .limited-note {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 600;
+    background: white;
+    padding: 11px 26px;
+    border-radius: 50px;
+    border: 1px solid rgba(27,58,107,0.1);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    background: linear-gradient(140deg, var(--navy-dark), var(--navy));
+    padding: 108px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(212,168,67,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .final-cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+
+  .final-cta p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.68);
+    font-weight: 600;
+    margin-bottom: 44px;
+    line-height: 1.68;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    padding: 44px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .footer-logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-text {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    max-width: 360px;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .footer-links { display: flex; gap: 24px; }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ===== MOBILE NAV ===== */
+  .nav-hamburger { display: none; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .nav-main-row { padding: 12px 24px; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(27,58,107,0.97);
+      z-index: 200; align-items: center; justify-content: center; gap: 28px;
+    }
+    .nav-links.open a { font-size: 1.3rem; color: white !important; }
+    .nav-hamburger {
+      display: flex; flex-direction: column;
+      gap: 5px; cursor: pointer; z-index: 300; padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 3px;
+      background: var(--navy); border-radius: 3px; transition: all 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-hamburger.open span { background: white; }
+    .nav-serving-bar p { font-size: 0.72rem; }
+
+    .content-section { padding: 72px 28px; }
+    .hero { padding: 160px 28px 100px; }
+    .hero h1 { font-size: 2.1rem; }
+
+    .steps-row { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .steps-row::before { display: none; }
+
+    .card-grid { grid-template-columns: 1fr; }
+    .no-work-grid { grid-template-columns: 1fr; }
+
+    .states-row { flex-direction: column; align-items: center; }
+    .state-card { min-width: 260px; }
+
+    .final-cta { padding: 72px 28px; }
+
+    footer { flex-direction: column; text-align: center; padding: 36px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+
+    .sticky-cta-bar { bottom: 20px; right: 16px; left: 16px; }
+    .sticky-cta-btn { width: 100%; justify-content: center; }
+  }
+
+  @media (max-width: 560px) {
+    .steps-row { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.9rem; }
+    .section-title { font-size: 1.8rem; }
+    footer { padding: 28px 16px; }
+    .footer-links { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-main-row">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpeg" alt="Match Care ABA Logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#signs">Signs to Watch</a></li>
+      <li><a href="index.html#how">How It Works</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="for-providers.html" class="active">For Providers</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="nav-serving-bar">
+    <p>CURRENTLY SERVING: 🗽 <span style="color:#FFD166;">New York</span> &nbsp;•&nbsp; 🌿 <span style="color:#6BCB77;">New Jersey</span> &nbsp;•&nbsp; 🌲 <span style="color:#FFD166;">North Carolina</span> &nbsp;•&nbsp; <span style="color:rgba(255,255,255,0.7);">&amp; Expanding Nationwide</span></p>
+  </div>
+</nav>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta-bar" id="stickyCta">
+  <a href="https://form.jotform.com/260663685302054" class="sticky-cta-btn" target="_blank" rel="noopener">
+    Join the Match Care ABA Network
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      For ABA Therapy Providers
+    </div>
+    <h1>Get Matched with Families<br>Looking for <span class="gold">ABA Therapy</span></h1>
+    <p class="hero-sub">Match Care connects ABA providers with families actively searching for services in your area.</p>
+    <div class="hero-cta-wrap">
+      <a href="https://form.jotform.com/260663685302054" class="btn-gold" target="_blank" rel="noopener">
+        Join the Match Care ABA Network
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Learn More</span>
+      <svg class="scroll-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block;">
+      <path d="M0,40 C360,80 1080,0 1440,48 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="content-section how-section" id="how-it-works">
+  <div class="section-inner">
+    <div class="section-header animate-up">
+      <span class="section-eyebrow">Simple Process</span>
+      <h2 class="section-title">How It Works</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="steps-row">
+      <div class="step-item animate-up" style="transition-delay:0.05s">
+        <div class="step-num">1</div>
+        <h3 class="step-title">Receive a new case notification</h3>
+        <p class="step-desc">We alert you when a family in your area is actively searching for services you offer.</p>
+      </div>
+      <div class="step-item animate-up" style="transition-delay:0.15s">
+        <div class="step-num">2</div>
+        <h3 class="step-title">Review a short case summary</h3>
+        <p class="step-desc">Get a clear, concise overview — no long forms or excessive documentation to review.</p>
+      </div>
+      <div class="step-item animate-up" style="transition-delay:0.25s">
+        <div class="step-num">3</div>
+        <h3 class="step-title">Accept if it fits your availability</h3>
+        <p class="step-desc">You're in full control. Only take on cases that work for your schedule and capacity.</p>
+      </div>
+      <div class="step-item animate-up" style="transition-delay:0.35s">
+        <div class="step-num">4</div>
+        <h3 class="step-title">Get connected with the family</h3>
+        <p class="step-desc">We facilitate the introduction so you can start the conversation and begin care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="bold-divider">
+
+<!-- WHAT YOU'LL RECEIVE -->
+<section class="content-section receive-section">
+  <div class="section-inner">
+    <div class="animate-up" style="text-align:center;">
+      <span class="section-eyebrow">Built for Providers</span>
+      <h2 class="section-title">What You'll Receive</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="card-grid">
+      <div class="receive-card animate-up" style="transition-delay:0.05s">
+        <div class="card-icon">👨‍👩‍👧</div>
+        <div>
+          <h3>Real families actively looking for ABA services</h3>
+          <p>Every referral comes from a family who has actively sought out services — not a cold lead or speculative match.</p>
+        </div>
+      </div>
+      <div class="receive-card animate-up" style="transition-delay:0.15s">
+        <div class="card-icon">📋</div>
+        <div>
+          <h3>Short, clear case summaries (no long forms)</h3>
+          <p>We give you the essential information you need to make a quick, informed decision — concise and to the point.</p>
+        </div>
+      </div>
+      <div class="receive-card animate-up" style="transition-delay:0.25s">
+        <div class="card-icon">📍</div>
+        <div>
+          <h3>Cases matched to your location and criteria</h3>
+          <p>We route cases based on your service area and availability — no irrelevant or out-of-range matches.</p>
+        </div>
+      </div>
+      <div class="receive-card animate-up" style="transition-delay:0.35s">
+        <div class="card-icon">✅</div>
+        <div>
+          <h3>The ability to accept only what fits your availability</h3>
+          <p>You decide what you take on. There's no pressure, no quota, and no obligation to accept any case.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="bold-divider">
+
+<!-- NO EXTRA WORK -->
+<section class="content-section no-work-section">
+  <div class="section-inner">
+    <div class="animate-up" style="text-align:center;">
+      <span class="section-eyebrow">Low Lift, High Impact</span>
+      <h2 class="section-title">No Extra Work Required</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="no-work-grid">
+      <div class="no-work-card animate-up" style="transition-delay:0.05s">
+        <div class="check-circle">✓</div>
+        <div>
+          <h3>No new system to learn</h3>
+          <p>We work around your existing workflow — no software to install or platforms to navigate.</p>
+        </div>
+      </div>
+      <div class="no-work-card animate-up" style="transition-delay:0.15s">
+        <div class="check-circle">✓</div>
+        <div>
+          <h3>No long onboarding process</h3>
+          <p>Getting started is simple and quick. Begin receiving matched cases without a drawn-out setup process.</p>
+        </div>
+      </div>
+      <div class="no-work-card animate-up" style="transition-delay:0.25s">
+        <div class="check-circle">✓</div>
+        <div>
+          <h3>No obligation to accept cases</h3>
+          <p>Review each case on your own terms. Accept what works, pass on what doesn't — no explanation needed.</p>
+        </div>
+      </div>
+      <div class="no-work-card animate-up" style="transition-delay:0.35s">
+        <div class="check-circle">✓</div>
+        <div>
+          <h3>Simply review and respond when it works for you</h3>
+          <p>No real-time demands. Respond to case notifications at your convenience and at your own pace.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MATCH CARE -->
+<section class="content-section why-section">
+  <div class="section-inner">
+    <div class="why-inner animate-up">
+      <span class="why-quote-mark">&ldquo;</span>
+      <p class="why-text">We help fill open therapy hours by connecting you with families who are actively searching — without the need for outreach or marketing.</p>
+      <cite class="why-source">— Match Care ABA</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="bold-divider">
+
+<!-- CURRENTLY SERVING -->
+<section class="content-section serving-section">
+  <div class="section-inner" style="text-align:center;">
+    <div class="animate-up">
+      <span class="section-eyebrow">Service Area</span>
+      <h2 class="section-title">Currently Serving</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="states-row animate-up" style="transition-delay:0.1s">
+      <div class="state-card">
+        <span class="state-flag">🗽</span>
+        <span class="state-name">New York</span>
+        <span class="state-abbr">NY</span>
+      </div>
+      <div class="state-card">
+        <span class="state-flag">🌿</span>
+        <span class="state-name">New Jersey</span>
+        <span class="state-abbr">NJ</span>
+      </div>
+      <div class="state-card">
+        <span class="state-flag">🌲</span>
+        <span class="state-name">North Carolina</span>
+        <span class="state-abbr">NC</span>
+      </div>
+    </div>
+    <div class="animate-up" style="transition-delay:0.2s">
+      <span class="expanding-tag">
+        <span class="pulse-dot"></span>
+        Expanding to new areas
+      </span>
+    </div>
+    <span class="limited-note animate-up" style="transition-delay:0.3s">
+      Currently onboarding a limited number of providers per area.
+    </span>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner animate-up">
+    <h2>Ready to Start Receiving Matched Families?</h2>
+    <p>Join the Match Care ABA network and fill your open therapy hours with families who are already looking for you.</p>
+    <a href="https://form.jotform.com/260663685302054" class="btn-gold" target="_blank" rel="noopener">
+      Join the Match Care ABA Network
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="logo.jpeg" alt="Match Care ABA Logo">
+    <span>Match Care <span style="color:var(--gold);">ABA</span></span>
+  </div>
+  <div style="max-width: 480px; text-align: center;">
+    <p class="footer-text">Match Care is an independent referral service and does not provide medical advice, diagnosis, or therapy services. All services are provided directly by licensed professionals.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="for-providers.html">For Providers</a>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  function toggleMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Sticky CTA — show after scrolling past the hero
+  const stickyCta = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      stickyCta.classList.add('visible');
+    } else {
+      stickyCta.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  // Scroll-triggered animations via IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
