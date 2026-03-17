@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parent Resources | Match Care ABA — Autism & ABA Therapy Guides</title>
+<meta name="description" content="Quick-answer guides for parents of autistic children. Get clear answers on ABA therapy hours, early signs, communication, behavior, and what to do after a diagnosis.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://matchcareaba.com/resources.html">
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-192.png">
+<meta name="theme-color" content="#1B3A6B">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matchcareaba.com/resources.html">
+<meta property="og:title" content="Parent Resources | Match Care ABA — Autism & ABA Therapy Guides">
+<meta property="og:description" content="Quick-answer guides for parents of autistic children. Get clear answers on ABA therapy hours, early signs, communication, behavior, and what to do after a diagnosis.">
+<meta property="og:image" content="https://matchcareaba.com/family-hero.jpeg">
+<meta property="og:site_name" content="Match Care ABA">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-37F7PCXW57"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-37F7PCXW57');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #EEF6FF;
+    --white: #FFFFFF;
+    --navy: #1B3A6B;
+    --navy-dark: #0D2247;
+    --navy-mid: #2A5298;
+    --gold: #D4A843;
+    --gold-light: #E8C06A;
+    --gold-pale: #FDF5E0;
+    --text: #1B3A6B;
+    --muted: #6B7FA3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+    background: #fff;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+  }
+
+  .animate-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .animate-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid rgba(212,168,67,0.2);
+    box-shadow: 0 2px 20px rgba(27,58,107,0.06);
+  }
+
+  .nav-main-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 60px;
+  }
+
+  .nav-serving-bar {
+    background: linear-gradient(90deg, #1B3A6B, #2A5298);
+    padding: 7px 0;
+    text-align: center;
+  }
+
+  .nav-serving-bar p {
+    color: white; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px; margin: 0;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 1.2rem;
+    font-weight: 800;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a.active { color: var(--navy); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid)) !important;
+    color: #D4A843 !important;
+    padding: 11px 26px;
+    border-radius: 50px;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 14px rgba(27,58,107,0.25);
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(27,58,107,0.35) !important;
+  }
+
+  .nav-hamburger { display: none; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 55%, #1E4A8A 100%);
+    padding: 180px 60px 120px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-bg-glow {
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse at 20% 60%, rgba(212,168,67,0.09) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 25%, rgba(255,255,255,0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 55% 85%, rgba(212,168,67,0.06) 0%, transparent 40%);
+  }
+
+  .hero-grid-pattern {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-content {
+    position: relative; z-index: 3;
+    max-width: 820px; margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: rgba(212,168,67,0.14);
+    border: 2px solid rgba(212,168,67,0.38);
+    color: var(--gold-light);
+    font-size: 0.78rem; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 9px 22px; border-radius: 50px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-badge .dot {
+    width: 7px; height: 7px;
+    background: var(--gold); border-radius: 50%;
+    animation: pulse 2s infinite; flex-shrink: 0;
+  }
+
+  .hero h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.9rem);
+    font-weight: 900; line-height: 1.13;
+    color: white; margin-bottom: 26px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 .gold { color: var(--gold); }
+
+  .hero-sub {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.72; color: rgba(255,255,255,0.72);
+    max-width: 640px; margin: 0 auto 48px;
+    font-weight: 600; animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-wave {
+    position: absolute; bottom: 0; left: 0; right: 0;
+  }
+
+  /* ===== CATEGORY FILTER BAR ===== */
+  .filter-bar {
+    background: var(--sky);
+    padding: 32px 60px;
+    display: flex; align-items: center; gap: 12px;
+    flex-wrap: wrap; justify-content: center;
+    border-bottom: 1px solid rgba(27,58,107,0.08);
+  }
+
+  .filter-label {
+    font-size: 0.82rem; font-weight: 900;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted); margin-right: 8px;
+  }
+
+  .filter-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 18px; border-radius: 50px;
+    font-size: 0.85rem; font-weight: 800;
+    border: 2px solid rgba(27,58,107,0.15);
+    background: white; color: var(--navy);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .filter-pill:hover, .filter-pill.active {
+    background: var(--navy); color: white;
+    border-color: var(--navy);
+  }
+
+  /* ===== RESOURCES GRID ===== */
+  .resources-section {
+    background: var(--sky);
+    padding: 72px 60px 96px;
+  }
+
+  .section-inner {
+    max-width: 1140px; margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center; margin-bottom: 56px;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem; font-weight: 900;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px;
+    padding: 6px 18px;
+    background: rgba(212,168,67,0.1);
+    border-radius: 50px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900; color: var(--navy);
+    line-height: 1.2; margin-bottom: 16px;
+  }
+
+  .section-divider {
+    width: 60px; height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px; margin: 0 auto;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .resource-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(27,58,107,0.08);
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex; flex-direction: column;
+    border: 1px solid rgba(27,58,107,0.06);
+  }
+
+  .resource-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(27,58,107,0.15);
+  }
+
+  .resource-card-header {
+    padding: 28px 28px 0;
+  }
+
+  .resource-tag {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 900;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 50px;
+    margin-bottom: 14px;
+  }
+
+  .tag-hours { background: rgba(212,168,67,0.12); color: #8B6914; }
+  .tag-signs { background: rgba(107,203,119,0.15); color: #2D6E3A; }
+  .tag-communication { background: rgba(100,149,237,0.15); color: #1E3A7A; }
+  .tag-behavior { background: rgba(255,107,107,0.12); color: #8B2020; }
+  .tag-diagnosis { background: rgba(160,110,235,0.12); color: #5A1E8B; }
+
+  .resource-card h2 {
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+
+  .resource-card-body {
+    padding: 14px 28px 28px;
+    flex: 1; display: flex; flex-direction: column;
+  }
+
+  .resource-meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .resource-excerpt {
+    font-size: 0.92rem;
+    line-height: 1.68;
+    color: #4A5E82;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+
+  .btn-read-more {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: var(--gold) !important;
+    padding: 12px 22px;
+    border-radius: 50px;
+    font-size: 0.85rem; font-weight: 900;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    align-self: flex-start;
+    box-shadow: 0 4px 14px rgba(27,58,107,0.2);
+  }
+
+  .btn-read-more:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(27,58,107,0.3);
+  }
+
+  .btn-read-more svg { flex-shrink: 0; }
+
+  /* ===== CTA SECTION ===== */
+  .final-cta {
+    background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 60%, #1E4A8A 100%);
+    padding: 96px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .final-cta-inner {
+    position: relative; z-index: 2;
+    max-width: 680px; margin: 0 auto;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 900; color: white;
+    line-height: 1.25; margin-bottom: 20px;
+  }
+
+  .final-cta h2 .gold { color: var(--gold); }
+
+  .final-cta p {
+    font-size: 1.08rem; line-height: 1.72;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 40px; font-weight: 600;
+  }
+
+  .btn-gold {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy) !important;
+    padding: 18px 38px;
+    border-radius: 50px;
+    font-size: 1.05rem; font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 8px 28px rgba(212,168,67,0.38);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 14px 44px rgba(212,168,67,0.5);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy-dark);
+    padding: 48px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: white;
+  }
+
+  .footer-logo img {
+    height: 44px; width: auto;
+    border-radius: 8px;
+  }
+
+  .footer-text {
+    font-size: 0.8rem; color: rgba(255,255,255,0.45);
+    line-height: 1.7; text-align: center;
+    max-width: 480px;
+  }
+
+  .footer-links {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.88rem; font-weight: 700;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .resources-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: fixed; inset: 0;
+      background: var(--navy); z-index: 200;
+      justify-content: center; align-items: center;
+      gap: 32px; padding: 40px;
+    }
+    .nav-links.open a { font-size: 1.3rem; color: white !important; }
+    .nav-hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 8px; z-index: 300;
+    }
+    .nav-hamburger span {
+      display: block; width: 26px; height: 2.5px;
+      background: var(--navy); border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-hamburger.open span { background: white; }
+    .nav-main-row { padding: 10px 20px; }
+    .hero { padding: 140px 24px 80px; }
+    .filter-bar { padding: 24px 20px; }
+    .resources-section { padding: 48px 20px 64px; }
+    .final-cta { padding: 64px 24px; }
+    footer { padding: 36px 20px; }
+  }
+
+  @media (max-width: 640px) {
+    .resources-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-main-row">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpeg" alt="Match Care ABA Logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#signs">Signs to Watch</a></li>
+      <li><a href="index.html#how">How It Works</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="for-providers.html">For Providers</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="resources.html" class="active">Resources</a></li>
+      <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="nav-serving-bar">
+    <p>CURRENTLY SERVING: 🗽 <span style="color:#FFD166;">New York</span> &nbsp;•&nbsp; 🌿 <span style="color:#6BCB77;">New Jersey</span> &nbsp;•&nbsp; 🌲 <span style="color:#FFD166;">North Carolina</span> &nbsp;•&nbsp; <span style="color:rgba(255,255,255,0.7);">&amp; Expanding Nationwide</span></p>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Parent Resources
+    </div>
+    <h1>Answers for <span class="gold">Autism Parents</span><br>When You Need Them</h1>
+    <p class="hero-sub">Clear, honest answers to the questions parents of autistic children ask most — written by the Match Care ABA team.</p>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block;">
+      <path d="M0,40 C360,80 1080,0 1440,48 L1440,80 L0,80 Z" fill="#EEF6FF"/>
+    </svg>
+  </div>
+</section>
+
+<!-- RESOURCES GRID -->
+<section class="resources-section">
+  <div class="section-inner">
+    <div class="section-header animate-up">
+      <span class="section-eyebrow">All Resources</span>
+      <h2 class="section-title">Quick-Answer Guides for Parents</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="resources-grid">
+
+      <!-- Card 1 -->
+      <div class="resource-card animate-up" style="transition-delay:0.05s">
+        <div class="resource-card-header">
+          <span class="resource-tag tag-hours">🕐 ABA Hours</span>
+          <h2>How Many ABA Hours Does a Child with Mild Autism Need?</h2>
+        </div>
+        <div class="resource-card-body">
+          <p class="resource-meta">5 min read &nbsp;•&nbsp; By The Match Care ABA Team</p>
+          <p class="resource-excerpt">For Level 1 autism, most children start with 10–20 hours per week — not 40. Learn how hours are determined and why more isn't always better.</p>
+          <a href="resources/aba-hours-mild-autism.html" class="btn-read-more">
+            Read Article
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="resource-card animate-up" style="transition-delay:0.1s">
+        <div class="resource-card-header">
+          <span class="resource-tag tag-hours">🕐 ABA Hours</span>
+          <h2>Is 40 Hours of ABA Therapy Too Much for My Child?</h2>
+        </div>
+        <div class="resource-card-body">
+          <p class="resource-meta">5 min read &nbsp;•&nbsp; By The Match Care ABA Team</p>
+          <p class="resource-excerpt">40 hours a week is the upper ceiling from a 1987 study — not the standard. Find out when it's appropriate and how to push back if it isn't right for your child.</p>
+          <a href="resources/is-40-hours-aba-too-much.html" class="btn-read-more">
+            Read Article
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="resource-card animate-up" style="transition-delay:0.15s">
+        <div class="resource-card-header">
+          <span class="resource-tag tag-hours">🕐 ABA Hours</span>
+          <h2>How Many ABA Hours Will Insurance Approve?</h2>
+        </div>
+        <div class="resource-card-body">
+          <p class="resource-meta">5 min read &nbsp;•&nbsp; By The Match Care ABA Team</p>
+          <p class="resource-excerpt">Insurance doesn't use a fixed number — it approves hours based on medical necessity. Learn the process, what to expect, and what to do when you get fewer hours than recommended.</p>
+          <a href="resources/aba-hours-insurance-approve.html" class="btn-read-more">
+            Read Article
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="resource-card animate-up" style="transition-delay:0.2s">
+        <div class="resource-card-header">
+          <span class="resource-tag tag-signs">🧩 Early Signs</span>
+          <h2>Is My 3 Year Old Autistic or Just Speech Delayed?</h2>
+        </div>
+        <div class="resource-card-body">
+          <p class="resource-meta">5 min read &nbsp;•&nbsp; By The Match Care ABA Team</p>
+          <p class="resource-excerpt">Speech delay and autism overlap — but they're not the same thing. Learn the key differences, what a developmental evaluation looks like, and why acting early matters either way.</p>
+          <a href="resources/3-year-old-autistic-or-speech-delayed.html" class="btn-read-more">
+            Read Article
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="resource-card animate-up" style="transition-delay:0.25s">
+        <div class="resource-card-header">
+          <span class="resource-tag tag-communication">💬 Communication</span>
+          <h2>What To Do If Your Autistic Child Is Not Talking</h2>
+        </div>
+        <div class="resource-card-body">
+          <p class="resource-meta">5 min read &nbsp;•&nbsp; By The Match Care ABA Team</p>
+          <p class="resource-excerpt">Not speaking doesn't mean not communicating. Learn about AAC tools, the Verbal Behavior ABA approach, and research-backed strategies to support your child's voice — whatever form it takes.</p>
+          <a href="resources/autistic-child-not-talking.html" class="btn-read-more">
+            Read Article
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="resource-card animate-up" style="transition-delay:0.3s">
+        <div class="resource-card-header">
+          <span class="resource-tag tag-signs">🧩 Early Signs</span>
+          <h2>Signs of Mild Autism in a 2 Year Old</h2>
+        </div>
+        <div class="resource-card-body">
+          <p class="resource-meta">5 min read &nbsp;•&nbsp; By The Match Care ABA Team</p>
+          <p class="resource-excerpt">Some signs of mild autism at age 2 are easy to miss. Learn the 8 key patterns to watch for, what typical development looks like at 24 months, and why earlier action leads to better outcomes.</p>
+          <a href="resources/signs-mild-autism-age-2.html" class="btn-read-more">
+            Read Article
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="resource-card animate-up" style="transition-delay:0.35s">
+        <div class="resource-card-header">
+          <span class="resource-tag tag-behavior">💥 Behavior</span>
+          <h2>Autistic Child Hitting Parents — What To Do</h2>
+        </div>
+        <div class="resource-card-body">
+          <p class="resource-meta">5 min read &nbsp;•&nbsp; By The Match Care ABA Team</p>
+          <p class="resource-excerpt">Hitting is communication, not bad behavior. Learn the 4 behavioral functions, what a Functional Behavior Assessment involves, and how ABA helps your child replace hitting with safer ways to get their needs met.</p>
+          <a href="resources/autistic-child-hitting-parents.html" class="btn-read-more">
+            Read Article
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="resource-card animate-up" style="transition-delay:0.4s">
+        <div class="resource-card-header">
+          <span class="resource-tag tag-diagnosis">📋 After Diagnosis</span>
+          <h2>My Child Was Just Diagnosed with Autism — What Do I Do Next?</h2>
+        </div>
+        <div class="resource-card-body">
+          <p class="resource-meta">6 min read &nbsp;•&nbsp; By The Match Care ABA Team</p>
+          <p class="resource-excerpt">A diagnosis can feel overwhelming. Here are the 5 concrete steps to take in the weeks after your child is diagnosed — broken down clearly so you can move forward with confidence.</p>
+          <a href="resources/child-just-diagnosed-autism.html" class="btn-read-more">
+            Read Article
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="final-cta">
+  <div class="final-cta-inner animate-up">
+    <h2>Ready to Find an <span class="gold">ABA Provider</span> Near You?</h2>
+    <p>Match Care ABA is a free matching service. Tell us about your child and we'll connect you with verified ABA providers in NY, NJ, or NC — with no waitlists and no cost to families.</p>
+    <a href="https://form.jotform.com/260662279796069" class="btn-gold" target="_blank" rel="noopener">
+      Get Matched Now — It's Free
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="logo.jpeg" alt="Match Care ABA Logo">
+    <span>Match Care <span style="color:var(--gold);">ABA</span></span>
+  </div>
+  <div style="max-width: 480px; text-align: center;">
+    <p class="footer-text">Match Care ABA is an independent matching service and does not provide medical or therapeutic services. All evaluations, diagnoses, and treatment decisions are handled directly by licensed providers.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="resources.html">Resources</a>
+    <a href="for-providers.html">For Providers</a>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  function toggleMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
