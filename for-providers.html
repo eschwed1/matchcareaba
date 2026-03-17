@@ -313,6 +313,13 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     animation: fadeIn 1s 0.9s ease both;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .hero-scroll-hint:hover {
+    color: rgba(255,255,255,0.65);
   }
 
   .scroll-chevron {
@@ -907,10 +914,10 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
-    <div class="hero-scroll-hint">
+    <a href="#how-it-works" class="hero-scroll-hint">
       <span>Learn More</span>
       <svg class="scroll-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
+    </a>
   </div>
   <div class="hero-wave">
     <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block;">
@@ -1134,10 +1141,14 @@
     });
   });
 
-  // Sticky CTA — show after scrolling past the hero
+  // Sticky CTA — show after scrolling past the hero, hide near bottom
   const stickyCta = document.getElementById('stickyCta');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const nearBottom = scrollY + windowHeight > docHeight - 220;
+    if (scrollY > 500 && !nearBottom) {
       stickyCta.classList.add('visible');
     } else {
       stickyCta.classList.remove('visible');

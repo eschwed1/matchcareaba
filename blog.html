@@ -35,13 +35,11 @@
     --sky: #EEF6FF;
     --white: #FFFFFF;
     --navy: #1B3A6B;
+    --navy-dark: #0D2247;
     --navy-mid: #2A5298;
-    --gold: #F5A623;
-    --gold-light: #FFD166;
-    --coral: #FF6B6B;
-    --mint: #4ECDC4;
-    --lavender: #A78BFA;
-    --soft-green: #6BCB77;
+    --gold: #D4A843;
+    --gold-light: #E8C06A;
+    --gold-pale: #FDF5E0;
     --text: #1B3A6B;
     --muted: #6B7FA3;
     --card-bg: #FFFFFF;
@@ -52,31 +50,45 @@
 
   body {
     font-family: 'Nunito', sans-serif;
-    background: var(--sky);
+    background: #fff;
     color: var(--text);
     overflow-x: hidden;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image:
-      radial-gradient(circle at 10% 20%, rgba(245,166,35,0.06) 0%, transparent 40%),
-      radial-gradient(circle at 90% 10%, rgba(78,205,196,0.07) 0%, transparent 35%),
-      radial-gradient(circle at 80% 80%, rgba(167,139,250,0.06) 0%, transparent 40%),
-      radial-gradient(circle at 20% 90%, rgba(107,203,119,0.06) 0%, transparent 35%);
-    pointer-events: none;
-    z-index: 0;
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+  }
+
+  .animate-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .animate-up.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* ===== NAV ===== */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; flex-direction: column;
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.97);
     backdrop-filter: blur(12px);
-    border-bottom: 2px solid rgba(245,166,35,0.2);
+    border-bottom: 2px solid rgba(212,168,67,0.2);
     box-shadow: 0 2px 20px rgba(27,58,107,0.06);
   }
 
@@ -121,7 +133,7 @@
 
   .nav-cta {
     background: linear-gradient(135deg, var(--navy), var(--navy-mid)) !important;
-    color: #F5A623 !important;
+    color: #D4A843 !important;
     padding: 11px 26px;
     border-radius: 50px;
     font-weight: 800 !important;
@@ -129,73 +141,151 @@
     transition: transform 0.2s, box-shadow 0.2s !important;
   }
 
-  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,58,107,0.35) !important; }
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(27,58,107,0.35) !important;
+  }
 
   /* ===== HERO ===== */
   .blog-hero {
-    padding: 160px 60px 80px;
-    text-align: center;
+    background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 55%, #1E4A8A 100%);
+    padding: 180px 60px 120px;
     position: relative;
-    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-bg-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 20% 60%, rgba(212,168,67,0.09) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 25%, rgba(255,255,255,0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 55% 85%, rgba(212,168,67,0.06) 0%, transparent 40%);
+  }
+
+  .hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 820px;
+    margin: 0 auto;
   }
 
   .blog-hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(245,166,35,0.12);
-    border: 2px solid rgba(245,166,35,0.35);
-    color: var(--gold);
-    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(212,168,67,0.14);
+    border: 2px solid rgba(212,168,67,0.38);
+    color: var(--gold-light);
+    font-size: 0.78rem;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 8px 18px;
+    padding: 9px 22px;
     border-radius: 50px;
-    margin-bottom: 24px;
-    animation: fadeUp 0.5s ease both;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .blog-hero-badge .dot {
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
   }
 
   .blog-hero h1 {
     font-family: 'Nunito', sans-serif;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-size: clamp(2.4rem, 5vw, 3.9rem);
     font-weight: 900;
-    color: var(--navy);
-    margin-bottom: 16px;
-    animation: fadeUp 0.5s 0.1s ease both;
+    line-height: 1.13;
+    color: white;
+    margin-bottom: 26px;
+    animation: fadeUp 0.6s 0.1s ease both;
   }
 
-  .blog-hero h1 .highlight {
-    color: var(--gold);
-    position: relative;
-    display: inline-block;
-  }
-
-  .blog-hero h1 .highlight::after {
-    content: '';
-    position: absolute;
-    bottom: 2px; left: 0; right: 0;
-    height: 4px;
-    background: var(--gold-light);
-    border-radius: 4px;
-    opacity: 0.5;
-  }
+  .blog-hero h1 .gold { color: var(--gold); }
 
   .blog-hero p {
-    font-size: 1.1rem;
-    line-height: 1.75;
-    color: var(--muted);
-    max-width: 560px;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.72;
+    color: rgba(255,255,255,0.72);
+    max-width: 610px;
     margin: 0 auto;
     font-weight: 600;
-    animation: fadeUp 0.5s 0.2s ease both;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    line-height: 0;
+  }
+
+  /* ===== DIVIDER ===== */
+  .bold-divider {
+    height: 5px;
+    background: linear-gradient(90deg, var(--navy-dark), var(--navy-mid), var(--gold), var(--navy-mid), var(--navy-dark));
+    border: none;
+    margin: 0;
+  }
+
+  /* ===== BLOG SECTION ===== */
+  .blog-section {
+    padding: 90px 60px 100px;
+    background: white;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  .section-divider {
+    width: 56px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 3px;
+    margin: 18px auto 0;
   }
 
   /* ===== BLOG GRID ===== */
-  .blog-section {
-    padding: 20px 60px 100px;
-    position: relative;
-    z-index: 1;
-  }
-
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -209,26 +299,16 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 6px 24px rgba(27,58,107,0.08);
-    border: 2px solid rgba(245,166,35,0.12);
+    border: 2px solid rgba(212,168,67,0.12);
     display: flex;
     flex-direction: column;
     transition: transform 0.25s, box-shadow 0.25s;
-    animation: fadeUp 0.5s ease both;
   }
 
   .blog-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 16px 40px rgba(27,58,107,0.14);
   }
-
-  .blog-card:nth-child(1) { animation-delay: 0.1s; }
-  .blog-card:nth-child(2) { animation-delay: 0.15s; }
-  .blog-card:nth-child(3) { animation-delay: 0.2s; }
-  .blog-card:nth-child(4) { animation-delay: 0.25s; }
-  .blog-card:nth-child(5) { animation-delay: 0.3s; }
-  .blog-card:nth-child(6) { animation-delay: 0.35s; }
-  .blog-card:nth-child(7) { animation-delay: 0.4s; }
-  .blog-card:nth-child(8) { animation-delay: 0.45s; }
 
   .blog-card-header {
     background: linear-gradient(135deg, var(--navy), var(--navy-mid));
@@ -242,21 +322,13 @@
     position: absolute;
     bottom: -30px; right: -20px;
     width: 100px; height: 100px;
-    background: rgba(245,166,35,0.15);
+    background: rgba(212,168,67,0.15);
     border-radius: 50%;
-  }
-
-  .blog-card:nth-child(2) .blog-card-header {
-    background: linear-gradient(135deg, #1e4d87, #2A5298);
-  }
-
-  .blog-card:nth-child(3) .blog-card-header {
-    background: linear-gradient(135deg, var(--navy), #1e4d87);
   }
 
   .blog-tag {
     display: inline-block;
-    background: rgba(245,166,35,0.2);
+    background: rgba(212,168,67,0.2);
     color: var(--gold-light);
     font-size: 0.72rem;
     font-weight: 800;
@@ -264,7 +336,7 @@
     text-transform: uppercase;
     padding: 5px 12px;
     border-radius: 50px;
-    border: 1px solid rgba(245,166,35,0.3);
+    border: 1px solid rgba(212,168,67,0.3);
     margin-bottom: 14px;
     position: relative;
     z-index: 1;
@@ -295,12 +367,14 @@
     font-size: 0.78rem;
     color: var(--muted);
     font-weight: 700;
+    flex-wrap: wrap;
   }
 
   .blog-meta .dot {
     width: 4px; height: 4px;
     background: var(--gold);
     border-radius: 50%;
+    flex-shrink: 0;
   }
 
   .blog-excerpt {
@@ -316,7 +390,7 @@
     align-items: center;
     gap: 8px;
     background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
+    color: var(--navy-dark);
     padding: 12px 24px;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -325,34 +399,33 @@
     border: none;
     cursor: pointer;
     transition: all 0.25s;
-    box-shadow: 0 4px 16px rgba(245,166,35,0.35);
+    box-shadow: 0 4px 16px rgba(212,168,67,0.35);
     align-self: flex-start;
     margin-top: 4px;
   }
 
   .btn-read-more:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 24px rgba(245,166,35,0.48);
+    box-shadow: 0 8px 24px rgba(212,168,67,0.48);
   }
 
-  .btn-read-more svg {
-    transition: transform 0.2s;
-  }
-
-  .btn-read-more:hover svg {
-    transform: translateX(4px);
-  }
+  .btn-read-more svg { transition: transform 0.2s; }
+  .btn-read-more:hover svg { transform: translateX(4px); }
 
   /* ===== CTA SECTION ===== */
+  .blog-cta-section {
+    background: linear-gradient(180deg, #F2F7FF 0%, #EBF2FF 100%);
+    padding: 0 60px 100px;
+  }
+
   .blog-cta {
-    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    background: linear-gradient(140deg, var(--navy-dark), var(--navy));
     border-radius: 28px;
-    padding: 56px 60px;
+    padding: 80px 60px;
     text-align: center;
     max-width: 1200px;
-    margin: 0 auto 100px;
+    margin: 0 auto;
     position: relative;
-    z-index: 1;
     overflow: hidden;
   }
 
@@ -361,7 +434,7 @@
     position: absolute;
     top: -60px; right: -60px;
     width: 240px; height: 240px;
-    background: rgba(245,166,35,0.1);
+    background: rgba(212,168,67,0.1);
     border-radius: 50%;
   }
 
@@ -370,7 +443,7 @@
     position: absolute;
     bottom: -80px; left: -40px;
     width: 280px; height: 280px;
-    background: rgba(78,205,196,0.08);
+    background: rgba(42,82,152,0.15);
     border-radius: 50%;
   }
 
@@ -395,25 +468,26 @@
     position: relative; z-index: 1;
   }
 
-  .blog-cta a {
+  .btn-cta-gold {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-    padding: 16px 36px;
+    color: var(--navy-dark);
+    padding: 19px 48px;
     border-radius: 50px;
     font-size: 1rem;
     font-weight: 900;
     text-decoration: none;
-    box-shadow: 0 6px 20px rgba(245,166,35,0.4);
+    box-shadow: 0 6px 20px rgba(212,168,67,0.4);
     transition: all 0.25s;
     position: relative; z-index: 1;
+    letter-spacing: 0.3px;
   }
 
-  .blog-cta a:hover {
+  .btn-cta-gold:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 28px rgba(245,166,35,0.5);
+    box-shadow: 0 10px 28px rgba(212,168,67,0.5);
   }
 
   /* ===== FOOTER ===== */
@@ -430,6 +504,7 @@
     font-size: 1.4rem; font-weight: 900;
     color: white;
     display: flex; align-items: center; gap: 8px;
+    text-decoration: none;
   }
 
   .footer-logo span { color: var(--gold); }
@@ -462,6 +537,7 @@
   /* ===== MOBILE NAV ===== */
   .nav-hamburger { display: none; }
 
+  /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
     .nav-main-row { padding: 10px 24px; }
     .nav-links { display: none; }
@@ -485,23 +561,20 @@
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     .nav-hamburger.open span { background: white; }
     .nav-serving-bar p { font-size: 0.72rem; }
-    .blog-hero { padding: 140px 24px 60px; }
-    .blog-section { padding: 20px 24px 80px; }
+    .blog-hero { padding: 160px 28px 100px; }
+    .blog-section { padding: 72px 24px 80px; }
     .blog-grid { grid-template-columns: 1fr; }
-    .blog-cta { padding: 44px 28px; margin: 0 24px 80px; }
+    .blog-cta-section { padding: 0 24px 80px; }
+    .blog-cta { padding: 44px 28px; }
     footer { flex-direction: column; text-align: center; padding: 36px 24px; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 560px) {
     .blog-hero h1 { font-size: 2rem; }
+    .section-title { font-size: 1.8rem; }
     footer { padding: 28px 16px; }
     .footer-links { gap: 12px; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
   }
 </style>
 </head>
@@ -530,19 +603,37 @@
   </div>
 </nav>
 
-<!-- Blog Hero -->
+<!-- HERO -->
 <section class="blog-hero">
-  <div class="blog-hero-badge">📚 Resources &amp; Guides</div>
-  <h1>The Match Care <span class="highlight">Blog</span></h1>
-  <p>Helpful guides for families navigating ABA therapy — from finding providers to understanding insurance and spotting early signs.</p>
+  <div class="hero-bg-glow"></div>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-content">
+    <div class="blog-hero-badge">
+      <span class="dot"></span>
+      Resources &amp; Guides
+    </div>
+    <h1>The Match Care <span class="gold">Blog</span></h1>
+    <p>Helpful guides for families navigating ABA therapy — from finding providers to understanding insurance and spotting early signs.</p>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block;">
+      <path d="M0,40 C360,80 1080,0 1440,48 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
 </section>
 
-<!-- Blog Posts -->
+<!-- BLOG POSTS -->
 <section class="blog-section">
+  <div class="section-header animate-up">
+    <span class="section-eyebrow">Resources &amp; Guides</span>
+    <h2 class="section-title">Latest Articles</h2>
+    <div class="section-divider"></div>
+  </div>
+
   <div class="blog-grid">
 
     <!-- Post 1 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.05s">
       <div class="blog-card-header">
         <div class="blog-tag">⏳ Getting Started</div>
         <h2>How Long Are ABA Therapy Waiting Lists? (And How to Skip the Wait)</h2>
@@ -564,7 +655,7 @@
     </article>
 
     <!-- Post 2 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.15s">
       <div class="blog-card-header">
         <div class="blog-tag">🏥 Medicaid &amp; Insurance</div>
         <h2>Does Medicaid Cover ABA Therapy? (State by State Guide for NY, NJ &amp; NC)</h2>
@@ -586,7 +677,7 @@
     </article>
 
     <!-- Post 3 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.25s">
       <div class="blog-card-header">
         <div class="blog-tag">💰 Insurance &amp; Cost</div>
         <h2>How Much Does ABA Therapy Cost? (What Parents Should Know in 2025)</h2>
@@ -608,7 +699,7 @@
     </article>
 
     <!-- Post 4 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.05s">
       <div class="blog-card-header">
         <div class="blog-tag">🏠 Parent Strategies</div>
         <h2>How to Do ABA Therapy Activities at Home</h2>
@@ -630,7 +721,7 @@
     </article>
 
     <!-- Post 5 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.15s">
       <div class="blog-card-header">
         <div class="blog-tag">🏫 ABA Settings</div>
         <h2>Can ABA Therapy Be Done at School or Daycare?</h2>
@@ -652,7 +743,7 @@
     </article>
 
     <!-- Post 6 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.25s">
       <div class="blog-card-header">
         <div class="blog-tag">🔬 The Science</div>
         <h2>Why Does ABA Therapy Work? The Science Behind It</h2>
@@ -674,7 +765,7 @@
     </article>
 
     <!-- Post 7 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.05s">
       <div class="blog-card-header">
         <div class="blog-tag">⏱️ ABA Basics</div>
         <h2>How Long Does ABA Therapy Take?</h2>
@@ -696,7 +787,7 @@
     </article>
 
     <!-- Post 8 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.15s">
       <div class="blog-card-header">
         <div class="blog-tag">💳 Medicaid &amp; Insurance</div>
         <h2>Why Finding Medicaid ABA Therapy Providers Is So Hard (And What Actually Helps)</h2>
@@ -718,7 +809,7 @@
     </article>
 
     <!-- Post 9 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.25s">
       <div class="blog-card-header">
         <div class="blog-tag">💳 Insurance</div>
         <h2>How to Get ABA Therapy Covered by Insurance</h2>
@@ -740,7 +831,7 @@
     </article>
 
     <!-- Post 10 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.05s">
       <div class="blog-card-header">
         <div class="blog-tag">👶 Early Signs</div>
         <h2>5 Early Signs Your Child May Benefit from ABA Therapy</h2>
@@ -762,7 +853,7 @@
     </article>
 
     <!-- Post 11 -->
-    <article class="blog-card">
+    <article class="blog-card animate-up" style="transition-delay:0.15s">
       <div class="blog-card-header">
         <div class="blog-tag">📍 Finding Providers</div>
         <h2>How to Find ABA Therapy in New York, New Jersey &amp; North Carolina</h2>
@@ -786,17 +877,19 @@
   </div>
 </section>
 
+<hr class="bold-divider">
+
 <!-- CTA -->
-<div style="padding: 0 60px; position: relative; z-index: 1;">
-  <div class="blog-cta">
+<section class="blog-cta-section">
+  <div class="blog-cta animate-up">
     <h2>Ready to Find the <span>Right Provider?</span></h2>
     <p>Skip the waitlists and the guesswork. Match Care ABA connects your family with verified ABA providers — for free.</p>
-    <a href="https://form.jotform.com/260662279796069">
+    <a href="https://form.jotform.com/260662279796069" class="btn-cta-gold">
       Get Matched for Free
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
-</div>
+</section>
 
 <footer>
   <div class="footer-logo">
@@ -829,6 +922,18 @@
       navLinks.classList.remove('open');
     });
   });
+
+  // Scroll-triggered animations via IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
