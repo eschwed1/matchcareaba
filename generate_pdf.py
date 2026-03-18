@@ -443,7 +443,7 @@ def draw_cover(canvas_obj, doc, logo_path):
     canvas_obj.setFillColor(white)
     canvas_obj.setFont('Helvetica', 9.5)
     canvas_obj.drawCentredString(w / 2, box_y + 0.28 * inch,
-        'Free ABA therapy matching in New York, New Jersey & North Carolina')
+        'Currently serving New York, New Jersey & North Carolina — and working to help families wherever you are.')
     canvas_obj.drawCentredString(w / 2, box_y + 0.12 * inch, 'matchcareaba.com')
 
     # Bottom gold stripes
@@ -463,7 +463,7 @@ def build_pdf(output_path):
 
     HEADER_H = 0.55 * inch
     FOOTER_H = 0.38 * inch
-    TOP_MARGIN = HEADER_H + 0.35 * inch
+    TOP_MARGIN = HEADER_H + 0.5 * inch
     BOT_MARGIN = FOOTER_H + 0.3 * inch
 
     doc = SimpleDocTemplate(
@@ -538,8 +538,8 @@ def build_pdf(output_path):
         [
             'We built Match Care ABA because we believe every family deserves access to quality '
             'ABA therapy — regardless of income, insurance, or zip code. Our free matching service '
-            'connects families in New York, New Jersey, and North Carolina with licensed, vetted ABA '
-            'providers at no cost to you.'
+            'currently serves New York, New Jersey & North Carolina — and is working to help families wherever you are — '
+            'connecting you with licensed, vetted ABA providers at no cost to you.'
         ],
         styles
     ))
@@ -580,24 +580,35 @@ def build_pdf(output_path):
          'Coping strategies, calming techniques, and managing frustration.'],
     ]
 
+    col_w = CONTENT_W / 3
+    cell_inner_w = col_w - 22  # subtract 10+10 cell padding + 2pt buffer
+
+    inner_cell_style = TableStyle([
+        ('TOPPADDING', (0, 0), (-1, -1), 0),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 0),
+        ('LEFTPADDING', (0, 0), (-1, -1), 0),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+    ])
+
     skill_data = [
         [
-            Table([[Paragraph(c[0], ParagraphStyle('sh', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=NAVY, alignment=TA_CENTER)),
-                    Spacer(1, 4),
-                    Paragraph(c[1], ParagraphStyle('sb', fontName='Helvetica', fontSize=9, leading=13, textColor=DARK_TEXT, alignment=TA_CENTER))]]
-                  , colWidths=[(CONTENT_W - 0.2 * inch) / 3])
+            Table(
+                [[Paragraph(c[0], ParagraphStyle('sh', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=NAVY, alignment=TA_CENTER))],
+                 [Spacer(1, 4)],
+                 [Paragraph(c[1], ParagraphStyle('sb', fontName='Helvetica', fontSize=9, leading=13, textColor=DARK_TEXT, alignment=TA_CENTER))]],
+                colWidths=[cell_inner_w], style=inner_cell_style)
             for c in zip(cols[0], cols[1])
         ],
         [
-            Table([[Paragraph(c[0], ParagraphStyle('sh2', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=NAVY, alignment=TA_CENTER)),
-                    Spacer(1, 4),
-                    Paragraph(c[1], ParagraphStyle('sb2', fontName='Helvetica', fontSize=9, leading=13, textColor=DARK_TEXT, alignment=TA_CENTER))]]
-                  , colWidths=[(CONTENT_W - 0.2 * inch) / 3])
+            Table(
+                [[Paragraph(c[0], ParagraphStyle('sh2', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=NAVY, alignment=TA_CENTER))],
+                 [Spacer(1, 4)],
+                 [Paragraph(c[1], ParagraphStyle('sb2', fontName='Helvetica', fontSize=9, leading=13, textColor=DARK_TEXT, alignment=TA_CENTER))]],
+                colWidths=[cell_inner_w], style=inner_cell_style)
             for c in zip(cols[2], cols[3])
         ],
     ]
-
-    col_w = (CONTENT_W - 0.3 * inch) / 3
     for row_items in skill_data:
         t = Table([row_items], colWidths=[col_w] * 3)
         t.setStyle(TableStyle([
@@ -885,9 +896,8 @@ def build_pdf(output_path):
     story.append(callout_box(
         'Why is it free?',
         [
-            'Match Care ABA is funded through partnerships with ABA provider agencies. '
-            'Providers pay us a referral fee when a successful match is made — so the service '
-            'is completely free for families. There is no catch, no subscription, and no obligation.'
+            'Match Care ABA is free for families because providers partner with us to connect with families '
+            'seeking ABA therapy in their area. There is no catch, no subscription, and no obligation.'
         ],
         styles,
         bg=HexColor('#FFF8EC'),
@@ -1005,45 +1015,46 @@ def build_pdf(output_path):
     qr_buf = make_qr_image('https://matchcareaba.com', 400)
     qr_img = Image(qr_buf, width=1.6 * inch, height=1.6 * inch)
 
-    story.append(Spacer(1, 0.3 * inch))
+    story.append(Spacer(1, 0.15 * inch))
 
-    # Big CTA box
-    cta_inner = [
-        Paragraph('Ready to Find an ABA Provider?', styles['cta_head']),
-        Spacer(1, 8),
-        Paragraph(
-            'Match Care ABA matches families with licensed, vetted ABA therapy '
-            'providers — completely free of charge.',
-            styles['cta_sub']
-        ),
-        Spacer(1, 4),
-        Paragraph('No waitlists to navigate. No cold calls. Just answers.', styles['cta_sub']),
-        Spacer(1, 16),
-        Paragraph('Get started at:', ParagraphStyle(
-            'cta_label', fontName='Helvetica', fontSize=11, textColor=HexColor('#A8BDD4'),
-            alignment=TA_CENTER
-        )),
-        Paragraph('matchcareaba.com', styles['cta_url']),
-        Spacer(1, 6),
-        Paragraph('Serving families in New York · New Jersey · North Carolina', ParagraphStyle(
-            'cta_states', fontName='Helvetica', fontSize=10, textColor=HexColor('#A8BDD4'),
-            alignment=TA_CENTER
-        )),
+    # Big CTA box — use nested table so paragraphs wrap at padded inner width
+    cta_pad = 22
+    cta_inner_w = CONTENT_W - cta_pad * 2
+    cta_inner_style = TableStyle([
+        ('TOPPADDING', (0, 0), (-1, -1), 0),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 0),
+        ('LEFTPADDING', (0, 0), (-1, -1), 0),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+    ])
+    cta_rows = [
+        [Paragraph('Ready to Find an ABA Provider?', styles['cta_head'])],
+        [Spacer(1, 6)],
+        [Paragraph('Match Care ABA matches families with licensed, vetted ABA therapy providers — completely free of charge.', styles['cta_sub'])],
+        [Spacer(1, 4)],
+        [Paragraph('No waitlists. No cold calls. Just answers.', styles['cta_sub'])],
+        [Spacer(1, 12)],
+        [Paragraph('Get started at:', ParagraphStyle('cta_label', fontName='Helvetica', fontSize=11, textColor=HexColor('#A8BDD4'), alignment=TA_CENTER))],
+        [Paragraph('matchcareaba.com', styles['cta_url'])],
+        [Spacer(1, 4)],
+        [Paragraph('Currently serving New York, New Jersey & North Carolina — and working to help families wherever you are.', ParagraphStyle('cta_states', fontName='Helvetica', fontSize=9.5, textColor=HexColor('#A8BDD4'), alignment=TA_CENTER))],
     ]
+    inner_t = Table(cta_rows, colWidths=[cta_inner_w])
+    inner_t.setStyle(cta_inner_style)
 
-    cta_table = Table([cta_inner], colWidths=[CONTENT_W])
+    cta_table = Table([[inner_t]], colWidths=[CONTENT_W])
     cta_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, -1), NAVY_DARK),
         ('ROUNDEDCORNERS', [10, 10, 10, 10]),
-        ('TOPPADDING', (0, 0), (-1, -1), 32),
-        ('BOTTOMPADDING', (0, 0), (-1, -1), 32),
-        ('LEFTPADDING', (0, 0), (-1, -1), 28),
-        ('RIGHTPADDING', (0, 0), (-1, -1), 28),
+        ('TOPPADDING', (0, 0), (-1, -1), cta_pad),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), cta_pad),
+        ('LEFTPADDING', (0, 0), (-1, -1), cta_pad),
+        ('RIGHTPADDING', (0, 0), (-1, -1), cta_pad),
         ('VALIGN', (0, 0), (-1, -1), 'TOP'),
     ]))
     story.append(cta_table)
 
-    story.append(Spacer(1, 24))
+    story.append(Spacer(1, 14))
 
     # QR code + label
     qr_label_style = ParagraphStyle(
@@ -1075,9 +1086,9 @@ def build_pdf(output_path):
     ]))
     story.append(qr_table)
 
-    story.append(Spacer(1, 20))
+    story.append(Spacer(1, 10))
     story.append(HRFlowable(width=CONTENT_W, thickness=0.5, color=HexColor('#CBD5E1')))
-    story.append(Spacer(1, 8))
+    story.append(Spacer(1, 6))
     story.append(Paragraph(
         'This guide is provided for informational purposes only and does not constitute medical or legal advice. '
         'Always consult with qualified healthcare professionals regarding your child\'s care.',
@@ -1085,7 +1096,7 @@ def build_pdf(output_path):
                        alignment=TA_CENTER, leading=11)
     ))
     story.append(Paragraph(
-        '© 2025 Match Care ABA · matchcareaba.com · Free ABA Therapy Matching Service',
+        '© 2026 Match Care ABA · matchcareaba.com · Free ABA Therapy Matching Service',
         ParagraphStyle('copy', fontName='Helvetica', fontSize=7.5, textColor=MEDIUM_GRAY,
                        alignment=TA_CENTER, leading=11, spaceBefore=4)
     ))
