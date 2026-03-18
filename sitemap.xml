@@ -325,4 +325,102 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- No-Waitlist Landing Pages -->
+  <url>
+    <loc>https://matchcareaba.com/aba-providers-no-waitlist-long-island.html</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-providers-no-waitlist-brooklyn.html</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-providers-no-waitlist-queens.html</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-providers-no-waitlist-new-jersey.html</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-providers-no-waitlist-north-carolina.html</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Insurance-Specific Landing Pages — New York -->
+  <url>
+    <loc>https://matchcareaba.com/aetna-aba-providers-new-york.html</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/bcbs-aba-providers-new-york.html</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/united-healthcare-aba-providers-new-york.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/cigna-aba-providers-new-york.html</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/medicaid-aba-providers-new-york.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Insurance-Specific Landing Pages — New Jersey -->
+  <url>
+    <loc>https://matchcareaba.com/aetna-aba-providers-new-jersey.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/bcbs-aba-providers-new-jersey.html</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/medicaid-aba-providers-new-jersey.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Insurance-Specific Landing Pages — North Carolina -->
+  <url>
+    <loc>https://matchcareaba.com/aetna-aba-providers-north-carolina.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/medicaid-aba-providers-north-carolina.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
