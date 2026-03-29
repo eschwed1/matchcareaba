@@ -166,6 +166,64 @@
     .footer-links { gap: 12px; }
   }
 </style>
+
+<!-- Article + BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Is 40 Hours of ABA Therapy Too Much for My Child?",
+      "url": "https://matchcareaba.com/resources/is-40-hours-aba-too-much.html",
+      "datePublished": "2026-03-18",
+      "dateModified": "2026-03-18",
+      "author": {
+        "@type": "Organization",
+        "name": "The Match Care ABA Team",
+        "url": "https://matchcareaba.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Match Care ABA",
+        "url": "https://matchcareaba.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://matchcareaba.com/logo.jpeg"
+        }
+      },
+      "image": "https://matchcareaba.com/family-hero.jpeg",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://matchcareaba.com/resources/is-40-hours-aba-too-much.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://matchcareaba.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Parent Resources",
+          "item": "https://matchcareaba.com/resources.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Is 40 Hours of ABA Therapy Too Much for My Child?",
+          "item": "https://matchcareaba.com/resources/is-40-hours-aba-too-much.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
