@@ -431,4 +431,101 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- City-Specific Landing Pages — New York -->
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-manhattan-ny.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-buffalo-ny.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-albany-ny.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-rochester-ny.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-yonkers-ny.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-white-plains-ny.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- City-Specific Landing Pages — New Jersey -->
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-hackensack-nj.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-paterson-nj.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-elizabeth-nj.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-edison-nj.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- City-Specific Landing Pages — North Carolina -->
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-durham-nc.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-raleigh-nc.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-winston-salem-nc.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-cary-nc.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-wilmington-nc.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
