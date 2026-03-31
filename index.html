@@ -924,6 +924,61 @@
   }
   :-ms-input-placeholder { color: #c5cfe0 !important; }
   ::-ms-input-placeholder { color: #c5cfe0 !important; }
+
+  /* MOBILE QUICK NAV — hidden on desktop */
+  .mobile-quick-nav { display: none; }
+
+  @media (max-width: 767px) {
+    /* Mobile quick-nav bar */
+    .mobile-quick-nav {
+      display: flex;
+      gap: 8px;
+      padding: 8px 14px 10px;
+      background: white;
+      border-top: 1px solid rgba(27,58,107,0.08);
+    }
+    .mob-btn {
+      flex: 1;
+      text-align: center;
+      padding: 8px 10px;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .mob-btn:hover { opacity: 0.82; }
+    .mob-btn-primary {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color: var(--gold);
+      box-shadow: 0 2px 8px rgba(27,58,107,0.2);
+    }
+    .mob-btn-secondary {
+      background: rgba(245,166,35,0.1);
+      color: var(--navy);
+      border: 1.5px solid rgba(245,166,35,0.45);
+    }
+
+    /* Smaller chat launcher bubble */
+    .chat-launcher-ring {
+      width: 60px !important;
+      height: 60px !important;
+    }
+
+    /* Compact floating chat window — not fullscreen */
+    #chat-window {
+      width: 318px !important;
+      height: 480px !important;
+      right: 14px !important;
+      bottom: 100px !important;
+      max-height: calc(100vh - 120px) !important;
+    }
+
+    /* Extra top padding to clear the taller mobile nav */
+    .hero { padding-top: 178px !important; }
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -973,6 +1028,47 @@
   ]
 }
 </script>
+
+<!-- LocalBusiness + MedicalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "MedicalBusiness"],
+      "@id": "https://matchcareaba.com/#business",
+      "name": "Match Care ABA",
+      "description": "Match Care ABA is a free ABA therapy matching service connecting families of children with autism to trusted, verified ABA therapy providers in New York, New Jersey, and North Carolina.",
+      "url": "https://matchcareaba.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://matchcareaba.com/logo.jpeg"
+      },
+      "image": "https://matchcareaba.com/family-hero.jpeg",
+      "telephone": "",
+      "email": "hello@matchcareaba.com",
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "New York"
+        },
+        {
+          "@type": "State",
+          "name": "New Jersey"
+        },
+        {
+          "@type": "State",
+          "name": "North Carolina"
+        }
+      ],
+      "serviceType": "ABA Therapy Matching Service",
+      "priceRange": "Free",
+      "medicalSpecialty": "Applied Behavior Analysis",
+      "sameAs": []
+    }
+  ]
+}
+</script>
 </head>
 <body id="top">
 
@@ -995,6 +1091,10 @@
   </div>
   <div class="nav-serving-bar">
     <p>CURRENTLY SERVING: 🗽 <span style="color:#FFD166;">New York</span> &nbsp;•&nbsp; 🌿 <span style="color:#6BCB77;">New Jersey</span> &nbsp;•&nbsp; 🌲 <span style="color:#FFD166;">North Carolina</span> &nbsp;•&nbsp; <span style="color:rgba(255,255,255,0.7);">&amp; Expanding Nationwide</span></p>
+  </div>
+  <div class="mobile-quick-nav">
+    <a href="https://form.jotform.com/260662279796069" class="mob-btn mob-btn-primary">✨ Get Matched Now</a>
+    <a href="/for-providers.html" class="mob-btn mob-btn-secondary">For Providers</a>
   </div>
 </nav>
 
