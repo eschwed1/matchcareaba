@@ -1,0 +1,5 @@
+.git/
+.claude/
+*.py
+generate_pdf.py
+node_modules/
