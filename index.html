@@ -906,7 +906,6 @@
     .phase-stepper { gap: 0; }
     .phase-label { font-size: 0.58rem; max-width: 54px; }
     .phase-spacer { width: 20px; }
-    #chat-window { width: calc(100vw - 32px) !important; right: 16px !important; bottom: 144px !important; }
     #chat-bubble { right: 16px !important; bottom: 22px !important; }
     footer { padding: 28px 16px; }
     .footer-links { gap: 12px; }
@@ -967,13 +966,30 @@
       height: 60px !important;
     }
 
-    /* Compact floating chat window — not fullscreen */
+    /* Compact floating chat window — fixed size, keyboard-safe */
     #chat-window {
-      width: 318px !important;
-      height: 480px !important;
-      right: 14px !important;
-      bottom: 100px !important;
-      max-height: calc(100vh - 120px) !important;
+      position: fixed !important;
+      width: calc(100vw - 32px) !important;
+      max-width: 360px !important;
+      height: 400px !important;
+      max-height: 400px !important;
+      right: 16px !important;
+      bottom: 86px !important;
+      left: auto !important;
+      top: auto !important;
+    }
+
+    /* Prevent messages area from forcing the window taller */
+    #chat-messages {
+      min-height: 0 !important;
+    }
+
+    /* Close button — minimum 44×44 px tap target */
+    .chat-close {
+      width: 44px !important;
+      height: 44px !important;
+      font-size: 1.1rem !important;
+      flex-shrink: 0 !important;
     }
 
     /* Extra top padding to clear the taller mobile nav */
