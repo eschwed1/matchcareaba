@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Match Care ABA</title>
+<meta name="description" content="Get in touch with Match Care ABA. We connect families with trusted ABA therapy providers in New York, New Jersey, and North Carolina.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://matchcareaba.com/contact.html">
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-192.png">
+<meta name="theme-color" content="#1B3A6B">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matchcareaba.com/contact.html">
+<meta property="og:title" content="Contact | Match Care ABA">
+<meta property="og:description" content="Get in touch with Match Care ABA. We connect families with trusted ABA therapy providers in New York, New Jersey, and North Carolina.">
+<meta property="og:image" content="https://matchcareaba.com/family-hero.jpeg">
+<meta property="og:site_name" content="Match Care ABA">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-37F7PCXW57"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-37F7PCXW57');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #EEF6FF;
+    --white: #FFFFFF;
+    --navy: #1B3A6B;
+    --navy-dark: #0D2247;
+    --navy-mid: #2A5298;
+    --gold: #D4A843;
+    --gold-light: #E8C06A;
+    --gold-pale: #FDF5E0;
+    --text: #1B3A6B;
+    --muted: #6B7FA3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+    background: #fff;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid rgba(212,168,67,0.2);
+    box-shadow: 0 2px 20px rgba(27,58,107,0.06);
+  }
+
+  .nav-main-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 60px;
+  }
+
+  .nav-serving-bar {
+    background: linear-gradient(90deg, #1B3A6B, #2A5298);
+    padding: 7px 0;
+    text-align: center;
+  }
+
+  .nav-serving-bar p {
+    color: white; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px; margin: 0;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 1.2rem;
+    font-weight: 800;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a.active { color: var(--navy); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid)) !important;
+    color: #D4A843 !important;
+    padding: 11px 26px;
+    border-radius: 50px;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 14px rgba(27,58,107,0.25);
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(27,58,107,0.35) !important;
+  }
+
+  .nav-hamburger { display: none; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 55%, #1E4A8A 100%);
+    padding: 180px 60px 120px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-bg-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 20% 60%, rgba(212,168,67,0.09) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 25%, rgba(255,255,255,0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 55% 85%, rgba(212,168,67,0.06) 0%, transparent 40%);
+  }
+
+  .hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(212,168,67,0.15);
+    border: 1px solid rgba(212,168,67,0.35);
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 .gold { color: var(--gold); }
+
+  .hero p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+    font-weight: 600;
+  }
+
+  /* ===== CONTACT SECTION ===== */
+  .contact-section {
+    padding: 80px 60px 100px;
+    background: var(--sky);
+  }
+
+  .contact-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .contact-card {
+    background: white;
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 4px 24px rgba(27,58,107,0.08);
+    border: 1px solid rgba(27,58,107,0.08);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .contact-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.6rem;
+  }
+
+  .contact-card h2 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .contact-card p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: var(--gold) !important;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 900;
+    padding: 16px 32px;
+    border-radius: 50px;
+    box-shadow: 0 4px 18px rgba(27,58,107,0.22);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .email-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(27,58,107,0.32);
+  }
+
+  /* ===== FORM ===== */
+  .form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 4px 24px rgba(27,58,107,0.08);
+    border: 1px solid rgba(27,58,107,0.08);
+  }
+
+  .form-card h2 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .form-card .form-subtitle {
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e8edf5;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text);
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--navy-mid);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: var(--gold);
+    font-weight: 900;
+    font-size: 1rem;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 8px;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(27,58,107,0.3);
+  }
+
+  .form-success {
+    display: none;
+    background: #f0fdf4;
+    border: 2px solid #6BCB77;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    margin-top: 16px;
+    font-weight: 700;
+    color: #166534;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    padding: 44px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .footer-logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    max-width: 360px;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .footer-links { display: flex; gap: 24px; }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+  .footer-links a.active { color: var(--gold); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .nav-main-row { padding: 12px 24px; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(27,58,107,0.97);
+      z-index: 200; align-items: center; justify-content: center; gap: 28px;
+    }
+    .nav-links.open a { font-size: 1.3rem; color: white !important; }
+    .nav-hamburger {
+      display: flex; flex-direction: column;
+      gap: 5px; cursor: pointer; z-index: 300; padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 3px;
+      background: var(--navy); border-radius: 3px; transition: all 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-hamburger.open span { background: white; }
+    .nav-serving-bar p { font-size: 0.72rem; }
+
+    .hero { padding: 160px 28px 80px; }
+    .hero h1 { font-size: 2.2rem; }
+
+    .contact-section { padding: 60px 20px 80px; }
+    .contact-card, .form-card { padding: 32px 24px; }
+
+    footer { flex-direction: column; text-align: center; padding: 36px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  @media (max-width: 560px) {
+    .hero h1 { font-size: 1.9rem; }
+    footer { padding: 28px 16px; }
+    .footer-links { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-main-row">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpeg" alt="Match Care ABA Logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="for-providers.html">For Providers</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="nav-serving-bar">
+    <p>CURRENTLY SERVING: 🗽 <span style="color:#FFD166;">New York</span> &nbsp;•&nbsp; 🌿 <span style="color:#6BCB77;">New Jersey</span> &nbsp;•&nbsp; 🌲 <span style="color:#FFD166;">North Carolina</span> &nbsp;•&nbsp; <span style="color:rgba(255,255,255,0.7);">&amp; Expanding Nationwide</span></p>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Match Care ABA</div>
+    <h1>Get in <span class="gold">Touch</span></h1>
+    <p>We're here to help families find the right ABA therapy. Reach out with any questions — we respond quickly.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-inner">
+
+    <!-- Email card -->
+    <div class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <h2>Email Us Directly</h2>
+      <p>The fastest way to reach us. We typically respond within one business day.</p>
+      <a href="mailto:matchcareaba@gmail.com" class="email-link">
+        matchcareaba@gmail.com
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- Contact form -->
+    <div class="form-card">
+      <h2>Send a Message</h2>
+      <p class="form-subtitle">Fill out the form below and we'll get back to you shortly.</p>
+
+      <div id="contactForm">
+        <div class="form-group">
+          <label for="c-name">Your Name</label>
+          <input id="c-name" type="text" placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label for="c-email">Email Address</label>
+          <input id="c-email" type="email" placeholder="jane@email.com">
+        </div>
+        <div class="form-group">
+          <label for="c-subject">Subject</label>
+          <select id="c-subject">
+            <option value="">Select a topic...</option>
+            <option value="family">I'm looking for ABA therapy for my child</option>
+            <option value="provider">I'm an ABA provider interested in joining</option>
+            <option value="general">General question</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="c-message">Message</label>
+          <textarea id="c-message" placeholder="How can we help you?"></textarea>
+        </div>
+        <button class="submit-btn" onclick="submitForm()">Send Message →</button>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        ✅ <strong>Message sent!</strong> We'll be in touch within one business day.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="logo.jpeg" alt="Match Care ABA Logo">
+    <span>Match Care <span style="color:var(--gold);">ABA</span></span>
+  </div>
+  <div style="max-width: 480px; text-align: center;">
+    <p class="footer-text">Match Care ABA is an independent matching service and does not provide medical or therapeutic services. All evaluations, diagnoses, and treatment decisions are handled directly by licensed providers.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="for-providers.html">For Providers</a>
+    <a href="blog.html">Blog</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    const ham = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    ham.classList.toggle('open');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const nav = document.getElementById('navLinks');
+      const ham = document.getElementById('hamburger');
+      nav.classList.remove('open');
+      ham.classList.remove('open');
+    });
+  });
+
+  function submitForm() {
+    const name = document.getElementById('c-name').value.trim();
+    const email = document.getElementById('c-email').value.trim();
+    const message = document.getElementById('c-message').value.trim();
+
+    if (!name || !email) {
+      alert('Please enter your name and email address.');
+      return;
+    }
+
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
