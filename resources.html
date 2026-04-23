@@ -78,7 +78,7 @@
 
   /* ===== NAV ===== */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: static;
     display: flex; flex-direction: column;
     background: rgba(255,255,255,0.97);
     backdrop-filter: blur(12px);
@@ -91,7 +91,7 @@
     padding: 10px 60px;
   }
 
-  .nav-serving-bar {
+  .nav-serving-bar { order: -1;
     background: linear-gradient(90deg, #1B3A6B, #2A5298);
     padding: 7px 0;
     text-align: center;
@@ -145,7 +145,7 @@
   /* ===== HERO ===== */
   .hero {
     background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 55%, #1E4A8A 100%);
-    padding: 180px 60px 120px;
+    padding: 60px 60px 120px;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -642,7 +642,7 @@
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     .nav-hamburger.open span { background: white; }
     .nav-main-row { padding: 10px 20px; }
-    .hero { padding: 140px 24px 80px; }
+    .hero { padding: 40px 24px 80px; }
     .filter-bar { padding: 24px 20px; }
     .downloads-section { padding: 48px 20px 0; }
     .download-card { flex-direction: column; }

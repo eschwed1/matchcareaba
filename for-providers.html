@@ -88,7 +88,7 @@
 
   /* ===== NAV ===== */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: static;
     display: flex; flex-direction: column;
     background: rgba(255,255,255,0.97);
     backdrop-filter: blur(12px);
@@ -101,7 +101,7 @@
     padding: 10px 60px;
   }
 
-  .nav-serving-bar {
+  .nav-serving-bar { order: -1;
     background: linear-gradient(90deg, #1B3A6B, #2A5298);
     padding: 7px 0;
     text-align: center;
@@ -195,7 +195,7 @@
   /* ===== HERO ===== */
   .hero {
     background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 55%, #1E4A8A 100%);
-    padding: 180px 60px 120px;
+    padding: 60px 60px 120px;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -833,7 +833,7 @@
     .nav-serving-bar p { font-size: 0.72rem; }
 
     .content-section { padding: 72px 28px; }
-    .hero { padding: 160px 28px 100px; }
+    .hero { padding: 40px 28px 100px; }
     .hero h1 { font-size: 2.1rem; }
 
     .steps-row { grid-template-columns: repeat(2, 1fr); gap: 40px; }

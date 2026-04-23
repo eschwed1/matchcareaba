@@ -74,7 +74,7 @@
 
   /* ===== NAV ===== */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: static;
     display: flex; flex-direction: column;
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(12px);
@@ -87,7 +87,7 @@
     padding: 10px 60px;
   }
 
-  .nav-serving-bar {
+  .nav-serving-bar { order: -1;
     background: linear-gradient(90deg, #1B3A6B, #2A5298);
     padding: 7px 0;
     text-align: center;
@@ -135,7 +135,7 @@
 
   /* ===== ARTICLE HERO ===== */
   .article-hero {
-    padding: 160px 60px 60px;
+    padding: 40px 60px 60px;
     max-width: 860px;
     margin: 0 auto;
     position: relative;
@@ -630,7 +630,7 @@
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     .nav-hamburger.open span { background: white; }
     .nav-serving-bar p { font-size: 0.72rem; }
-    .article-hero { padding: 140px 24px 40px; }
+    .article-hero { padding: 40px 24px 40px; }
     .article-body { padding: 0 24px 80px; }
     .step-card { padding: 24px 22px; }
     .highlight-box { padding: 26px 28px; }
@@ -695,7 +695,7 @@
     box-shadow: 0 5px 16px rgba(245,166,35,0.5);
   }
   /* Increase article-hero top padding to account for taller fixed nav */
-  .article-hero { padding-top: 210px !important; }
+
 
   /* ===== BOTTOM CHAT SECTION ===== */
   .blog-bottom-section {
@@ -942,7 +942,7 @@
   @media (max-width: 900px) {
     .top-promo-banner { padding: 10px 20px; }
     .top-promo-text { font-size: 0.8rem; text-align: center; }
-    .article-hero { padding-top: 225px !important; }
+
     .blog-bottom-section { padding: 50px 24px 60px; }
     .blog-chat-heading h3 { font-size: 1.4rem; }
     .bc-messages { max-height: 300px; }
