@@ -312,6 +312,7 @@
   .chat-pill-btn:hover:not(:disabled){background:#1588b5;color:white;}
   #chat-window{--chat-border-angle:0deg;}
   @media(max-width:900px){#chat-window{width:calc(100vw - 48px)!important;right:16px!important;}}
+  @media(max-width:768px){#chat-greeting{padding:16px 18px!important;min-width:calc(100vw - 70px)!important;max-width:calc(100vw - 56px)!important;position:relative!important;overflow:hidden!important;}#chat-greeting::before{content:'';position:absolute;top:0;left:0;right:0;height:66px;background:#f3f4f6;z-index:0;}#chat-greeting>*{position:relative;z-index:1;}#chat-window{bottom:16px!important;max-height:calc(100vh - 32px)!important;}}
 </style>
 
 <div id="chat-bubble" onclick="toggleChat()" style="position:fixed;bottom:30px;right:24px;z-index:99999;cursor:pointer;display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
