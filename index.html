@@ -868,20 +868,21 @@
   .success-msg p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; font-weight: 500; }
 
   footer {
-    background: #0F172A;
+    background: #FDEEE0;
     padding: 48px 60px;
     display: flex; align-items: center; justify-content: space-between;
     position: relative; z-index: 1;
     flex-wrap: wrap; gap: 20px;
   }
 
-  .footer-logo { font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif; font-size: 1.4rem; font-weight: 800; color: white; display: flex; align-items: center; gap: 8px; }
-  .footer-logo span { color: var(--teal-light); }
+  .footer-logo { font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--navy); display: flex; align-items: center; gap: 8px; }
+  .footer-logo span { color: var(--teal); }
+  .footer-logo img { mix-blend-mode: multiply; }
   .footer-logo .logo-icon { width: 32px; height: 32px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
-  .footer-text { font-size: 0.8rem; color: rgba(255,255,255,0.4); max-width: 360px; line-height: 1.6; text-align: center; font-weight: 500; }
+  .footer-text { font-size: 0.8rem; color: rgba(0,0,0,0.5); max-width: 360px; line-height: 1.6; text-align: center; font-weight: 500; }
   .footer-links { display: flex; gap: 24px; }
-  .footer-links a { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--teal-light); }
+  .footer-links a { font-size: 0.82rem; font-weight: 600; color: rgba(0,0,0,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal); }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -1300,10 +1301,6 @@
   <div class="hero-visual">
     <div class="hero-photo-wrap">
       <img src="family-hero.jpeg" alt="Happy family playing together after finding the right ABA therapy provider for their child with autism" class="hero-photo">
-      <div class="kid-card">
-        <div class="kid-card-icon">🧩</div>
-        <div class="kid-card-text">Every child deserves <span>the right support 💛</span></div>
-      </div>
     </div>
   </div>
 </section>
@@ -1373,7 +1370,7 @@
   <div class="trust-item"><div class="trust-icon ti4">⚡</div> Matched In Days, Not Months</div>
 </div>
 
-<section id="consultation" style="background: white; padding: 100px 60px; position: relative; z-index: 1;">
+<section id="consultation" style="background: #FDEEE0; padding: 100px 60px; position: relative; z-index: 1;">
   <div class="consultation-grid" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;">
     
     <!-- Photo left -->
@@ -1408,8 +1405,8 @@
         </div>
       </div>
 
-      <a href="https://form.jotform.com/260662279796069" style="display:inline-flex; align-items:center; gap:8px; margin-top:32px; background:linear-gradient(135deg,#D4A843,#E8C06A); color:var(--navy); font-weight:900; font-size:0.95rem; padding:14px 28px; border-radius:50px; text-decoration:none; box-shadow:0 8px 24px rgba(212,168,67,0.3);">
-        💛 Get Matched Today →
+      <a href="https://form.jotform.com/260662279796069" style="display:inline-flex; align-items:center; gap:8px; margin-top:32px; background:var(--teal); color:white; font-weight:900; font-size:0.95rem; padding:14px 28px; border-radius:50px; text-decoration:none; box-shadow:0 4px 14px rgba(8,145,178,0.3);">
+        💙 Get Matched Today →
       </a>
     </div>
   </div>
@@ -1469,14 +1466,14 @@
 
   <div style="max-width: 600px; text-align: center; margin: 0 auto;">
 
-    <div style="background: rgba(255,255,255,0.06); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; text-align: left;">
-      <p style="font-family: Nunito, sans-serif; font-size: 0.78rem; font-weight: 800; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">⚕️ Medical Disclaimer</p>
-      <p style="font-family: Nunito, sans-serif; font-size: 0.76rem; color: rgba(255,255,255,0.4); line-height: 1.6; font-weight: 600;">Match Care ABA is an independent matching service and does not provide medical or therapeutic services. All evaluations, diagnoses, and treatment decisions are handled directly by licensed providers.</p>
+    <div style="background: rgba(0,0,0,0.04); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; text-align: left;">
+      <p style="font-family: Nunito, sans-serif; font-size: 0.78rem; font-weight: 800; color: rgba(0,0,0,0.55); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">⚕️ Medical Disclaimer</p>
+      <p style="font-family: Nunito, sans-serif; font-size: 0.76rem; color: rgba(0,0,0,0.45); line-height: 1.6; font-weight: 600;">Match Care ABA is an independent matching service and does not provide medical or therapeutic services. All evaluations, diagnoses, and treatment decisions are handled directly by licensed providers.</p>
     </div>
 
-    <div style="background: rgba(255,255,255,0.06); border-radius: 12px; padding: 16px 20px; text-align: left;">
-      <p style="font-family: Nunito, sans-serif; font-size: 0.78rem; font-weight: 800; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">🔒 Privacy Notice</p>
-      <p style="font-family: Nunito, sans-serif; font-size: 0.76rem; color: rgba(255,255,255,0.4); line-height: 1.6; font-weight: 600;">Information submitted is used solely to connect families with independent providers. We do not collect insurance ID numbers, diagnosis documents, or clinical records. We never sell your information.</p>
+    <div style="background: rgba(0,0,0,0.04); border-radius: 12px; padding: 16px 20px; text-align: left;">
+      <p style="font-family: Nunito, sans-serif; font-size: 0.78rem; font-weight: 800; color: rgba(0,0,0,0.55); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">🔒 Privacy Notice</p>
+      <p style="font-family: Nunito, sans-serif; font-size: 0.76rem; color: rgba(0,0,0,0.45); line-height: 1.6; font-weight: 600;">Information submitted is used solely to connect families with independent providers. We do not collect insurance ID numbers, diagnosis documents, or clinical records. We never sell your information.</p>
     </div>
   </div>
 
