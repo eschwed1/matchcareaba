@@ -53,7 +53,7 @@
   gtag('js', new Date());
   gtag('config', 'G-37F7PCXW57');
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --sky: #EEF6FF;
@@ -110,13 +110,14 @@
   }
 
   .nav-serving-bar {
-    background: linear-gradient(90deg, #1B3A6B, #2A5298);
+    background: #FDFBF7;
     padding: 10px 0;
     text-align: center;
+    border-bottom: 1px solid rgba(212,168,67,0.15);
   }
 
   .nav-serving-bar p {
-    color: white; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px; margin: 0;
+    color: #4A5568; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; margin: 0;
   }
 
   .nav-logo {
@@ -177,6 +178,19 @@
 
   .hero-content { position: relative; z-index: 1; padding-top: 20px; }
 
+  .hero-content::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -80px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(212,168,67,0.08) 0%, rgba(212,168,67,0.03) 40%, transparent 70%);
+    border-radius: 60% 40% 50% 50%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(212,168,67,0.12);
@@ -205,11 +219,12 @@
   }
 
   .hero h1 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
     font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1.15;
-    color: var(--navy);
+    letter-spacing: -0.03em;
+    color: #1A2B4A;
     margin-bottom: 20px;
     animation: fadeUp 0.6s 0.1s ease both;
   }
@@ -246,21 +261,21 @@
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
+    background: linear-gradient(135deg, #5A7FA8, #6B9AC4);
+    color: white;
     padding: 18px 44px;
     border-radius: 50px;
     font-size: 1.05rem;
     font-weight: 900;
     text-decoration: none;
     border: none; cursor: pointer;
-    transition: all 0.25s;
-    box-shadow: 0 8px 32px rgba(212,168,67,0.42);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 28px rgba(90,127,168,0.35);
     display: inline-flex; align-items: center; gap: 8px;
     letter-spacing: 0.2px;
   }
 
-  .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 44px rgba(212,168,67,0.56); }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(90,127,168,0.45); }
 
   .btn-secondary {
     color: var(--navy-mid);
@@ -272,10 +287,10 @@
     border-radius: 50px;
     border: 2px solid rgba(27,58,107,0.15);
     background: white;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
   }
 
-  .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+  .btn-secondary:hover { border-color: var(--navy); color: var(--navy); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,58,107,0.1); }
 
   .hero-stats {
     display: flex; gap: 16px; margin-top: 48px; flex-wrap: wrap; align-items: stretch;
@@ -286,8 +301,8 @@
     background: white;
     border-radius: 16px;
     padding: 14px 20px;
-    box-shadow: 0 4px 16px rgba(27,58,107,0.08);
-    border: 2px solid rgba(212,168,67,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -310,9 +325,9 @@
     width: 100%;
     max-width: 100%;
     margin-top: 0;
-    border-radius: 28px;
+    border-radius: 80px 20px 80px 20px;
     overflow: hidden;
-    box-shadow: 0 24px 60px rgba(27,58,107,0.2);
+    box-shadow: 0 24px 60px rgba(27,58,107,0.15);
   }
 
   .hero-photo {
@@ -915,7 +930,7 @@
 
   @media (max-width: 480px) {
     .nav-logo img { height: 56px !important; }
-    .nav-serving-bar p { font-size: 0.72rem; }
+    .nav-serving-bar p { font-size: 0.7rem; }
     .hero { padding: 40px 16px 48px; }
     .hero-badge { font-size: 0.72rem; padding: 6px 12px; letter-spacing: 0.5px; margin-top: 10px; }
     .hero p { font-size: 1rem; }
@@ -1249,7 +1264,7 @@
   </div>
 </nav>
 <div class="nav-serving-bar">
-  <p>CURRENTLY SERVING: 🗽 <span style="color:#E8C06A;">New York</span> &nbsp;•&nbsp; 🌿 <span style="color:#6BCB77;">New Jersey</span> &nbsp;•&nbsp; 🌲 <span style="color:#E8C06A;">North Carolina</span> &nbsp;•&nbsp; <span style="color:rgba(255,255,255,0.7);">&amp; Expanding Nationwide</span></p>
+  <p>Currently Serving: <span style="margin-left:4px;">🗽</span> <span style="color:#2D3748; font-weight:800;">New York</span> &nbsp;·&nbsp; <span>🌿</span> <span style="color:#2D3748; font-weight:800;">New Jersey</span> &nbsp;·&nbsp; <span>🌲</span> <span style="color:#2D3748; font-weight:800;">North Carolina</span> &nbsp;·&nbsp; <span style="color:#A0AEC0; font-style:italic;">&amp; Expanding Nationwide</span></p>
 </div>
 
 <section class="hero">
@@ -1505,10 +1520,12 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.sign-card, .how-step, .stat-item, .trust-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  document.querySelectorAll('.sign-card, .how-step, .stat-item, .trust-item, .hero-content, .signs-inner, .how-inner, .story-box, .consultation-grid > div, .form-inner').forEach((el, i) => {
+    if (!el.classList.contains('hero-content')) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+    }
+    el.style.transition = 'opacity 0.6s ease ' + (i % 3) * 0.1 + 's, transform 0.6s ease ' + (i % 3) * 0.1 + 's';
     observer.observe(el);
   });
 
