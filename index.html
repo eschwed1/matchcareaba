@@ -1604,6 +1604,18 @@
       isDragging = false;
       header.style.cursor = 'grab';
     });
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 768) {
+        win.style.height = '';
+        win.style.maxHeight = '';
+        win.style.width = '';
+        win.style.maxWidth = '';
+        win.style.left = '';
+        win.style.right = '';
+        win.style.bottom = '';
+      }
+    });
   })();
 
 
@@ -1778,7 +1790,7 @@
   function handlePopupInput(){var g=document.getElementById('chat-greeting');if(g)g.style.display='none';popupDismissed=true;chatOpen=true;document.getElementById('chat-window').classList.add('open');var b=document.getElementById('chat-bubble');if(b)b.style.display='none';if(chatHistory.length===0)initChat();setTimeout(function(){document.getElementById('chat-input').focus();},300);}
   setTimeout(()=>{const g=document.getElementById('chat-greeting');if(g&&!chatOpen)g.style.display='block';},3000);
   /* Prevent mobile keyboard from resizing chat window */
-  if(window.visualViewport){window.visualViewport.addEventListener('resize',function(){var w=document.getElementById('chat-window');if(w&&w.classList.contains('open')&&window.innerWidth<768){w.style.height='480px';w.style.maxHeight='480px';}});}
+  if(window.visualViewport){window.visualViewport.addEventListener('resize',function(){var w=document.getElementById('chat-window');if(!w||!w.classList.contains('open'))return;if(window.innerWidth<768){w.style.height='480px';w.style.maxHeight='480px';}else{w.style.height='';w.style.maxHeight='';}});}
 </script>
 
 <!-- PRIVACY POLICY MODAL -->
