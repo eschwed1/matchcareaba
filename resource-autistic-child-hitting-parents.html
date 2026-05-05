@@ -369,11 +369,13 @@
         <div class="bc-avatar-wrap"><div class="bc-avatar-ring"></div><div class="bc-avatar-inner"><img src="julie-avatar.png" alt="Julie"></div></div>
         <div><div class="bc-name">Julie &middot; Match Care ABA</div><div class="bc-status"><span class="bc-online-dot"></span> Online now &middot; Replies instantly</div></div>
       </div>
-      <div class="bc-disclaimer">By using this chat, you agree to our Terms and acknowledge our Privacy Policy. Your chat may be recorded and stored securely.</div>
+      <div class="bc-disclaimer">Your privacy matters. Chats may be recorded and stored securely. By using this chat, you agree to our Terms and Privacy Policy.</div>
       <div class="bc-messages" id="bcMessages"></div>
       <div class="bc-input-area">
-        <textarea id="bcInput" placeholder="Type a message&#8230;" rows="1" onkeydown="bcHandleKey(event)" oninput="bcAutoResize(this)"></textarea>
-        <button id="bcSend" onclick="bcSend()">&#10148;</button>
+        <div class="bc-input-wrap">
+          <input id="bcInput" type="text" placeholder="Message…" onkeydown="bcHandleKey(event)">
+          <button id="bcSend" onclick="bcSend()">↑</button>
+        </div>
       </div>
     </div>
     <div class="blog-final-cta">
