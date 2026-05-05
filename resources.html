@@ -415,7 +415,8 @@
 
   /* ===== FOOTER ===== */
   footer {
-    background: var(--navy-dark);
+    background: var(--white);
+    border-top: 1px solid var(--border);
     padding: 48px 60px;
     display: flex;
     flex-direction: column;
@@ -427,7 +428,7 @@
     display: flex; align-items: center; gap: 12px;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.4rem; font-weight: 700;
-    color: white;
+    color: var(--navy);
   }
 
   .footer-logo img {
@@ -437,7 +438,7 @@
   }
 
   .footer-text {
-    font-size: 0.8rem; color: rgba(255,255,255,0.45);
+    font-size: 0.8rem; color: var(--muted);
     line-height: 1.7; text-align: center;
     max-width: 480px;
   }
@@ -448,7 +449,7 @@
   }
 
   .footer-links a {
-    color: rgba(255,255,255,0.6);
+    color: var(--muted);
     text-decoration: none;
     font-size: 0.88rem; font-weight: 700;
     transition: color 0.2s;

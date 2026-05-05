@@ -615,7 +615,8 @@
 
   /* ===== FOOTER ===== */
   footer {
-    background: var(--navy);
+    background: var(--white);
+    border-top: 1px solid var(--border);
     padding: 44px 60px;
     display: flex; align-items: center; justify-content: space-between;
     position: relative; z-index: 1;
@@ -625,7 +626,7 @@
   .footer-logo {
     font-family: 'Nunito', sans-serif;
     font-size: 1.4rem; font-weight: 900;
-    color: white;
+    color: var(--navy);
     display: flex; align-items: center; gap: 8px;
   }
 
@@ -635,7 +636,7 @@
 
   .footer-text {
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.4);
+    color: var(--muted);
     max-width: 360px;
     line-height: 1.6;
     text-align: center;
@@ -646,7 +647,7 @@
 
   .footer-links a {
     font-size: 0.82rem; font-weight: 700;
-    color: rgba(255,255,255,0.4);
+    color: var(--muted);
     text-decoration: none;
     transition: color 0.2s;
   }

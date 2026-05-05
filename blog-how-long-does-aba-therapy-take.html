@@ -315,20 +315,21 @@
   }
 
   footer {
-    background: var(--navy); padding: 44px 60px;
+    background: var(--white);
+    border-top: 1px solid var(--border); padding: 44px 60px;
     display: flex; align-items: center; justify-content: space-between;
     position: relative; z-index: 1; flex-wrap: wrap; gap: 20px;
   }
 
   .footer-logo {
     font-family: 'Nunito', sans-serif; font-size: 1.4rem; font-weight: 900;
-    color: white; display: flex; align-items: center; gap: 8px;
+    color: var(--navy); display: flex; align-items: center; gap: 8px;
   }
 
   .footer-logo img { height: 40px; width: auto; mix-blend-mode: multiply; }
 
   .footer-text {
-    font-size: 0.8rem; color: rgba(255,255,255,0.4);
+    font-size: 0.8rem; color: var(--muted);
     max-width: 360px; line-height: 1.6; text-align: center; font-weight: 600;
   }
 
@@ -336,7 +337,7 @@
 
   .footer-links a {
     font-size: 0.82rem; font-weight: 700;
-    color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s;
+    color: var(--muted); text-decoration: none; transition: color 0.2s;
   }
 
   .footer-links a:hover { color: var(--teal); }
