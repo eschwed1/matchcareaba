@@ -103,8 +103,7 @@
   .nav-logo img {
     height: 52px;
     width: auto;
-    display: block;
-  }
+    display: block; mix-blend-mode: multiply; }
 
   .nav-links { display: flex; gap: 32px; list-style: none; }
 
@@ -138,32 +137,15 @@
 
   /* ===== HERO ===== */
   .hero {
-    background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 55%, #1E4A8A 100%);
-    padding: 60px 60px 120px;
+    background: var(--white);
+    padding: 60px 60px 80px;
     position: relative;
     overflow: hidden;
     text-align: center;
   }
 
-  .hero-bg-glow {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-      radial-gradient(ellipse at 20% 60%, rgba(212,168,67,0.09) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 25%, rgba(255,255,255,0.04) 0%, transparent 45%),
-      radial-gradient(ellipse at 55% 85%, rgba(212,168,67,0.06) 0%, transparent 40%);
-  }
-
-  .hero-grid-pattern {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 48px 48px;
-  }
+  .hero-bg-glow { display: none; }
+  .hero-grid-pattern { display: none; }
 
   .hero-content {
     position: relative;
@@ -174,9 +156,9 @@
 
   .hero-tag {
     display: inline-block;
-    background: rgba(212,168,67,0.15);
-    border: 1px solid rgba(212,168,67,0.35);
-    color: var(--gold-light);
+    background: rgba(8,145,178,0.08);
+    border: 1.5px solid rgba(8,145,178,0.2);
+    color: var(--teal);
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 1.5px;
@@ -189,16 +171,16 @@
   .hero h1 {
     font-size: 3rem;
     font-weight: 900;
-    color: white;
+    color: var(--navy);
     line-height: 1.15;
     margin-bottom: 20px;
   }
 
-  .hero h1 .gold { color: var(--gold); }
+  .hero h1 .gold { color: var(--teal); }
 
   .hero p {
     font-size: 1.15rem;
-    color: rgba(255,255,255,0.75);
+    color: var(--muted);
     line-height: 1.7;
     max-width: 560px;
     margin: 0 auto;
@@ -208,7 +190,7 @@
   /* ===== CONTACT SECTION ===== */
   .contact-section {
     padding: 80px 60px 100px;
-    background: var(--sky);
+    background: var(--white);
   }
 
   .contact-inner {
@@ -217,11 +199,11 @@
   }
 
   .contact-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 48px;
-    box-shadow: 0 4px 24px rgba(27,58,107,0.08);
-    border: 1px solid rgba(27,58,107,0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
     text-align: center;
     margin-bottom: 32px;
   }
@@ -229,7 +211,7 @@
   .contact-icon {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    background: var(--teal);
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -257,29 +239,29 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-    color: var(--gold) !important;
+    background: var(--teal);
+    color: white !important;
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: 900;
     padding: 16px 32px;
     border-radius: 50px;
-    box-shadow: 0 4px 18px rgba(27,58,107,0.22);
+    box-shadow: 0 4px 18px rgba(8,145,178,0.3);
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .email-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(27,58,107,0.32);
+    box-shadow: 0 8px 28px rgba(8,145,178,0.4);
   }
 
   /* ===== FORM ===== */
   .form-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 48px;
-    box-shadow: 0 4px 24px rgba(27,58,107,0.08);
-    border: 1px solid rgba(27,58,107,0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
   }
 
   .form-card h2 {
@@ -330,15 +312,15 @@
   .form-group input:focus,
   .form-group textarea:focus,
   .form-group select:focus {
-    border-color: var(--navy-mid);
+    border-color: var(--teal);
   }
 
   .form-group textarea { resize: vertical; min-height: 110px; }
 
   .submit-btn {
     width: 100%;
-    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-    color: var(--gold);
+    background: var(--teal);
+    color: white;
     font-weight: 900;
     font-size: 1rem;
     padding: 16px;
@@ -352,7 +334,7 @@
 
   .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(27,58,107,0.3);
+    box-shadow: 0 8px 24px rgba(8,145,178,0.3);
   }
 
   .form-success {
@@ -393,8 +375,7 @@
 
   .footer-logo img {
     height: 40px;
-    width: auto;
-  }
+    width: auto; mix-blend-mode: multiply; }
 
   .footer-text {
     font-size: 0.8rem;
