@@ -141,6 +141,13 @@
   .blog-final-cta p { font-size: 1rem; color: #6B7FA3; font-weight: 700; margin-bottom: 22px; line-height: 1.7; }
   .blog-final-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #1B3A6B, #2A5298); color: #F5A623; padding: 15px 36px; border-radius: 50px; font-size: 1rem; font-weight: 900; text-decoration: none; box-shadow: 0 6px 20px rgba(27,58,107,0.3); transition: all 0.25s; }
   .blog-final-btn:hover { transform: translateY(-3px); }
+  @media (max-width: 1100px) and (min-width: 901px) {
+    .nav-main-row { padding: 12px 24px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 0.88rem; }
+    .nav-cta { padding: 8px 18px; font-size: 0.85rem !important; }
+  }
+
   @media (max-width: 900px) {
     .nav-main-row { padding: 10px 24px; } .nav-links { display: none; }
     .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(27,58,107,0.97); z-index: 200; align-items: center; justify-content: center; gap: 28px; }
