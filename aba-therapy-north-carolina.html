@@ -42,7 +42,7 @@
   body{font-family:'Nunito',sans-serif;background: var(--white);color:var(--text);overflow-x:hidden;}
   body::before { display: none; }
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;flex-direction:column;background: rgba(253,238,224,0.98);backdrop-filter:blur(12px);border-bottom: 1px solid var(--border);box-shadow: 0 1px 3px rgba(0,0,0,0.04);}
-  .nav-main-row{display:flex;align-items:center;justify-content:space-between;padding:10px 60px;}
+  .nav-main-row{position:relative;display:flex;align-items:center;justify-content:space-between;padding:10px 60px;}
   .nav-serving-bar{background: #FDEEE0;padding:7px 0;text-align:center;}
   .nav-serving-bar p{color: var(--muted);font-size:0.82rem;font-weight: 600;letter-spacing:0.5px;margin:0;}
   .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
@@ -146,6 +146,7 @@
       <li><a href="for-providers.html">For Providers</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
     </ul>
     <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></div>

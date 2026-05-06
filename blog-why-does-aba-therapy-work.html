@@ -64,7 +64,7 @@
     backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
-  .nav-main-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 60px; }
+  .nav-main-row { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 10px 60px; }
   .nav-serving-bar { order: -1; background: #FDEEE0; padding: 7px 0; text-align: center; }
   .nav-serving-bar p { color: var(--muted); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px; margin: 0; }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; background: transparent; }
@@ -193,14 +193,36 @@
   @media (max-width: 900px) {
     .nav-main-row { padding: 10px 24px; }
     .nav-links { display: none; }
-    .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(27,58,107,0.97); z-index: 200; align-items: center; justify-content: center; gap: 28px; }
-    .nav-links.open a { font-size: 1.3rem; color: white !important; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; right: 0; left: 0;
+      background: #ffffff;
+      z-index: 200; align-items: stretch;
+      gap: 0; padding: 8px 0;
+      box-shadow: 0 8px 24px rgba(27,58,107,0.15);
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .nav-links.open li { list-style: none; }
+    .nav-links.open a {
+      font-size: 1rem; color: #1B3A6B !important;
+      font-weight: 700; display: block;
+      padding: 14px 28px;
+      border-bottom: 1px solid #f1f5f9;
+      transition: background 0.15s;
+    }
+    .nav-links.open a:hover { background: #f8fafc; }
+    .nav-links.open .nav-cta {
+      background: #0891b2 !important; color: white !important;
+      margin: 8px 20px 12px; text-align: center;
+      border-radius: 50px; padding: 12px 24px !important;
+      border-bottom: none;
+    }
     .nav-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 300; padding: 4px; }
     .nav-hamburger span { display: block; width: 24px; height: 3px; background: var(--navy); border-radius: 3px; transition: all 0.3s; }
     .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    .nav-hamburger.open span { background: white; }
+    .nav-hamburger.open span { background: var(--navy); }
     .nav-serving-bar p { font-size: 0.72rem; }
     .article-hero { padding: 40px 24px 40px; }
     .article-body { padding: 0 24px 80px; }
@@ -542,6 +564,13 @@
     .blog-chat-heading h3 { font-size: 1.4rem; }
     .bc-messages { max-height: 300px; }
   }
+
+  @media (max-width: 768px) {
+    .bc-widget { max-height: 480px; overflow: hidden; }
+    .bc-messages { max-height: 220px; }
+    .bc-input-wrap { height: 40px; }
+    #bcInput { font-size: 16px; }
+  }
 </style>
 
 <!-- Article + BreadcrumbList Schema -->
@@ -617,6 +646,7 @@
       <li><a href="for-providers.html">For Providers</a></li>
       <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
     </ul>
     <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
