@@ -93,7 +93,7 @@
   }
 
   nav {
-    position: static;
+    position: relative; z-index: 9999;
     display: flex; flex-direction: column;
     background: rgba(253,238,224,0.98);
     backdrop-filter: blur(20px);
@@ -102,6 +102,7 @@
   }
 
   .nav-main-row {
+    position: relative;
     display: flex; align-items: center; justify-content: space-between;
     padding: 12px 60px;
   }
@@ -143,6 +144,7 @@
   }
 
   .nav-logo span { color: var(--teal); }
+  .nav-hamburger { display: none; }
   .nav-links { display: flex; gap: 32px; list-style: none; }
 
   .nav-links a {
@@ -1036,8 +1038,6 @@
     footer { padding: 28px 16px; }
     .footer-links { gap: 12px; }
   }
-
-  .nav-hamburger { display: none; }
 
   #signs, #how, #match, #about, #providers, #consultation {
     scroll-margin-top: 120px;
