@@ -67,6 +67,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://matchcareaba.com/aba-therapy-colorado.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://matchcareaba.com/aba-therapy-new-york-city.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -197,6 +203,14 @@
   <url>
     <loc>https://matchcareaba.com/aba-therapy-fayetteville-nc.html</loc>
     <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Colorado Cities -->
+  <url>
+    <loc>https://matchcareaba.com/aba-therapy-denver-co.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -470,13 +484,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://matchcareaba.com/aba-therapy-denver-co.html</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- For Providers -->
   <url>
     <loc>https://matchcareaba.com/for-providers.html</loc>
@@ -582,6 +589,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Insurance-Specific Landing Pages — Colorado -->
+  <url>
+    <loc>https://matchcareaba.com/medicaid-aba-providers-colorado.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://matchcareaba.com/medicaid-aba-providers-charlotte-nc.html</loc>
     <lastmod>2026-05-10</lastmod>
