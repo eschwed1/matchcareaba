@@ -588,7 +588,7 @@
   .ti4 { background: rgba(8,145,178,0.1); }
 
   .how { padding: 100px 60px; background: var(--white); position: relative; z-index: 1; }
-  .how-inner { max-width: 1100px; margin: 0 auto; }
+  .how-inner { max-width: 800px; margin: 0 auto; }
 
   .how h2 {
     font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
@@ -599,37 +599,121 @@
 
   .how-subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 60px; max-width: 500px; line-height: 1.7; font-weight: 500; }
 
-  .steps-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; position: relative;
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  .steps-grid::before {
-    content: '';
+  .timeline-line {
     position: absolute;
-    top: 40px; left: calc(16.67% + 24px); right: calc(16.67% + 24px);
-    height: 2px;
-    background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    left: 39px;
+    top: 40px;
+    bottom: 40px;
+    width: 3px;
+    background: #E2E8F0;
     border-radius: 3px;
+    z-index: 0;
   }
 
-  .how-step { text-align: center; position: relative; }
+  .timeline-line-fill {
+    position: absolute;
+    left: 39px;
+    top: 40px;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(180deg, var(--teal), var(--teal-light), #9FA8DA);
+    border-radius: 3px;
+    z-index: 1;
+    transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 
-  .step-circle {
-    width: 80px; height: 80px;
+  .timeline-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+    padding: 24px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .timeline-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .step-number {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2rem;
-    margin: 0 auto 20px;
-    position: relative; z-index: 1;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 3;
   }
 
-  .c1 { background: linear-gradient(135deg, #E0F7FA, #80DEEA); }
-  .c2 { background: linear-gradient(135deg, #E0F2F1, #80CBC4); }
-  .c3 { background: linear-gradient(135deg, #E8EAF6, #9FA8DA); }
+  .step-number-inner {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  }
 
-  .how-step h3 { font-size: 1.15rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
-  .how-step p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; font-weight: 500; }
+  .timeline-step.visible .step-number-inner {
+    animation: numberPop 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes numberPop {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .step-number-inner:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  }
+
+  .sn1 { background: linear-gradient(135deg, #0891B2, #06B6D4); }
+  .sn2 { background: linear-gradient(135deg, #0D9488, #2DD4BF); }
+  .sn3 { background: linear-gradient(135deg, #6366F1, #818CF8); }
+
+  .step-content {
+    flex: 1;
+    padding-top: 8px;
+  }
+
+  .step-emoji { font-size: 1.6rem; margin-bottom: 8px; display: block; }
+
+  .step-content h3 {
+    font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .step-content p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    font-weight: 500;
+    max-width: 480px;
+  }
 
   .form-section { padding: 100px 60px; background: var(--surface); position: relative; z-index: 1; }
 
@@ -923,8 +1007,11 @@
     .floating-badge { font-size: 0.75rem; padding: 8px 12px; }
     .hero-stats { gap: 10px; }
     .how { padding: 60px 24px; }
-    .steps-grid { grid-template-columns: 1fr; gap: 28px; }
-    .steps-grid::before { display: none; }
+    .timeline-step { gap: 24px; }
+    .step-number-inner { width: 64px; height: 64px; font-size: 1.3rem; }
+    .step-number { width: 64px; height: 64px; }
+    .timeline-line, .timeline-line-fill { left: 31px; }
+    .step-content h3 { font-size: 1.2rem; }
     #consultation { padding: 48px 24px !important; }
     .consultation-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
     #about { padding: 48px 24px !important; }
@@ -957,6 +1044,12 @@
     .kid-card { left: 8px; bottom: 16px; }
     .trust-strip { flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 16px; }
     .how { padding: 48px 16px; }
+    .timeline-step { gap: 16px; padding: 16px 0; }
+    .step-number-inner { width: 56px; height: 56px; font-size: 1.1rem; }
+    .step-number { width: 56px; height: 56px; }
+    .timeline-line, .timeline-line-fill { left: 27px; }
+    .step-content h3 { font-size: 1.1rem; }
+    .step-content p { font-size: 0.92rem; }
     #consultation { padding: 36px 16px !important; }
     #about { padding: 36px 16px !important; }
     #providers { padding: 36px 16px !important; }
@@ -1373,21 +1466,32 @@
     <div class="section-tag" style="background: rgba(78,205,196,0.12); border-color: rgba(78,205,196,0.3); color: var(--mint);">💡 How It Works</div>
     <h2>Getting matched is as simple as 1, 2, 3!</h2>
     <p class="how-subtitle">We handle the hard part so you can focus on your family. No waiting rooms, no confusion — just the right match, fast.</p>
-    <div class="steps-grid">
-      <div class="how-step">
-        <div class="step-circle c1">📝</div>
-        <h3>Tell Us About Your Child</h3>
-        <p>Fill out a quick form with your location, your child's age, and what you're noticing. It takes under 3 minutes and is completely free.</p>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="timeline-line-fill"></div>
+      <div class="timeline-step" data-step="1">
+        <div class="step-number"><div class="step-number-inner sn1">1</div></div>
+        <div class="step-content">
+          <span class="step-emoji">📝</span>
+          <h3>Tell Us About Your Child</h3>
+          <p>Fill out a quick form with your location, your child's age, and what you're noticing. It takes under 3 minutes and is completely free.</p>
+        </div>
       </div>
-      <div class="how-step">
-        <div class="step-circle c2">🔍</div>
-        <h3>We Find Your Match</h3>
-        <p>Our team reviews your information and connects you with a verified ABA therapy provider that accepts your insurance and meets your specific requirements.</p>
+      <div class="timeline-step" data-step="2">
+        <div class="step-number"><div class="step-number-inner sn2">2</div></div>
+        <div class="step-content">
+          <span class="step-emoji">🔍</span>
+          <h3>We Find Your Match</h3>
+          <p>Our team reviews your information and connects you with a verified ABA therapy provider that accepts your insurance and meets your specific requirements.</p>
+        </div>
       </div>
-      <div class="how-step">
-        <div class="step-circle c3">🌱</div>
-        <h3>Start Therapy</h3>
-        <p>Your child begins receiving the support they deserve — right away.</p>
+      <div class="timeline-step" data-step="3">
+        <div class="step-number"><div class="step-number-inner sn3">3</div></div>
+        <div class="step-content">
+          <span class="step-emoji">🌱</span>
+          <h3>Start Therapy</h3>
+          <p>Your child begins receiving the support they deserve — right away.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1467,7 +1571,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.how-step, .stat-item, .trust-item, .hero-content, .how-inner, .story-box, .consultation-grid > div, .form-inner').forEach((el, i) => {
+  document.querySelectorAll('.stat-item, .trust-item, .hero-content, .how-inner, .story-box, .consultation-grid > div, .form-inner').forEach((el, i) => {
     if (!el.classList.contains('hero-content')) {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
@@ -1476,7 +1580,40 @@
     observer.observe(el);
   });
 
-  
+  // Timeline scroll animation
+  (function() {
+    var steps = document.querySelectorAll('.timeline-step');
+    var fill = document.querySelector('.timeline-line-fill');
+    var timeline = document.querySelector('.timeline');
+    if (!steps.length || !fill || !timeline) return;
+
+    var tObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          var delay = (parseInt(e.target.getAttribute('data-step')) - 1) * 200;
+          setTimeout(function() { e.target.classList.add('visible'); }, delay);
+          tObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    steps.forEach(function(s) { tObs.observe(s); });
+
+    var tLine = document.querySelector('.timeline-line');
+    var lineObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          var totalH = tLine.offsetHeight;
+          fill.style.height = totalH + 'px';
+          fill.style.transition = 'height 1.8s cubic-bezier(0.22, 1, 0.36, 1)';
+          lineObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    lineObs.observe(tLine);
+  })();
+
+
 
   async function submitContact() {
     const name = document.getElementById('contact-name').value;
