@@ -587,17 +587,17 @@
   .ti3 { background: rgba(8,145,178,0.1); }
   .ti4 { background: rgba(8,145,178,0.1); }
 
-  .how { padding: 100px 60px; background: var(--white); position: relative; z-index: 1; }
-  .how-inner { max-width: 800px; margin: 0 auto; }
+  .how { padding: 120px 60px; background: var(--white); position: relative; z-index: 1; }
+  .how-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
 
   .how h2 {
     font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
     font-weight: 800; color: var(--text); margin-bottom: 16px;
     letter-spacing: -0.03em;
   }
 
-  .how-subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 60px; max-width: 500px; line-height: 1.7; font-weight: 500; }
+  .how-subtitle { color: var(--muted); font-size: 1.2rem; margin-bottom: 80px; max-width: 560px; line-height: 1.7; font-weight: 500; margin-left: auto; margin-right: auto; }
 
   .timeline {
     position: relative;
@@ -606,49 +606,68 @@
     gap: 0;
   }
 
-  .timeline-line {
+  .timeline-path {
     position: absolute;
-    left: 39px;
-    top: 40px;
-    bottom: 40px;
-    width: 3px;
-    background: #E2E8F0;
-    border-radius: 3px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
+    pointer-events: none;
   }
 
-  .timeline-line-fill {
-    position: absolute;
-    left: 39px;
-    top: 40px;
-    width: 3px;
-    height: 0;
-    background: linear-gradient(180deg, var(--teal), var(--teal-light), #9FA8DA);
-    border-radius: 3px;
-    z-index: 1;
-    transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  .timeline-path .path-bg {
+    fill: none;
+    stroke: #E2E8F0;
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+
+  .timeline-path .path-fill {
+    fill: none;
+    stroke: url(#timeline-gradient);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: var(--path-length);
+    stroke-dashoffset: var(--path-length);
+    transition: stroke-dashoffset 2.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .timeline-path .path-fill.animate {
+    stroke-dashoffset: 0;
   }
 
   .timeline-step {
     display: flex;
-    align-items: flex-start;
-    gap: 32px;
+    align-items: center;
+    gap: 48px;
     position: relative;
     z-index: 2;
-    padding: 24px 0;
+    padding: 40px 0;
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateX(-60px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .timeline-step:nth-child(odd) {
+    flex-direction: row;
+    padding-left: 5%;
+  }
+
+  .timeline-step:nth-child(even) {
+    flex-direction: row-reverse;
+    padding-right: 5%;
+    transform: translateX(60px);
   }
 
   .timeline-step.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   .step-number {
-    width: 80px;
-    height: 80px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -659,60 +678,70 @@
   }
 
   .step-number-inner {
-    width: 80px;
-    height: 80px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 800;
     color: white;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
   }
 
   .timeline-step.visible .step-number-inner {
-    animation: numberPop 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: numberPop 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   @keyframes numberPop {
-    0% { transform: scale(0.5); opacity: 0; }
-    60% { transform: scale(1.15); }
-    100% { transform: scale(1); opacity: 1; }
+    0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+    50% { transform: scale(1.2) rotate(3deg); }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
   }
 
   .step-number-inner:hover {
-    transform: scale(1.1);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
   }
 
   .sn1 { background: linear-gradient(135deg, #0891B2, #06B6D4); }
   .sn2 { background: linear-gradient(135deg, #0D9488, #2DD4BF); }
   .sn3 { background: linear-gradient(135deg, #6366F1, #818CF8); }
 
-  .step-content {
+  .step-card {
     flex: 1;
-    padding-top: 8px;
+    max-width: 520px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 36px 40px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .step-emoji { font-size: 1.6rem; margin-bottom: 8px; display: block; }
+  .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
 
-  .step-content h3 {
+  .step-emoji { font-size: 2rem; margin-bottom: 12px; display: block; }
+
+  .step-card h3 {
     font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--text);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
-  .step-content p {
-    font-size: 1rem;
+  .step-card p {
+    font-size: 1.1rem;
     color: var(--muted);
     line-height: 1.8;
     font-weight: 500;
-    max-width: 480px;
   }
 
   .form-section { padding: 100px 60px; background: var(--surface); position: relative; z-index: 1; }
@@ -1007,11 +1036,16 @@
     .floating-badge { font-size: 0.75rem; padding: 8px 12px; }
     .hero-stats { gap: 10px; }
     .how { padding: 60px 24px; }
-    .timeline-step { gap: 24px; }
-    .step-number-inner { width: 64px; height: 64px; font-size: 1.3rem; }
-    .step-number { width: 64px; height: 64px; }
-    .timeline-line, .timeline-line-fill { left: 31px; }
-    .step-content h3 { font-size: 1.2rem; }
+    .timeline-step { gap: 20px; padding: 24px 0; }
+    .timeline-step:nth-child(odd),
+    .timeline-step:nth-child(even) { flex-direction: row; padding-left: 0; padding-right: 0; }
+    .timeline-step:nth-child(even) { transform: translateX(-60px); }
+    .timeline-path { display: none; }
+    .step-number-inner { width: 72px; height: 72px; font-size: 1.5rem; }
+    .step-number { width: 72px; height: 72px; }
+    .step-card { padding: 28px 24px; }
+    .step-card h3 { font-size: 1.3rem; }
+    .step-card p { font-size: 1rem; }
     #consultation { padding: 48px 24px !important; }
     .consultation-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
     #about { padding: 48px 24px !important; }
@@ -1044,12 +1078,12 @@
     .kid-card { left: 8px; bottom: 16px; }
     .trust-strip { flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 16px; }
     .how { padding: 48px 16px; }
-    .timeline-step { gap: 16px; padding: 16px 0; }
-    .step-number-inner { width: 56px; height: 56px; font-size: 1.1rem; }
-    .step-number { width: 56px; height: 56px; }
-    .timeline-line, .timeline-line-fill { left: 27px; }
-    .step-content h3 { font-size: 1.1rem; }
-    .step-content p { font-size: 0.92rem; }
+    .timeline-step { gap: 14px; padding: 16px 0; }
+    .step-number-inner { width: 60px; height: 60px; font-size: 1.2rem; }
+    .step-number { width: 60px; height: 60px; }
+    .step-card { padding: 22px 18px; }
+    .step-card h3 { font-size: 1.15rem; }
+    .step-card p { font-size: 0.95rem; }
     #consultation { padding: 36px 16px !important; }
     #about { padding: 36px 16px !important; }
     #providers { padding: 36px 16px !important; }
@@ -1464,14 +1498,23 @@
 <section class="how" id="how">
   <div class="how-inner">
     <div class="section-tag" style="background: rgba(78,205,196,0.12); border-color: rgba(78,205,196,0.3); color: var(--mint);">💡 How It Works</div>
-    <h2>Getting matched is as simple as 1, 2, 3!</h2>
+    <h2>Getting matched is simple<br>as 1, 2, 3!</h2>
     <p class="how-subtitle">We handle the hard part so you can focus on your family. No waiting rooms, no confusion — just the right match, fast.</p>
     <div class="timeline">
-      <div class="timeline-line"></div>
-      <div class="timeline-line-fill"></div>
+      <svg class="timeline-path" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="timeline-gradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0891B2"/>
+            <stop offset="50%" stop-color="#0D9488"/>
+            <stop offset="100%" stop-color="#6366F1"/>
+          </linearGradient>
+        </defs>
+        <path class="path-bg" d=""/>
+        <path class="path-fill" d=""/>
+      </svg>
       <div class="timeline-step" data-step="1">
         <div class="step-number"><div class="step-number-inner sn1">1</div></div>
-        <div class="step-content">
+        <div class="step-card">
           <span class="step-emoji">📝</span>
           <h3>Tell Us About Your Child</h3>
           <p>Fill out a quick form with your location, your child's age, and what you're noticing. It takes under 3 minutes and is completely free.</p>
@@ -1479,7 +1522,7 @@
       </div>
       <div class="timeline-step" data-step="2">
         <div class="step-number"><div class="step-number-inner sn2">2</div></div>
-        <div class="step-content">
+        <div class="step-card">
           <span class="step-emoji">🔍</span>
           <h3>We Find Your Match</h3>
           <p>Our team reviews your information and connects you with a verified ABA therapy provider that accepts your insurance and meets your specific requirements.</p>
@@ -1487,7 +1530,7 @@
       </div>
       <div class="timeline-step" data-step="3">
         <div class="step-number"><div class="step-number-inner sn3">3</div></div>
-        <div class="step-content">
+        <div class="step-card">
           <span class="step-emoji">🌱</span>
           <h3>Start Therapy</h3>
           <p>Your child begins receiving the support they deserve — right away.</p>
@@ -1580,37 +1623,80 @@
     observer.observe(el);
   });
 
-  // Timeline scroll animation
+  // Timeline zigzag path + scroll animation
   (function() {
     var steps = document.querySelectorAll('.timeline-step');
-    var fill = document.querySelector('.timeline-line-fill');
-    var timeline = document.querySelector('.timeline');
-    if (!steps.length || !fill || !timeline) return;
+    var svg = document.querySelector('.timeline-path');
+    var pathBg = svg ? svg.querySelector('.path-bg') : null;
+    var pathFill = svg ? svg.querySelector('.path-fill') : null;
+    if (!steps.length || !svg) return;
 
-    var tObs = new IntersectionObserver(function(entries) {
+    function buildPath() {
+      var timeline = document.querySelector('.timeline');
+      var tRect = timeline.getBoundingClientRect();
+      var points = [];
+      steps.forEach(function(s) {
+        var circle = s.querySelector('.step-number-inner');
+        var cRect = circle.getBoundingClientRect();
+        points.push({
+          x: cRect.left - tRect.left + cRect.width / 2,
+          y: cRect.top - tRect.top + cRect.height / 2
+        });
+      });
+      svg.setAttribute('viewBox', '0 0 ' + tRect.width + ' ' + tRect.height);
+      svg.style.width = tRect.width + 'px';
+      svg.style.height = tRect.height + 'px';
+
+      var d = 'M ' + points[0].x + ' ' + points[0].y;
+      for (var i = 1; i < points.length; i++) {
+        var prev = points[i - 1];
+        var curr = points[i];
+        var midY = (prev.y + curr.y) / 2;
+        d += ' C ' + prev.x + ' ' + midY + ', ' + curr.x + ' ' + midY + ', ' + curr.x + ' ' + curr.y;
+      }
+      if (pathBg) pathBg.setAttribute('d', d);
+      if (pathFill) {
+        pathFill.setAttribute('d', d);
+        var len = pathFill.getTotalLength();
+        pathFill.style.setProperty('--path-length', len);
+        pathFill.style.strokeDasharray = len;
+        pathFill.style.strokeDashoffset = len;
+      }
+    }
+
+    // Observe each step individually with staggered delays
+    var revealedCount = 0;
+    var stepObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (e.isIntersecting) {
-          var delay = (parseInt(e.target.getAttribute('data-step')) - 1) * 200;
-          setTimeout(function() { e.target.classList.add('visible'); }, delay);
-          tObs.unobserve(e.target);
+          var stepNum = parseInt(e.target.getAttribute('data-step'));
+          var delay = (stepNum - 1) * 500;
+          setTimeout(function() {
+            e.target.classList.add('visible');
+            revealedCount++;
+            // After last step reveals, animate the path
+            if (revealedCount === steps.length && pathFill) {
+              setTimeout(function() {
+                pathFill.classList.add('animate');
+              }, 300);
+            }
+          }, delay);
+          stepObs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
 
-    steps.forEach(function(s) { tObs.observe(s); });
+    // Build path after layout settles, then observe
+    setTimeout(function() {
+      buildPath();
+      steps.forEach(function(s) { stepObs.observe(s); });
+    }, 100);
 
-    var tLine = document.querySelector('.timeline-line');
-    var lineObs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          var totalH = tLine.offsetHeight;
-          fill.style.height = totalH + 'px';
-          fill.style.transition = 'height 1.8s cubic-bezier(0.22, 1, 0.36, 1)';
-          lineObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    lineObs.observe(tLine);
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(buildPath, 200);
+    });
   })();
 
 
