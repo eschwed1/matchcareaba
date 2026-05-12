@@ -630,7 +630,7 @@
     stroke-linecap: round;
     stroke-dasharray: var(--path-length);
     stroke-dashoffset: var(--path-length);
-    transition: stroke-dashoffset 2.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .timeline-path .path-fill.animate {
@@ -646,7 +646,7 @@
     padding: 40px 0;
     opacity: 0;
     transform: translateX(-60px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .timeline-step:nth-child(odd) {
@@ -693,7 +693,7 @@
   }
 
   .timeline-step.visible .step-number-inner {
-    animation: numberPop 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: numberPop 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   @keyframes numberPop {
@@ -707,14 +707,12 @@
     box-shadow: 0 16px 40px rgba(0,0,0,0.2);
   }
 
-  .sn1 { background: linear-gradient(135deg, #0891B2, #06B6D4); }
-  .sn2 { background: linear-gradient(135deg, #0D9488, #2DD4BF); }
-  .sn3 { background: linear-gradient(135deg, #6366F1, #818CF8); }
+  .sn1, .sn2, .sn3 { background: linear-gradient(135deg, #0891B2, #06B6D4); }
 
   .step-card {
     flex: 1;
     max-width: 520px;
-    background: #F8FAFC;
+    background: #F1F5F9;
     border: 1px solid #E2E8F0;
     border-radius: 20px;
     padding: 36px 40px;
@@ -1497,7 +1495,7 @@
 
 <section class="how" id="how">
   <div class="how-inner">
-    <div class="section-tag" style="background: rgba(78,205,196,0.12); border-color: rgba(78,205,196,0.3); color: var(--mint);">💡 How It Works</div>
+    <div class="section-tag" style="background: rgba(78,205,196,0.12); border-color: rgba(78,205,196,0.3); color: var(--mint); font-size: 0.95rem; padding: 10px 22px;">💡 How It Works</div>
     <h2>Getting matched is simple<br>as 1, 2, 3!</h2>
     <p class="how-subtitle">We handle the hard part so you can focus on your family. No waiting rooms, no confusion — just the right match, fast.</p>
     <div class="timeline">
@@ -1670,7 +1668,7 @@
       entries.forEach(function(e) {
         if (e.isIntersecting) {
           var stepNum = parseInt(e.target.getAttribute('data-step'));
-          var delay = (stepNum - 1) * 500;
+          var delay = (stepNum - 1) * 300;
           setTimeout(function() {
             e.target.classList.add('visible');
             revealedCount++;
