@@ -604,9 +604,10 @@
     display: flex;
     flex-direction: column;
     gap: 0;
+    padding: 20px 0;
   }
 
-  .timeline-path {
+  .timeline-swoosh {
     position: absolute;
     top: 0;
     left: 0;
@@ -614,60 +615,64 @@
     height: 100%;
     z-index: 0;
     pointer-events: none;
+    overflow: visible;
   }
 
-  .timeline-path .path-bg {
+  .timeline-swoosh .swoosh-bg {
     fill: none;
-    stroke: #E2E8F0;
-    stroke-width: 3;
+    stroke: #D4E8F7;
+    stroke-width: 50;
     stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
-  .timeline-path .path-fill {
+  .timeline-swoosh .swoosh-fill {
     fill: none;
-    stroke: url(#timeline-gradient);
-    stroke-width: 3;
+    stroke: #B8D8F0;
+    stroke-width: 50;
     stroke-linecap: round;
-    stroke-dasharray: var(--path-length);
-    stroke-dashoffset: var(--path-length);
-    transition: stroke-dashoffset 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    stroke-linejoin: round;
+    stroke-dasharray: var(--swoosh-length);
+    stroke-dashoffset: var(--swoosh-length);
+    transition: stroke-dashoffset 2s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .timeline-path .path-fill.animate {
+  .timeline-swoosh .swoosh-fill.animate {
     stroke-dashoffset: 0;
   }
 
   .timeline-step {
     display: flex;
-    align-items: center;
-    gap: 48px;
+    align-items: flex-start;
+    gap: 28px;
     position: relative;
     z-index: 2;
-    padding: 40px 0;
+    padding: 48px 0;
     opacity: 0;
-    transform: translateX(-60px);
-    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
-  .timeline-step:nth-child(odd) {
-    flex-direction: row;
-    padding-left: 5%;
+  .timeline-step:nth-child(2) {
+    padding-left: 8%;
   }
 
-  .timeline-step:nth-child(even) {
-    flex-direction: row-reverse;
-    padding-right: 5%;
-    transform: translateX(60px);
+  .timeline-step:nth-child(3) {
+    padding-left: 38%;
+  }
+
+  .timeline-step:nth-child(4) {
+    padding-left: 12%;
   }
 
   .timeline-step.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .step-number {
-    width: 96px;
-    height: 96px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -678,18 +683,20 @@
   }
 
   .step-number-inner {
-    width: 96px;
-    height: 96px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    color: white;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    color: #0891B2;
+    background: white;
+    border: 3px solid #0891B2;
+    box-shadow: 0 4px 16px rgba(8,145,178,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .timeline-step.visible .step-number-inner {
@@ -697,46 +704,34 @@
   }
 
   @keyframes numberPop {
-    0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
-    50% { transform: scale(1.2) rotate(3deg); }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    0% { transform: scale(0.3); opacity: 0; }
+    60% { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
   }
 
   .step-number-inner:hover {
-    transform: scale(1.1) rotate(-3deg);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(8,145,178,0.25);
   }
 
-  .sn1, .sn2, .sn3 { background: linear-gradient(135deg, #0891B2, #06B6D4); }
-
-  .step-card {
-    flex: 1;
-    max-width: 520px;
-    background: #F1F5F9;
-    border: 1px solid #E2E8F0;
-    border-radius: 20px;
-    padding: 36px 40px;
+  .step-text {
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 420px;
+    padding-top: 4px;
   }
 
-  .step-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-  }
+  .step-emoji { font-size: 1.8rem; margin-bottom: 8px; display: block; }
 
-  .step-emoji { font-size: 2rem; margin-bottom: 12px; display: block; }
-
-  .step-card h3 {
+  .step-text h3 {
     font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--text);
-    margin-bottom: 12px;
+    color: #0891B2;
+    margin-bottom: 10px;
   }
 
-  .step-card p {
-    font-size: 1.1rem;
+  .step-text p {
+    font-size: 1.05rem;
     color: var(--muted);
     line-height: 1.8;
     font-weight: 500;
@@ -1034,16 +1029,15 @@
     .floating-badge { font-size: 0.75rem; padding: 8px 12px; }
     .hero-stats { gap: 10px; }
     .how { padding: 60px 24px; }
-    .timeline-step { gap: 20px; padding: 24px 0; }
-    .timeline-step:nth-child(odd),
-    .timeline-step:nth-child(even) { flex-direction: row; padding-left: 0; padding-right: 0; }
-    .timeline-step:nth-child(even) { transform: translateX(-60px); }
-    .timeline-path { display: none; }
-    .step-number-inner { width: 72px; height: 72px; font-size: 1.5rem; }
-    .step-number { width: 72px; height: 72px; }
-    .step-card { padding: 28px 24px; }
-    .step-card h3 { font-size: 1.3rem; }
-    .step-card p { font-size: 1rem; }
+    .timeline-step { gap: 20px; padding: 28px 0; }
+    .timeline-step:nth-child(2),
+    .timeline-step:nth-child(3),
+    .timeline-step:nth-child(4) { padding-left: 0; }
+    .timeline-swoosh { display: none; }
+    .step-number-inner { width: 48px; height: 48px; font-size: 1.2rem; }
+    .step-number { width: 48px; height: 48px; }
+    .step-text h3 { font-size: 1.3rem; }
+    .step-text p { font-size: 1rem; }
     #consultation { padding: 48px 24px !important; }
     .consultation-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
     #about { padding: 48px 24px !important; }
@@ -1076,12 +1070,11 @@
     .kid-card { left: 8px; bottom: 16px; }
     .trust-strip { flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 16px; }
     .how { padding: 48px 16px; }
-    .timeline-step { gap: 14px; padding: 16px 0; }
-    .step-number-inner { width: 60px; height: 60px; font-size: 1.2rem; }
-    .step-number { width: 60px; height: 60px; }
-    .step-card { padding: 22px 18px; }
-    .step-card h3 { font-size: 1.15rem; }
-    .step-card p { font-size: 0.95rem; }
+    .timeline-step { gap: 14px; padding: 18px 0; }
+    .step-number-inner { width: 44px; height: 44px; font-size: 1.1rem; border-width: 2px; }
+    .step-number { width: 44px; height: 44px; }
+    .step-text h3 { font-size: 1.15rem; }
+    .step-text p { font-size: 0.95rem; }
     #consultation { padding: 36px 16px !important; }
     #about { padding: 36px 16px !important; }
     #providers { padding: 36px 16px !important; }
@@ -1499,36 +1492,29 @@
     <h2>Getting matched is simple<br>as 1, 2, 3!</h2>
     <p class="how-subtitle">We handle the hard part so you can focus on your family. No waiting rooms, no confusion — just the right match, fast.</p>
     <div class="timeline">
-      <svg class="timeline-path" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="timeline-gradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#0891B2"/>
-            <stop offset="50%" stop-color="#0D9488"/>
-            <stop offset="100%" stop-color="#6366F1"/>
-          </linearGradient>
-        </defs>
-        <path class="path-bg" d=""/>
-        <path class="path-fill" d=""/>
+      <svg class="timeline-swoosh" preserveAspectRatio="none">
+        <path class="swoosh-bg" d=""/>
+        <path class="swoosh-fill" d=""/>
       </svg>
       <div class="timeline-step" data-step="1">
-        <div class="step-number"><div class="step-number-inner sn1">1</div></div>
-        <div class="step-card">
+        <div class="step-number"><div class="step-number-inner">1</div></div>
+        <div class="step-text">
           <span class="step-emoji">📝</span>
           <h3>Tell Us About Your Child</h3>
           <p>Fill out a quick form with your location, your child's age, and what you're noticing. It takes under 3 minutes and is completely free.</p>
         </div>
       </div>
       <div class="timeline-step" data-step="2">
-        <div class="step-number"><div class="step-number-inner sn2">2</div></div>
-        <div class="step-card">
+        <div class="step-number"><div class="step-number-inner">2</div></div>
+        <div class="step-text">
           <span class="step-emoji">🔍</span>
           <h3>We Find Your Match</h3>
           <p>Our team reviews your information and connects you with a verified ABA therapy provider that accepts your insurance and meets your specific requirements.</p>
         </div>
       </div>
       <div class="timeline-step" data-step="3">
-        <div class="step-number"><div class="step-number-inner sn3">3</div></div>
-        <div class="step-card">
+        <div class="step-number"><div class="step-number-inner">3</div></div>
+        <div class="step-text">
           <span class="step-emoji">🌱</span>
           <h3>Start Therapy</h3>
           <p>Your child begins receiving the support they deserve — right away.</p>
@@ -1621,17 +1607,18 @@
     observer.observe(el);
   });
 
-  // Timeline zigzag path + scroll animation
+  // Timeline swoosh path + scroll animation
   (function() {
     var steps = document.querySelectorAll('.timeline-step');
-    var svg = document.querySelector('.timeline-path');
-    var pathBg = svg ? svg.querySelector('.path-bg') : null;
-    var pathFill = svg ? svg.querySelector('.path-fill') : null;
+    var svg = document.querySelector('.timeline-swoosh');
+    var swooshBg = svg ? svg.querySelector('.swoosh-bg') : null;
+    var swooshFill = svg ? svg.querySelector('.swoosh-fill') : null;
     if (!steps.length || !svg) return;
 
-    function buildPath() {
+    function buildSwoosh() {
       var timeline = document.querySelector('.timeline');
       var tRect = timeline.getBoundingClientRect();
+      var w = tRect.width;
       var points = [];
       steps.forEach(function(s) {
         var circle = s.querySelector('.step-number-inner');
@@ -1641,24 +1628,33 @@
           y: cRect.top - tRect.top + cRect.height / 2
         });
       });
-      svg.setAttribute('viewBox', '0 0 ' + tRect.width + ' ' + tRect.height);
-      svg.style.width = tRect.width + 'px';
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + tRect.height);
+      svg.style.width = w + 'px';
       svg.style.height = tRect.height + 'px';
 
-      var d = 'M ' + points[0].x + ' ' + points[0].y;
-      for (var i = 1; i < points.length; i++) {
-        var prev = points[i - 1];
-        var curr = points[i];
-        var midY = (prev.y + curr.y) / 2;
-        d += ' C ' + prev.x + ' ' + midY + ', ' + curr.x + ' ' + midY + ', ' + curr.x + ' ' + curr.y;
-      }
-      if (pathBg) pathBg.setAttribute('d', d);
-      if (pathFill) {
-        pathFill.setAttribute('d', d);
-        var len = pathFill.getTotalLength();
-        pathFill.style.setProperty('--path-length', len);
-        pathFill.style.strokeDasharray = len;
-        pathFill.style.strokeDashoffset = len;
+      // Build a smooth S-curve swoosh through the circle centers
+      var p0 = points[0], p1 = points[1], p2 = points[2];
+      var d = 'M ' + p0.x + ' ' + p0.y;
+      // First curve: swoops right toward step 2
+      var cp1x = p0.x + (p1.x - p0.x) * 0.7;
+      var cp1y = p0.y + (p1.y - p0.y) * 0.15;
+      var cp2x = p1.x + (p1.x - p0.x) * 0.2;
+      var cp2y = p1.y - (p1.y - p0.y) * 0.15;
+      d += ' C ' + cp1x + ' ' + cp1y + ', ' + cp2x + ' ' + cp2y + ', ' + p1.x + ' ' + p1.y;
+      // Second curve: swoops left toward step 3
+      var cp3x = p1.x - (p1.x - p2.x) * 0.3;
+      var cp3y = p1.y + (p2.y - p1.y) * 0.2;
+      var cp4x = p2.x - (p1.x - p2.x) * 0.4;
+      var cp4y = p2.y - (p2.y - p1.y) * 0.15;
+      d += ' C ' + cp3x + ' ' + cp3y + ', ' + cp4x + ' ' + cp4y + ', ' + p2.x + ' ' + p2.y;
+
+      if (swooshBg) swooshBg.setAttribute('d', d);
+      if (swooshFill) {
+        swooshFill.setAttribute('d', d);
+        var len = swooshFill.getTotalLength();
+        swooshFill.style.setProperty('--swoosh-length', len);
+        swooshFill.style.strokeDasharray = len;
+        swooshFill.style.strokeDashoffset = len;
       }
     }
 
@@ -1668,15 +1664,12 @@
       entries.forEach(function(e) {
         if (e.isIntersecting) {
           var stepNum = parseInt(e.target.getAttribute('data-step'));
-          var delay = (stepNum - 1) * 300;
+          var delay = (stepNum - 1) * 250;
           setTimeout(function() {
             e.target.classList.add('visible');
             revealedCount++;
-            // After last step reveals, animate the path
-            if (revealedCount === steps.length && pathFill) {
-              setTimeout(function() {
-                pathFill.classList.add('animate');
-              }, 300);
+            if (revealedCount === 1 && swooshFill) {
+              swooshFill.classList.add('animate');
             }
           }, delay);
           stepObs.unobserve(e.target);
@@ -1684,16 +1677,15 @@
       });
     }, { threshold: 0.15 });
 
-    // Build path after layout settles, then observe
     setTimeout(function() {
-      buildPath();
+      buildSwoosh();
       steps.forEach(function(s) { stepObs.observe(s); });
     }, 100);
 
     var resizeTimer;
     window.addEventListener('resize', function() {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(buildPath, 200);
+      resizeTimer = setTimeout(buildSwoosh, 200);
     });
   })();
 
