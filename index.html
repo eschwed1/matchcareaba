@@ -624,6 +624,12 @@
     stroke-width: 50;
     stroke-linecap: round;
     stroke-linejoin: round;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .timeline-swoosh.active .swoosh-bg {
+    opacity: 1;
   }
 
   .timeline-swoosh .swoosh-fill {
@@ -647,9 +653,6 @@
     position: relative;
     z-index: 2;
     padding: 48px 0;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
   .timeline-step:nth-child(2) {
@@ -662,11 +665,6 @@
 
   .timeline-step:nth-child(4) {
     padding-left: 12%;
-  }
-
-  .timeline-step.visible {
-    opacity: 1;
-    transform: translateY(0);
   }
 
   .step-number {
@@ -695,16 +693,18 @@
     background: white;
     border: 3px solid #0891B2;
     box-shadow: 0 4px 16px rgba(8,145,178,0.15);
+    opacity: 0;
+    transform: scale(0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .timeline-step.visible .step-number-inner {
+  .step-number-inner.pop {
     animation: numberPop 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   @keyframes numberPop {
     0% { transform: scale(0.3); opacity: 0; }
-    60% { transform: scale(1.15); }
+    60% { transform: scale(1.15); opacity: 1; }
     100% { transform: scale(1); opacity: 1; }
   }
 
@@ -717,6 +717,14 @@
     text-align: left;
     max-width: 420px;
     padding-top: 4px;
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .step-text.slide-in {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .step-text h3 {
@@ -1602,7 +1610,7 @@
     observer.observe(el);
   });
 
-  // Timeline: interactive scroll-linked swoosh with loop and arrow
+  // Timeline: text slides in first, then numbers pop, then scroll-linked line
   (function() {
     var steps = document.querySelectorAll('.timeline-step');
     var svg = document.querySelector('.timeline-swoosh');
@@ -1613,6 +1621,7 @@
 
     var totalLen = 0;
     var arrowPts = { x: 0, y: 0, angle: 0 };
+    var lineReady = false;
 
     function buildSwoosh() {
       var timeline = document.querySelector('.timeline');
@@ -1633,25 +1642,39 @@
       svg.style.height = h + 'px';
 
       var p0 = points[0], p1 = points[1], p2 = points[2];
-      // Segment 1: smooth curve from step 1 to step 2
-      var d = 'M ' + p0.x + ' ' + p0.y;
-      d += ' C ' + (p0.x + (p1.x - p0.x) * 0.65) + ' ' + (p0.y + (p1.y - p0.y) * 0.1) + ', ';
-      d += (p1.x + (p1.x - p0.x) * 0.15) + ' ' + (p1.y - (p1.y - p0.y) * 0.1) + ', ';
-      d += p1.x + ' ' + p1.y;
+      var dy12 = p1.y - p0.y;
+      var dy23 = p2.y - p1.y;
 
-      // Segment 2: from step 2, go down then loop UP and over, crossing the line, then down to step 3
-      var midX = (p1.x + p2.x) / 2;
-      var loopTop = p1.y - (p2.y - p1.y) * 0.25;
-      var loopW = Math.abs(p1.x - p2.x) * 0.35;
-      // Go down-right from p1
-      d += ' C ' + (p1.x - loopW * 0.3) + ' ' + (p1.y + (p2.y - p1.y) * 0.35) + ', ';
-      // Swing up to the loop peak (above the first segment line)
-      d += (midX + loopW) + ' ' + (p1.y + (p2.y - p1.y) * 0.45) + ', ';
-      d += (midX + loopW * 0.5) + ' ' + loopTop;
-      // Come back over and down to step 3
-      d += ' C ' + (midX - loopW * 0.5) + ' ' + (loopTop + (p2.y - loopTop) * 0.15) + ', ';
-      d += (p2.x + (p1.x - p2.x) * 0.3) + ' ' + (p2.y - (p2.y - p1.y) * 0.15) + ', ';
-      d += p2.x + ' ' + p2.y;
+      // Segment 1: smooth S-curve from step 1 to step 2
+      var d = 'M ' + p0.x + ' ' + p0.y;
+      d += ' C ' + (p0.x + (p1.x - p0.x) * 0.6) + ' ' + (p0.y + dy12 * 0.08);
+      d += ', ' + (p1.x + (p1.x - p0.x) * 0.1) + ' ' + (p1.y - dy12 * 0.08);
+      d += ', ' + p1.x + ' ' + p1.y;
+
+      // Segment 2: from step 2, curve down, then loop up into a smooth bow, cross over, then down to step 3
+      var loopR = Math.min(80, dy23 * 0.35);
+      var loopCx = (p1.x + p2.x) * 0.5;
+      var loopCy = p1.y + dy23 * 0.35;
+      var loopTop = loopCy - loopR * 2.2;
+
+      // Curve down from p1 to the right side of the loop
+      d += ' C ' + (p1.x - 20) + ' ' + (p1.y + dy23 * 0.18);
+      d += ', ' + (loopCx + loopR * 1.2) + ' ' + (loopCy - loopR * 0.3);
+      d += ', ' + (loopCx + loopR * 0.8) + ' ' + loopCy;
+
+      // Arc up and over (the bow) — goes up, crosses the midline, comes back
+      d += ' C ' + (loopCx + loopR * 0.3) + ' ' + (loopCy + loopR * 0.6);
+      d += ', ' + (loopCx + loopR * 1.5) + ' ' + loopTop;
+      d += ', ' + loopCx + ' ' + (loopTop + loopR * 0.3);
+
+      d += ' C ' + (loopCx - loopR * 1.2) + ' ' + (loopTop + loopR * 0.8);
+      d += ', ' + (loopCx - loopR * 0.8) + ' ' + (loopCy + loopR * 0.2);
+      d += ', ' + (loopCx - loopR * 0.3) + ' ' + (loopCy + dy23 * 0.15);
+
+      // Smooth curve down to step 3
+      d += ' C ' + (p2.x + (p1.x - p2.x) * 0.4) + ' ' + (p2.y - dy23 * 0.25);
+      d += ', ' + (p2.x + 30) + ' ' + (p2.y - dy23 * 0.1);
+      d += ', ' + p2.x + ' ' + p2.y;
 
       if (swooshBg) swooshBg.setAttribute('d', d);
       if (swooshFill) {
@@ -1661,65 +1684,89 @@
         swooshFill.style.strokeDashoffset = totalLen;
       }
 
-      // Compute arrow point at the end of the path
+      // Arrow direction at end of path
       if (swooshFill && totalLen > 0) {
         var endPt = swooshFill.getPointAtLength(totalLen);
-        var nearPt = swooshFill.getPointAtLength(totalLen - 2);
+        var nearPt = swooshFill.getPointAtLength(totalLen - 3);
         arrowPts.x = endPt.x;
         arrowPts.y = endPt.y;
-        arrowPts.angle = Math.atan2(endPt.y - nearPt.y, endPt.x - nearPt.x) * 180 / Math.PI;
+        arrowPts.angle = Math.atan2(endPt.y - nearPt.y, endPt.x - nearPt.x);
       }
     }
 
     function updateArrow(progress) {
       if (!arrowHead || totalLen === 0) return;
-      if (progress > 0.95) {
-        var sz = 18;
-        var a = arrowPts.angle * Math.PI / 180;
-        var tipX = arrowPts.x;
-        var tipY = arrowPts.y;
-        var lx = tipX - sz * Math.cos(a) + sz * 0.5 * Math.sin(a);
-        var ly = tipY - sz * Math.sin(a) - sz * 0.5 * Math.cos(a);
-        var rx = tipX - sz * Math.cos(a) - sz * 0.5 * Math.sin(a);
-        var ry = tipY - sz * Math.sin(a) + sz * 0.5 * Math.cos(a);
-        arrowHead.setAttribute('points', tipX+','+tipY+' '+lx+','+ly+' '+rx+','+ry);
+      if (progress > 0.92) {
+        var sz = 20;
+        var a = arrowPts.angle;
+        var tx = arrowPts.x, ty = arrowPts.y;
+        var lx = tx - sz * Math.cos(a) + sz * 0.55 * Math.sin(a);
+        var ly = ty - sz * Math.sin(a) - sz * 0.55 * Math.cos(a);
+        var rx = tx - sz * Math.cos(a) - sz * 0.55 * Math.sin(a);
+        var ry = ty - sz * Math.sin(a) + sz * 0.55 * Math.cos(a);
+        arrowHead.setAttribute('points', tx+','+ty+' '+lx+','+ly+' '+rx+','+ry);
         arrowHead.style.opacity = '1';
       } else {
         arrowHead.style.opacity = '0';
       }
     }
 
-    // Scroll-linked drawing
+    // Scroll-linked line drawing — only starts when step 1 circle is on screen
     function onScroll() {
-      if (totalLen === 0) return;
+      if (!lineReady || totalLen === 0) return;
       var timeline = document.querySelector('.timeline');
       var rect = timeline.getBoundingClientRect();
       var winH = window.innerHeight;
-      // Start drawing when timeline top enters bottom of viewport
-      // Finish when timeline bottom reaches center of viewport
-      var start = rect.top + window.scrollY - winH;
-      var end = rect.top + window.scrollY + rect.height - winH * 0.5;
+      // Start when step 1 circle is ~40% up the viewport
+      // End when step 3 circle reaches ~40% up the viewport
+      var firstCircle = steps[0].querySelector('.step-number-inner');
+      var lastCircle = steps[steps.length - 1].querySelector('.step-number-inner');
+      var startY = firstCircle.getBoundingClientRect().top + window.scrollY - winH * 0.6;
+      var endY = lastCircle.getBoundingClientRect().top + window.scrollY - winH * 0.4;
       var scrollY = window.scrollY;
-      var progress = Math.min(1, Math.max(0, (scrollY - start) / (end - start)));
-      var offset = totalLen * (1 - progress);
-      swooshFill.style.strokeDashoffset = offset;
+      var progress = Math.min(1, Math.max(0, (scrollY - startY) / (endY - startY)));
+      swooshFill.style.strokeDashoffset = totalLen * (1 - progress);
       updateArrow(progress);
     }
 
-    // Step reveal on scroll
-    var stepObs = new IntersectionObserver(function(entries) {
+    // Sequence: text slides in → numbers pop → line becomes active
+    function revealStep(stepEl, delay) {
+      setTimeout(function() {
+        // 1. Slide text in from right
+        var txt = stepEl.querySelector('.step-text');
+        if (txt) txt.classList.add('slide-in');
+
+        // 2. After text settles, pop the number
+        setTimeout(function() {
+          var num = stepEl.querySelector('.step-number-inner');
+          if (num) num.classList.add('pop');
+        }, 400);
+      }, delay);
+    }
+
+    var allRevealed = 0;
+    var textObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          stepObs.unobserve(e.target);
+          revealStep(e.target, 0);
+          allRevealed++;
+          textObs.unobserve(e.target);
+
+          // After all 3 steps have text + numbers, activate the line
+          if (allRevealed === steps.length) {
+            setTimeout(function() {
+              lineReady = true;
+              svg.classList.add('active');
+              buildSwoosh();
+              onScroll();
+            }, 600);
+          }
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.25 });
 
     setTimeout(function() {
-      buildSwoosh();
-      steps.forEach(function(s) { stepObs.observe(s); });
-      onScroll();
+      steps.forEach(function(s) { textObs.observe(s); });
     }, 100);
 
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -1727,7 +1774,7 @@
     var resizeTimer;
     window.addEventListener('resize', function() {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function() { buildSwoosh(); onScroll(); }, 200);
+      resizeTimer = setTimeout(function() { if (lineReady) { buildSwoosh(); onScroll(); } }, 200);
     });
   })();
 
