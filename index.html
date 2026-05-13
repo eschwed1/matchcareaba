@@ -1429,7 +1429,7 @@
   <div class="trust-item"><div class="trust-icon ti4">⚡</div> Matched In Days, Not Months</div>
 </div>
 
-<section id="consultation" style="background: #FDEEE0; padding: 100px 60px; position: relative; z-index: 1;">
+<section id="consultation" style="background: #FDEEE0; padding: 100px 60px; position: relative; z-index: 1; overflow: hidden;">
   <div class="consultation-grid" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;">
     
     <!-- Photo left -->
@@ -1574,22 +1574,51 @@
     });
   });
 
+  var consultPhoto = document.querySelector('.consultation-grid > div:first-child');
+  var consultText = document.querySelector('.consultation-grid > div:nth-child(2)');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
+        e.target.style.transform = 'translate(0, 0)';
       }
     });
   }, { threshold: 0.1 });
 
+  // Separate observer for consultation section — triggers later (35% visible)
+  const consultObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        if (e.target === consultPhoto) {
+          e.target.style.transform = 'rotate(-0.8deg)';
+        } else {
+          e.target.style.transform = 'translate(0, 0)';
+        }
+      }
+    });
+  }, { threshold: 0.35 });
+
   document.querySelectorAll('.stat-item, .trust-item, .hero-content, .how-inner, .story-box, .consultation-grid > div, .form-inner').forEach((el, i) => {
     if (!el.classList.contains('hero-content')) {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
+      if (el === consultPhoto) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(-60px) rotate(-0.8deg)';
+      } else if (el === consultText) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(60px)';
+      } else {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+      }
     }
-    el.style.transition = 'opacity 0.6s ease ' + (i % 3) * 0.1 + 's, transform 0.6s ease ' + (i % 3) * 0.1 + 's';
-    observer.observe(el);
+    el.style.transition = 'opacity 0.7s ease ' + (i % 3) * 0.1 + 's, transform 0.7s ease ' + (i % 3) * 0.1 + 's';
+    // Use the later-triggering observer for consultation items
+    if (el === consultPhoto || el === consultText) {
+      consultObserver.observe(el);
+    } else {
+      observer.observe(el);
+    }
   });
 
   // Timeline: each step fades in with its number, line draws in sync
