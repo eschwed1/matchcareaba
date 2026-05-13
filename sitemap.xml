@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Thank You / Conversion Page -->
+  <url>
+    <loc>https://matchcareaba.com/thank-you.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
   <!-- Core Pages -->
   <url>
     <loc>https://matchcareaba.com/</loc>
