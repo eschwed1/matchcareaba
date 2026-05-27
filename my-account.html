@@ -858,7 +858,7 @@
   <div class="tab-panel" id="panel-documents">
     <div class="card">
       <h2>My Documents</h2>
-      <p style="font-size:0.88rem; color:var(--muted); font-weight:500; line-height:1.6; margin-bottom:20px;">Upload the documents below to help us match you faster and get your child started with the right provider. All uploads are securely transmitted via HIPAA-compliant forms.</p>
+      <p style="font-size:0.88rem; color:var(--muted); font-weight:500; line-height:1.6; margin-bottom:20px;">Your secure personal document vault. Store your important documents here safely and access them anytime. All uploads are encrypted and transmitted via HIPAA-compliant forms.</p>
       <div class="doc-checklist" id="doc-checklist">
         <!-- Diagnosis Report -->
         <div class="doc-item" id="doc-diagnosis">
@@ -867,7 +867,7 @@
             <h4>Diagnosis Report</h4>
             <p>Your child's autism or developmental diagnosis from a licensed provider.</p>
             <div class="doc-actions">
-              <a href="https://form.jotform.com/260662279796069" target="_blank" class="btn-upload-doc">Upload Document</a>
+              <button class="btn-upload-doc" onclick="openUploadModal()">Upload Document</button>
               <button class="doc-tip-toggle" onclick="toggleDocTip('diagnosis')">Why do I need this?</button>
             </div>
             <div class="doc-tip" id="tip-diagnosis">A diagnosis report is required by most insurance companies to authorize ABA therapy services. It helps providers create the right treatment plan for your child.</div>
@@ -880,7 +880,7 @@
             <h4>Insurance Card</h4>
             <p>Front and back of your child's insurance card.</p>
             <div class="doc-actions">
-              <a href="https://form.jotform.com/260662279796069" target="_blank" class="btn-upload-doc">Upload Document</a>
+              <button class="btn-upload-doc" onclick="openUploadModal()">Upload Document</button>
               <button class="doc-tip-toggle" onclick="toggleDocTip('insurance')">Why do I need this?</button>
             </div>
             <div class="doc-tip" id="tip-insurance">We use your insurance information to verify coverage and connect you with in-network ABA providers, so you pay as little as possible out of pocket.</div>
@@ -893,7 +893,7 @@
             <h4>Physician Referral</h4>
             <p>A referral letter from your child's pediatrician or physician, if available.</p>
             <div class="doc-actions">
-              <a href="https://form.jotform.com/260662279796069" target="_blank" class="btn-upload-doc">Upload Document</a>
+              <button class="btn-upload-doc" onclick="openUploadModal()">Upload Document</button>
               <button class="doc-tip-toggle" onclick="toggleDocTip('referral')">Why do I need this?</button>
             </div>
             <div class="doc-tip" id="tip-referral">Some insurance plans require a physician referral before ABA services can begin. Uploading this now can help avoid delays in starting therapy.</div>
@@ -921,7 +921,7 @@
         <div class="empty-state" id="no-messages">
           <div class="empty-icon">💬</div>
           <h3>No Messages Yet</h3>
-          <p>Send a message to your care team below. We typically respond within 1 business day.</p>
+          <p>Send a message to your care team below.</p>
         </div>
       </div>
       <div class="message-input-row">
@@ -993,6 +993,17 @@
       <button class="btn-save-profile" onclick="saveProfile()">Save Changes</button>
       <p class="profile-saved" id="profile-saved">Profile updated successfully!</p>
     </div>
+  </div>
+</div>
+
+<!-- Document Upload Modal -->
+<div class="modal-overlay" id="upload-modal">
+  <div class="modal-card" style="max-width:620px; padding:0; overflow:hidden;">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:20px 24px; border-bottom:1px solid var(--border);">
+      <h2 style="margin:0; font-family:'Nunito',sans-serif; font-size:1.15rem; font-weight:800; color:var(--navy);">Upload Document</h2>
+      <button onclick="closeUploadModal()" style="background:none; border:none; cursor:pointer; padding:4px; color:var(--muted); font-size:1.4rem; line-height:1;">&times;</button>
+    </div>
+    <iframe id="upload-iframe" src="" style="width:100%; height:500px; border:none; display:block;"></iframe>
   </div>
 </div>
 
@@ -1117,7 +1128,7 @@
   const friendlyStepLabels = {
     'Referral Submitted': 'Application Received',
     'Provider Matched': 'Provider Matched',
-    'First Session Scheduled': 'First Session Scheduled',
+    'First Session Scheduled': 'Contacted Provider',
     'Therapy Started': 'Therapy Started'
   };
 
@@ -1344,6 +1355,27 @@
     const tip = document.getElementById('tip-' + docType);
     tip.classList.toggle('open');
   }
+
+  // ── Document upload modal ───────────────────────────────────
+  function openUploadModal() {
+    const modal = document.getElementById('upload-modal');
+    const iframe = document.getElementById('upload-iframe');
+    iframe.src = 'https://form.jotform.com/260684053692058';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeUploadModal() {
+    const modal = document.getElementById('upload-modal');
+    const iframe = document.getElementById('upload-iframe');
+    modal.classList.remove('open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('upload-modal').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeUploadModal();
+  });
 
   // ── Provider change request ─────────────────────────────────
   function requestProviderChange() {
