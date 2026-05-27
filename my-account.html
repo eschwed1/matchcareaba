@@ -785,7 +785,7 @@
   <!-- TAB 1: Match Status -->
   <div class="tab-panel" id="panel-status">
     <div class="card">
-      <h2>Your Match Status</h2>
+      <h2>Your Family's Status</h2>
       <div class="stepper" id="status-stepper">
         <!-- Populated by JS -->
       </div>
@@ -875,11 +875,6 @@
         </li>
       </ul>
     </div>
-    <div class="card">
-      <h2>Have a Concern?</h2>
-      <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; line-height: 1.6; font-weight: 500;">If you have a concern about your care or experience, we want to hear from you. Your feedback helps us improve.</p>
-      <button class="btn-submit-complaint" onclick="openComplaintModal()">Submit a Concern</button>
-    </div>
   </div>
 
   <!-- Profile Edit (hidden panel) -->
@@ -910,19 +905,6 @@
       </div>
       <button class="btn-save-profile" onclick="saveProfile()">Save Changes</button>
       <p class="profile-saved" id="profile-saved">Profile updated successfully!</p>
-    </div>
-  </div>
-</div>
-
-<!-- Complaint Modal -->
-<div class="modal-overlay" id="complaint-modal">
-  <div class="modal-card">
-    <h2>Submit a Concern</h2>
-    <p>Please describe your concern below. All submissions are reviewed by our team and handled confidentially.</p>
-    <textarea id="complaint-text" placeholder="Describe your concern..."></textarea>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeComplaintModal()">Cancel</button>
-      <button class="btn-submit-complaint" id="complaint-submit-btn" onclick="submitComplaint()">Submit</button>
     </div>
   </div>
 </div>
@@ -1003,17 +985,24 @@
     // Show first tab
     document.getElementById('panel-status').classList.add('active');
 
-    // Render status stepper
-    renderStepper(data.journey);
+    // Check if family has a linked submission
+    if (!data.submission && !data.submissionId) {
+      renderNoSubmission();
+    } else {
+      // Render status stepper
+      renderStepper(data.journey);
 
-    // Render status message
-    renderStatusMessage(data.matchStatus);
+      // Render status message
+      renderStatusMessage(data.matchStatus);
+    }
 
     // Render provider
     renderProvider(data.provider, data.matchStatus);
 
     // Render journey timeline
-    renderJourney(data.journey);
+    if (data.journey && data.journey.length > 0) {
+      renderJourney(data.journey);
+    }
 
     // Render messages
     renderMessages(data.messages);
@@ -1024,6 +1013,31 @@
     document.getElementById('edit-phone').value = data.profile.phone || '';
     document.getElementById('edit-address').value = data.profile.address || '';
     document.getElementById('edit-insurance').value = data.profile.insurance || '';
+  }
+
+  function renderNoSubmission() {
+    document.getElementById('status-stepper').innerHTML = '';
+    document.getElementById('status-message').innerHTML = `
+      <div style="text-align:center; padding: 24px 0;">
+        <div style="font-size: 2.5rem; margin-bottom: 12px;">&#128075;</div>
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 8px;">Ready to get started?</h3>
+        <p style="color: var(--muted); font-size: 0.92rem; font-weight: 500; line-height: 1.6; margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">Fill out our quick intake form and we'll start finding the perfect ABA provider match for your family.</p>
+        <a href="https://form.jotform.com/260662279796069" class="btn-intake-cta" style="display:inline-block; padding: 13px 32px; background: var(--teal); color: white; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; box-shadow: 0 4px 14px rgba(8,145,178,0.3); transition: all 0.25s;">Get Matched Now</a>
+      </div>
+    `;
+  }
+
+  // ── Friendly step labels ─────────────────────────────────────
+  const friendlyStepLabels = {
+    'Referral Submitted': 'Application Received',
+    'Insurance Verified': 'Insurance Verified',
+    'Provider Matched': 'Provider Matched',
+    'First Session Scheduled': 'First Session Scheduled',
+    'Therapy Started': 'Therapy Started'
+  };
+
+  function friendlyStep(step) {
+    return friendlyStepLabels[step] || step;
   }
 
   // ── Status Stepper ────────────────────────────────────────────
@@ -1044,7 +1058,7 @@
       return `
         <div class="step ${cls}">
           <div class="step-circle">${icon}</div>
-          <div class="step-label">${step.step}</div>
+          <div class="step-label">${friendlyStep(step.step)}</div>
           ${dateStr ? '<div class="step-date">' + dateStr + '</div>' : ''}
         </div>
       `;
@@ -1053,10 +1067,10 @@
 
   // ── Status Message ────────────────────────────────────────────
   const statusMessages = {
-    pending: { label: 'Pending', class: 'status-pending', text: 'Your referral has been received and is being reviewed. We are working to find the best ABA provider for your family.' },
-    routing: { label: 'Routing', class: 'status-routing', text: 'Great news! We are actively reaching out to providers in your area. You will be notified as soon as a provider accepts your referral.' },
-    matched: { label: 'Matched', class: 'status-matched', text: 'We found you a provider! Check the "My Provider" tab for their contact information. They will be reaching out to you soon.' },
-    no_providers: { label: 'Searching', class: 'status-no_providers', text: 'We are currently expanding our provider network in your area. Our team is actively working to find a match for your family.' }
+    pending: { label: 'In Progress', class: 'status-pending', text: 'We\'ve received your information and are working on finding the perfect match for your family. We\'ll keep you updated every step of the way.' },
+    routing: { label: 'Finding Your Match', class: 'status-routing', text: 'Great news! We\'re actively reaching out to providers in your area. You\'ll be notified as soon as we find the right fit for your family.' },
+    matched: { label: 'Matched', class: 'status-matched', text: 'Wonderful news! We found a great match for your family. Check the "My Provider" tab for their contact information. They\'ll be reaching out soon.' },
+    no_providers: { label: 'Searching', class: 'status-no_providers', text: 'We\'re expanding our provider network in your area to find the best fit for your family. Our team is on it, and we\'ll update you as soon as we have a match.' }
   };
 
   function renderStatusMessage(status) {
@@ -1074,9 +1088,9 @@
       card.innerHTML = `
         <h2>My Provider</h2>
         <div class="empty-state">
-          <div class="empty-icon">👨‍⚕️</div>
-          <h3>Not Yet Matched</h3>
-          <p>Once you are matched with a provider, their contact information will appear here. Check your Match Status tab for updates.</p>
+          <div class="empty-icon" style="font-size:2.5rem;">&#128149;</div>
+          <h3>We're Finding Your Match</h3>
+          <p>Once we find the right provider for your family, their contact information will appear here. Check your Match Status tab for the latest updates.</p>
         </div>
       `;
       return;
@@ -1123,7 +1137,7 @@
       return `
         <div class="timeline-item ${cls}">
           <div class="timeline-dot"></div>
-          <div class="timeline-title">${step.step}</div>
+          <div class="timeline-title">${friendlyStep(step.step)}</div>
           <div class="timeline-date">${dateStr}</div>
         </div>
       `;
@@ -1230,51 +1244,6 @@
     btn.disabled = false;
     btn.textContent = 'Save Changes';
   }
-
-  // ── Complaint modal ───────────────────────────────────────────
-  function openComplaintModal() {
-    document.getElementById('complaint-modal').classList.add('open');
-    document.getElementById('complaint-text').value = '';
-    document.getElementById('complaint-text').focus();
-  }
-
-  function closeComplaintModal() {
-    document.getElementById('complaint-modal').classList.remove('open');
-  }
-
-  async function submitComplaint() {
-    const text = document.getElementById('complaint-text').value.trim();
-    if (!text) return;
-
-    const btn = document.getElementById('complaint-submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'Submitting...';
-
-    try {
-      const res = await fetch(API_BASE + '/family-complaint', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + token
-        },
-        body: JSON.stringify({ complaint: text, category: 'general' })
-      });
-      const data = await res.json();
-
-      if (data.success) {
-        closeComplaintModal();
-        alert('Your concern has been submitted. Our team will review it promptly. Thank you for your feedback.');
-      }
-    } catch { /* connection error */ }
-
-    btn.disabled = false;
-    btn.textContent = 'Submit';
-  }
-
-  // Close modal on overlay click
-  document.getElementById('complaint-modal').addEventListener('click', e => {
-    if (e.target === e.currentTarget) closeComplaintModal();
-  });
 
   // ── Logout ────────────────────────────────────────────────────
   function handleLogout() {

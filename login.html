@@ -131,6 +131,7 @@
   .auth-section {
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 60px 24px;
@@ -469,6 +470,102 @@
 
   @media (max-width: 400px) {
     .auth-card { padding: 28px 18px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== BENEFITS SECTION ===== */
+  .benefits-section {
+    max-width: 720px;
+    width: 100%;
+    margin: 48px auto 0;
+  }
+
+  .benefits-heading {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .benefits-subheading {
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .benefit-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 28px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    box-shadow: 0 1px 4px rgba(27,58,107,0.05);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .benefit-card:hover {
+    box-shadow: 0 4px 16px rgba(27,58,107,0.1);
+    transform: translateY(-2px);
+  }
+
+  .benefit-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 360px;
+    justify-self: center;
+  }
+
+  .benefit-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(8,145,178,0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefit-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .benefit-text h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .benefit-text p {
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.55;
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .benefits-grid { grid-template-columns: 1fr; }
+    .benefit-card:last-child:nth-child(odd) { max-width: none; }
+    .benefits-section { margin-top: 36px; }
   }
 </style>
 </head>
@@ -586,6 +683,58 @@
       <p class="auth-link">
         <button onclick="switchTab('login')">Back to login</button>
       </p>
+    </div>
+  </div>
+
+  <div class="benefits-section">
+    <h2 class="benefits-heading">Why create a free account?</h2>
+    <p class="benefits-subheading">Everything you need to stay informed and connected throughout your family's journey.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="benefit-text">
+          <h3>Track Your Match Status</h3>
+          <p>See exactly where you are in the matching process with real-time updates from application to first session.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+        </div>
+        <div class="benefit-text">
+          <h3>Secure Document Vault</h3>
+          <p>Access important documents shared by your care team in one safe, organized place.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="benefit-text">
+          <h3>Your Journey Tracker</h3>
+          <p>A clear timeline of every milestone, from your initial application through the start of therapy.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="benefit-text">
+          <h3>Message Us Directly</h3>
+          <p>Have a question? Send a message to your care coordination team right from your dashboard.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </div>
+        <div class="benefit-text">
+          <h3>Your Matched Provider</h3>
+          <p>Once matched, view your provider's name, clinic, phone, and email all in one place.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
