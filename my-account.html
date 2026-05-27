@@ -867,7 +867,7 @@
             <h4>Diagnosis Report</h4>
             <p>Your child's autism or developmental diagnosis from a licensed provider.</p>
             <div class="doc-actions">
-              <button class="btn-upload-doc" onclick="openUploadModal()">Upload Document</button>
+              <button class="btn-upload-doc" onclick="openUploadModal('https://form.jotform.com/261466870317058', 'diagnosis')">Upload Document</button>
               <button class="doc-tip-toggle" onclick="toggleDocTip('diagnosis')">Why do I need this?</button>
             </div>
             <div class="doc-tip" id="tip-diagnosis">A diagnosis report is required by most insurance companies to authorize ABA therapy services. It helps providers create the right treatment plan for your child.</div>
@@ -880,7 +880,7 @@
             <h4>Insurance Card</h4>
             <p>Front and back of your child's insurance card.</p>
             <div class="doc-actions">
-              <button class="btn-upload-doc" onclick="openUploadModal()">Upload Document</button>
+              <button class="btn-upload-doc" onclick="openUploadModal('https://form.jotform.com/261466280599065', 'insurance')">Upload Document</button>
               <button class="doc-tip-toggle" onclick="toggleDocTip('insurance')">Why do I need this?</button>
             </div>
             <div class="doc-tip" id="tip-insurance">We use your insurance information to verify coverage and connect you with in-network ABA providers, so you pay as little as possible out of pocket.</div>
@@ -893,7 +893,7 @@
             <h4>Physician Referral</h4>
             <p>A referral letter from your child's pediatrician or physician, if available.</p>
             <div class="doc-actions">
-              <button class="btn-upload-doc" onclick="openUploadModal()">Upload Document</button>
+              <button class="btn-upload-doc" onclick="openUploadModal('https://form.jotform.com/261466388001052', 'referral')">Upload Document</button>
               <button class="doc-tip-toggle" onclick="toggleDocTip('referral')">Why do I need this?</button>
             </div>
             <div class="doc-tip" id="tip-referral">Some insurance plans require a physician referral before ABA services can begin. Uploading this now can help avoid delays in starting therapy.</div>
@@ -1000,10 +1000,18 @@
 <div class="modal-overlay" id="upload-modal">
   <div class="modal-card" style="max-width:620px; padding:0; overflow:hidden;">
     <div style="display:flex; align-items:center; justify-content:space-between; padding:20px 24px; border-bottom:1px solid var(--border);">
-      <h2 style="margin:0; font-family:'Nunito',sans-serif; font-size:1.15rem; font-weight:800; color:var(--navy);">Upload Document</h2>
+      <h2 id="upload-modal-title" style="margin:0; font-family:'Nunito',sans-serif; font-size:1.15rem; font-weight:800; color:var(--navy);">Upload Document</h2>
       <button onclick="closeUploadModal()" style="background:none; border:none; cursor:pointer; padding:4px; color:var(--muted); font-size:1.4rem; line-height:1;">&times;</button>
     </div>
-    <iframe id="upload-iframe" src="" style="width:100%; height:500px; border:none; display:block;"></iframe>
+    <div id="upload-form-container">
+      <iframe id="upload-iframe" src="" style="width:100%; height:500px; border:none; display:block;"></iframe>
+    </div>
+    <div id="upload-success" style="display:none; text-align:center; padding:60px 32px;">
+      <div style="width:56px; height:56px; border-radius:50%; background:#16A34A; color:white; display:inline-flex; align-items:center; justify-content:center; font-size:1.6rem; margin-bottom:16px;">&#10003;</div>
+      <h3 style="font-size:1.15rem; font-weight:800; color:var(--navy); margin-bottom:8px;">Document Uploaded</h3>
+      <p style="font-size:0.92rem; color:var(--muted); font-weight:500; line-height:1.6; margin-bottom:24px;">Your document has been securely submitted. You can close this window.</p>
+      <button onclick="closeUploadModal()" style="padding:12px 32px; background:var(--teal); color:white; border:none; border-radius:50px; font-weight:700; font-size:0.92rem; cursor:pointer; font-family:inherit;">Done</button>
+    </div>
   </div>
 </div>
 
@@ -1385,10 +1393,25 @@
   }
 
   // ── Document upload modal ───────────────────────────────────
-  function openUploadModal() {
+  const DOC_TITLES = {
+    diagnosis: 'Upload Diagnosis Report',
+    insurance: 'Upload Insurance Card',
+    referral: 'Upload Physician Referral'
+  };
+  let currentDocType = '';
+
+  function openUploadModal(formUrl, docType) {
     const modal = document.getElementById('upload-modal');
     const iframe = document.getElementById('upload-iframe');
-    iframe.src = 'https://form.jotform.com/260684053692058';
+    const title = document.getElementById('upload-modal-title');
+    const formContainer = document.getElementById('upload-form-container');
+    const success = document.getElementById('upload-success');
+
+    currentDocType = docType;
+    title.textContent = DOC_TITLES[docType] || 'Upload Document';
+    formContainer.style.display = 'block';
+    success.style.display = 'none';
+    iframe.src = formUrl;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -1399,7 +1422,36 @@
     modal.classList.remove('open');
     iframe.src = '';
     document.body.style.overflow = '';
+    currentDocType = '';
   }
+
+  function showUploadSuccess(docType) {
+    document.getElementById('upload-form-container').style.display = 'none';
+    document.getElementById('upload-success').style.display = 'block';
+
+    // Mark the document item as uploaded
+    const item = document.getElementById('doc-' + docType);
+    if (item) {
+      item.classList.add('uploaded');
+      const icon = item.querySelector('.doc-status-icon');
+      if (icon) {
+        icon.className = 'doc-status-icon done';
+        icon.innerHTML = '&#10003;';
+      }
+    }
+  }
+
+  // Listen for Jotform submission complete message
+  window.addEventListener('message', function(e) {
+    if (e.data && (e.data.action === 'submission-completed' || e.data === 'submission-completed'
+        || (typeof e.data === 'string' && e.data.indexOf('formSubmitted') !== -1))) {
+      if (currentDocType) showUploadSuccess(currentDocType);
+    }
+    // Jotform also posts a message with height info after submission
+    if (e.data && typeof e.data === 'object' && e.data.action === 'thankyou-page-shown') {
+      if (currentDocType) showUploadSuccess(currentDocType);
+    }
+  });
 
   document.getElementById('upload-modal').addEventListener('click', e => {
     if (e.target === e.currentTarget) closeUploadModal();
