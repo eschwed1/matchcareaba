@@ -1083,26 +1083,26 @@
     // Show first tab
     document.getElementById('panel-status').classList.add('active');
 
-    // Check if family has a linked submission
-    if (!data.submission && !data.submissionId) {
+    // Use hasSubmission from API (definitive), fall back to checking submission object
+    const hasSubmission = data.hasSubmission === true || !!data.submission;
+
+    if (!hasSubmission) {
+      // No Jotform submission linked — show CTA everywhere
       renderNoSubmission();
+      renderNoSubmissionProvider();
+      renderNoSubmissionJourney();
     } else {
-      // Render status stepper
+      // Has a real submission — show actual status
       renderStepper(data.journey);
-
-      // Render status message
       renderStatusMessage(data.matchStatus);
+      renderProvider(data.provider, data.matchStatus);
+
+      if (data.journey && data.journey.length > 0) {
+        renderJourney(data.journey);
+      }
     }
 
-    // Render provider
-    renderProvider(data.provider, data.matchStatus);
-
-    // Render journey timeline
-    if (data.journey && data.journey.length > 0) {
-      renderJourney(data.journey);
-    }
-
-    // Render messages
+    // Render messages (always available)
     renderMessages(data.messages);
 
     // Populate profile edit fields
@@ -1113,15 +1113,43 @@
     document.getElementById('edit-insurance').value = data.profile.insurance || '';
   }
 
+  // ── No-submission states ──────────────────────────────────────
+  const INTAKE_FORM_URL = 'https://form.jotform.com/260662279796069';
+  const INTAKE_CTA_STYLE = 'display:inline-block; padding: 13px 32px; background: var(--teal); color: white; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; box-shadow: 0 4px 14px rgba(8,145,178,0.3); transition: all 0.25s;';
+
   function renderNoSubmission() {
     document.getElementById('status-stepper').innerHTML = '';
     document.getElementById('status-message').innerHTML = `
       <div style="text-align:center; padding: 24px 0;">
-        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 8px;">Ready to get started?</h3>
-        <p style="color: var(--muted); font-size: 0.92rem; font-weight: 500; line-height: 1.6; margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">Fill out our quick intake form and we'll start finding the perfect ABA provider match for your family.</p>
-        <a href="https://form.jotform.com/260662279796069" class="btn-intake-cta" style="display:inline-block; padding: 13px 32px; background: var(--teal); color: white; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; box-shadow: 0 4px 14px rgba(8,145,178,0.3); transition: all 0.25s;">Get Matched Now</a>
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 8px;">Submit your matching form to get started</h3>
+        <p style="color: var(--muted); font-size: 0.92rem; font-weight: 500; line-height: 1.6; margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">Fill out our quick matching form and we'll find the right ABA provider for your family.</p>
+        <a href="${INTAKE_FORM_URL}" class="btn-intake-cta" style="${INTAKE_CTA_STYLE}">Get Matched Now</a>
       </div>
     `;
+  }
+
+  function renderNoSubmissionProvider() {
+    const card = document.getElementById('provider-card');
+    card.innerHTML = `
+      <h2>My Provider</h2>
+      <div class="empty-state">
+        <h3>Ready to find your ABA provider?</h3>
+        <p>Fill out our quick matching form to get started. Once we match you with a provider, their name, location, phone, and email will appear here.</p>
+        <a href="${INTAKE_FORM_URL}" style="${INTAKE_CTA_STYLE} margin-top: 16px;">Start Your Match</a>
+      </div>
+    `;
+  }
+
+  function renderNoSubmissionJourney() {
+    const timeline = document.getElementById('journey-timeline');
+    const steps = ['Application Received', 'Provider Matched', 'Contacted Provider', 'Therapy Started'];
+    timeline.innerHTML = steps.map(step => `
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">${step}</div>
+        <div class="timeline-date">Not started</div>
+      </div>
+    `).join('');
   }
 
   // ── Friendly step labels ─────────────────────────────────────
@@ -1405,10 +1433,13 @@
       const data = await res.json();
       if (data.success) {
         familyData = data;
-        renderStepper(data.journey);
-        renderStatusMessage(data.matchStatus);
-        renderProvider(data.provider, data.matchStatus);
-        renderJourney(data.journey);
+        const hasSubmission = data.hasSubmission === true || !!data.submission;
+        if (hasSubmission) {
+          renderStepper(data.journey);
+          renderStatusMessage(data.matchStatus);
+          renderProvider(data.provider, data.matchStatus);
+          renderJourney(data.journey);
+        }
         renderMessages(data.messages);
       }
     } catch { /* silent fail for polling */ }
