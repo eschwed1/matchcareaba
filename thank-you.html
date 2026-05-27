@@ -134,9 +134,11 @@
   .thank-you-section {
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 80px 24px;
+    gap: 32px;
   }
 
   .thank-you-card {
@@ -293,8 +295,57 @@
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
 
+  .signup-cta {
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(27,58,107,0.08);
+    padding: 44px 48px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    border: 2px dashed var(--teal-light);
+  }
+
+  .signup-cta h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .signup-cta p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+
+  .btn-signup-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--teal);
+    color: white;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(8,145,178,0.3);
+    transition: all 0.25s;
+  }
+
+  .btn-signup-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(8,145,178,0.4);
+    background: var(--teal-dark);
+  }
+
   @media (max-width: 560px) {
     .thank-you-card { padding: 36px 20px; }
+    .signup-cta { padding: 32px 20px; }
     footer { padding: 28px 16px; }
     .footer-links { gap: 12px; }
   }
@@ -313,6 +364,7 @@
       <li><a href="blog.html">Blog</a></li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="my-account.html">My Account</a></li>
       <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
     </ul>
     <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -331,6 +383,12 @@
     <p>We've received your information and a member of the Match Care ABA team will be in touch shortly to help find the right ABA provider for your family.</p>
     <p>In the meantime, feel free to explore our blog and parent resources for helpful guides on ABA therapy.</p>
     <a href="index.html" class="btn-home">Return to Home</a>
+  </div>
+
+  <div class="signup-cta">
+    <h2>Track Your Match in Real Time</h2>
+    <p>Create a free account to see your match status, connect with your provider, and access resources.</p>
+    <a href="login.html?tab=signup" class="btn-signup-cta">Create Your Account</a>
   </div>
 </section>
 

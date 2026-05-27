@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18137633597"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18137633597');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account | Match Care ABA</title>
+<meta name="description" content="Track your ABA therapy match status, connect with your provider, and access family resources in your Match Care ABA portal.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://matchcareaba.com/my-account.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-192.png">
+<meta name="theme-color" content="#1B3A6B">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-37F7PCXW57"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-37F7PCXW57');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #F8F9FA;
+    --white: #FDEEE0;
+    --navy: #1B3A6B;
+    --navy-dark: #0D2247;
+    --navy-mid: #2A5298;
+    --gold: #F5A623;
+    --gold-light: #FFD166;
+    --text: #1E293B;
+    --muted: #64748B;
+    --teal: #0891B2;
+    --teal-dark: #0E7490;
+    --teal-light: #22D3EE;
+    --border: #E2E8F0;
+    --surface: #F1F5F9;
+    --card-bg: #FFFFFF;
+    --coral: #FF6B6B;
+    --soft-green: #6BCB77;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+    font-weight: 500;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: relative; z-index: 9999;
+    display: flex; flex-direction: column;
+    background: rgba(253,238,224,0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .nav-main-row {
+    position: relative;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 60px;
+  }
+  .nav-serving-bar {
+    order: -1; background: #FDEEE0; padding: 10px 0;
+    text-align: center; border-bottom: 1px solid var(--border);
+  }
+  .nav-serving-bar p { color: var(--muted); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px; margin: 0; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; background: transparent; }
+  .nav-logo img { height: 50px; width: auto; mix-blend-mode: multiply; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 1rem; font-weight: 600; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-links a.active { color: var(--teal); }
+  .nav-cta { background: var(--teal) !important; color: white !important; padding: 11px 28px; border-radius: 50px; font-weight: 700 !important; box-shadow: 0 4px 14px rgba(8,145,178,0.3); transition: all 0.2s !important; }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(8,145,178,0.4) !important; background: var(--teal-dark) !important; }
+
+  /* ===== DASHBOARD HEADER ===== */
+  .dash-header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    padding: 40px 60px 24px;
+    color: white;
+  }
+  .dash-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .dash-greeting h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .dash-greeting p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    font-weight: 500;
+  }
+  .dash-actions { display: flex; gap: 12px; align-items: center; }
+  .btn-edit-profile, .btn-logout {
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    border: none;
+    text-decoration: none;
+  }
+  .btn-edit-profile {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .btn-edit-profile:hover { background: rgba(255,255,255,0.25); }
+  .btn-logout {
+    background: rgba(255,107,107,0.2);
+    color: #FCA5A5;
+    border: 1px solid rgba(255,107,107,0.3);
+  }
+  .btn-logout:hover { background: rgba(255,107,107,0.35); color: white; }
+
+  /* ===== DASHBOARD TABS ===== */
+  .dash-tabs-wrap {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .dash-tabs {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .dash-tabs::-webkit-scrollbar { display: none; }
+  .dash-tab {
+    padding: 16px 24px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: inherit;
+  }
+  .dash-tab:hover { color: var(--teal); }
+  .dash-tab.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+  /* ===== DASHBOARD CONTENT ===== */
+  .dash-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 32px 60px 60px;
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(27,58,107,0.06);
+    padding: 32px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+  }
+  .card h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+  .card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  /* ===== STATUS STEPPER ===== */
+  .stepper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 28px 0;
+    position: relative;
+  }
+  .stepper::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    right: 40px;
+    height: 3px;
+    background: var(--border);
+    z-index: 0;
+  }
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    max-width: 140px;
+  }
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 3px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--muted);
+    margin-bottom: 10px;
+    transition: all 0.3s;
+  }
+  .step.completed .step-circle {
+    background: var(--soft-green);
+    border-color: var(--soft-green);
+    color: white;
+  }
+  .step.current .step-circle {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: white;
+    box-shadow: 0 0 0 6px rgba(8,145,178,0.15);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 6px rgba(8,145,178,0.15); }
+    50% { box-shadow: 0 0 0 10px rgba(8,145,178,0.08); }
+  }
+  .step-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+  .step.completed .step-label { color: var(--soft-green); }
+  .step.current .step-label { color: var(--teal); font-weight: 800; }
+  .step-date {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .status-card {
+    background: linear-gradient(135deg, rgba(8,145,178,0.06) 0%, rgba(8,145,178,0.02) 100%);
+    border: 1px solid rgba(8,145,178,0.15);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+  .status-card p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .status-card .status-label {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .status-pending { background: #FEF3C7; color: #92400E; }
+  .status-routing { background: #DBEAFE; color: #1E40AF; }
+  .status-matched { background: #D1FAE5; color: #065F46; }
+  .status-no_providers { background: #FEE2E2; color: #991B1B; }
+
+  /* ===== PROVIDER CARD ===== */
+  .provider-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .provider-field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .provider-field span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .btn-message-provider {
+    margin-top: 24px;
+    padding: 12px 32px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .btn-message-provider:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+  .empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--muted);
+  }
+  .empty-state .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+  .empty-state h3 { color: var(--navy); margin-bottom: 8px; font-size: 1.1rem; }
+  .empty-state p { font-size: 0.9rem; font-weight: 500; max-width: 400px; margin: 0 auto; line-height: 1.6; }
+
+  /* ===== DOCUMENTS ===== */
+  .doc-list { list-style: none; }
+  .doc-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .doc-item:last-child { border-bottom: none; }
+  .doc-item:hover { background: var(--surface); border-radius: 8px; }
+  .doc-icon { font-size: 1.3rem; }
+  .doc-name { font-weight: 700; font-size: 0.92rem; flex: 1; }
+  .doc-date { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+
+  /* ===== JOURNEY TIMELINE ===== */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    padding-bottom: 28px;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-dot {
+    position: absolute;
+    left: -26px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--border);
+  }
+  .timeline-item.completed .timeline-dot {
+    background: var(--soft-green);
+    box-shadow: 0 0 0 2px var(--soft-green);
+  }
+  .timeline-item.current .timeline-dot {
+    background: var(--teal);
+    box-shadow: 0 0 0 2px var(--teal), 0 0 0 5px rgba(8,145,178,0.2);
+  }
+  .timeline-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .timeline-date {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  /* ===== MESSAGES ===== */
+  .messages-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 4px 0;
+    margin-bottom: 20px;
+  }
+  .message-bubble {
+    max-width: 80%;
+    padding: 12px 18px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .message-bubble.family {
+    background: var(--teal);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+  }
+  .message-bubble.admin {
+    background: var(--surface);
+    color: var(--text);
+    border-bottom-left-radius: 4px;
+  }
+  .message-meta {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .message-bubble.family .message-meta { color: rgba(255,255,255,0.7); }
+  .message-input-row {
+    display: flex;
+    gap: 10px;
+  }
+  .message-input {
+    flex: 1;
+    padding: 13px 18px;
+    border: 2px solid var(--border);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    font-weight: 500;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .message-input:focus { border-color: var(--teal); }
+  .btn-send {
+    padding: 13px 28px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .btn-send:hover { background: var(--teal-dark); }
+  .btn-send:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* ===== RESOURCES ===== */
+  .resource-list { list-style: none; }
+  .resource-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .resource-item:last-child { border-bottom: none; }
+  .resource-item a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+    transition: color 0.2s;
+  }
+  .resource-item a:hover { color: var(--teal-dark); text-decoration: underline; }
+  .resource-icon { font-size: 1.2rem; }
+
+  /* ===== COMPLAINT MODAL ===== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-card {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 32px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  }
+  .modal-card h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .modal-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  .modal-card textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--text);
+    resize: vertical;
+    min-height: 120px;
+    outline: none;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  .modal-card textarea:focus { border-color: var(--teal); }
+  .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+  .btn-cancel {
+    padding: 10px 24px;
+    background: none;
+    border: 2px solid var(--border);
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .btn-cancel:hover { border-color: var(--muted); }
+  .btn-submit-complaint {
+    padding: 10px 24px;
+    background: var(--coral);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .btn-submit-complaint:hover { background: #e55a5a; }
+
+  /* ===== PROFILE EDIT ===== */
+  .profile-edit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .profile-edit-grid .form-group { margin-bottom: 0; }
+  .profile-edit-grid label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .profile-edit-grid input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .profile-edit-grid input:focus { border-color: var(--teal); }
+  .btn-save-profile {
+    margin-top: 20px;
+    padding: 12px 32px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .btn-save-profile:hover { background: var(--teal-dark); }
+  .profile-saved {
+    display: none;
+    color: var(--soft-green);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+
+  .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.6s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loading-state {
+    text-align: center;
+    padding: 60px 24px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    padding: 44px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: relative; z-index: 1;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .footer-logo {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem; font-weight: 900;
+    color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+    text-decoration: none;
+  }
+  .footer-logo span { color: var(--teal); }
+  .footer-logo img { height: 40px; width: auto; mix-blend-mode: multiply; }
+  .footer-text {
+    font-size: 0.8rem; color: var(--muted);
+    max-width: 360px; line-height: 1.6;
+    text-align: center; font-weight: 600;
+  }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 0.82rem; font-weight: 700; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal); }
+
+  /* ===== MOBILE ===== */
+  .nav-hamburger { display: none; }
+
+  @media (max-width: 1100px) and (min-width: 901px) {
+    .nav-main-row { padding: 12px 24px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 0.88rem; }
+    .nav-cta { padding: 8px 18px; font-size: 0.85rem !important; }
+  }
+
+  @media (max-width: 900px) {
+    .nav-main-row { padding: 10px 24px; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; right: 0; left: 0;
+      background: #ffffff; z-index: 200; align-items: stretch;
+      gap: 0; padding: 8px 0;
+      box-shadow: 0 8px 24px rgba(27,58,107,0.15);
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .nav-links.open li { list-style: none; }
+    .nav-links.open a { font-size: 1rem; color: #1B3A6B !important; font-weight: 700; display: block; padding: 14px 28px; border-bottom: 1px solid #f1f5f9; transition: background 0.15s; }
+    .nav-links.open a:hover { background: #f8fafc; }
+    .nav-links.open .nav-cta { background: #0891b2 !important; color: white !important; margin: 8px 20px 12px; text-align: center; border-radius: 50px; padding: 12px 24px !important; border-bottom: none; }
+    .nav-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 300; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 3px; background: var(--navy); border-radius: 3px; transition: all 0.3s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-serving-bar p { font-size: 0.72rem; }
+    .dash-header { padding: 28px 20px 20px; }
+    .dash-header-inner { flex-direction: column; align-items: flex-start; }
+    .dash-greeting h1 { font-size: 1.4rem; }
+    .dash-content { padding: 24px 16px 40px; }
+    .card { padding: 24px 18px; }
+    .stepper { flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .stepper::before { display: none; }
+    .step { max-width: none; width: 30%; min-width: 90px; }
+    .provider-info { grid-template-columns: 1fr; }
+    .profile-edit-grid { grid-template-columns: 1fr; }
+    .message-bubble { max-width: 90%; }
+    footer { flex-direction: column; text-align: center; padding: 36px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  @media (max-width: 480px) {
+    .dash-actions { width: 100%; }
+    .btn-edit-profile, .btn-logout { flex: 1; text-align: center; font-size: 0.82rem; padding: 8px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-main-row">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpeg" alt="Match Care ABA Logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="for-providers.html">For Providers</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="my-account.html" class="active">My Account</a></li>
+      <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="nav-serving-bar">
+    <p>CURRENTLY SERVING: 🗽 <span style="color:#2D3748; font-weight:800;">New York</span> &nbsp;•&nbsp; 🌿 <span style="color:#2D3748; font-weight:800;">New Jersey</span> &nbsp;•&nbsp; 🌲 <span style="color:#2D3748; font-weight:800;">North Carolina</span> &nbsp;•&nbsp; 🏔️ <span style="color:#2D3748; font-weight:800;">Colorado</span> &nbsp;•&nbsp; <span style="color:#A0AEC0; font-style:italic;">&amp; Expanding Nationwide</span></p>
+  </div>
+</nav>
+
+<!-- Dashboard Header -->
+<div class="dash-header">
+  <div class="dash-header-inner">
+    <div class="dash-greeting">
+      <h1 id="greeting">Welcome!</h1>
+      <p>Your family portal dashboard</p>
+    </div>
+    <div class="dash-actions">
+      <button class="btn-edit-profile" onclick="switchDashTab('profile')">Edit Profile</button>
+      <button class="btn-logout" onclick="handleLogout()">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<!-- Dashboard Tabs -->
+<div class="dash-tabs-wrap">
+  <div class="dash-tabs">
+    <button class="dash-tab active" data-tab="status">Match Status</button>
+    <button class="dash-tab" data-tab="provider">My Provider</button>
+    <button class="dash-tab" data-tab="documents">My Documents</button>
+    <button class="dash-tab" data-tab="journey">My Journey</button>
+    <button class="dash-tab" data-tab="messages">Messages</button>
+    <button class="dash-tab" data-tab="resources">Resources</button>
+  </div>
+</div>
+
+<!-- Dashboard Content -->
+<div class="dash-content">
+
+  <div class="loading-state" id="loading-state">Loading your dashboard...</div>
+
+  <!-- TAB 1: Match Status -->
+  <div class="tab-panel" id="panel-status">
+    <div class="card">
+      <h2>Your Match Status</h2>
+      <div class="stepper" id="status-stepper">
+        <!-- Populated by JS -->
+      </div>
+      <div class="status-card" id="status-message">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: My Provider -->
+  <div class="tab-panel" id="panel-provider">
+    <div class="card" id="provider-card">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <!-- TAB 3: My Documents -->
+  <div class="tab-panel" id="panel-documents">
+    <div class="card">
+      <h2>My Documents</h2>
+      <div id="documents-list">
+        <div class="empty-state">
+          <div class="empty-icon">📄</div>
+          <h3>No Documents Yet</h3>
+          <p>Your care team will share documents here once your match is confirmed. Check back soon!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: My Journey -->
+  <div class="tab-panel" id="panel-journey">
+    <div class="card">
+      <h2>My Journey</h2>
+      <div class="timeline" id="journey-timeline">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5: Messages -->
+  <div class="tab-panel" id="panel-messages">
+    <div class="card">
+      <h2>Messages</h2>
+      <div class="messages-container" id="messages-container">
+        <div class="empty-state" id="no-messages">
+          <div class="empty-icon">💬</div>
+          <h3>No Messages Yet</h3>
+          <p>Send a message to your care team below. We typically respond within 1 business day.</p>
+        </div>
+      </div>
+      <div class="message-input-row">
+        <input type="text" class="message-input" id="message-input" placeholder="Type your message..." maxlength="2000">
+        <button class="btn-send" id="send-btn" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 6: Resources -->
+  <div class="tab-panel" id="panel-resources">
+    <div class="card">
+      <h2>Helpful Resources</h2>
+      <ul class="resource-list">
+        <li class="resource-item">
+          <span class="resource-icon">📖</span>
+          <a href="resources.html">Parent Resource Center</a>
+        </li>
+        <li class="resource-item">
+          <span class="resource-icon">🏥</span>
+          <a href="aba-therapy-covered-by-insurance.html">Is ABA Therapy Covered by Insurance?</a>
+        </li>
+        <li class="resource-item">
+          <span class="resource-icon">🧩</span>
+          <a href="what-is-aba-therapy.html">What Is ABA Therapy?</a>
+        </li>
+        <li class="resource-item">
+          <span class="resource-icon">📋</span>
+          <a href="preparing-for-first-aba-session.html">Preparing for Your First ABA Session</a>
+        </li>
+        <li class="resource-item">
+          <span class="resource-icon">❓</span>
+          <a href="aba-therapy-faq.html">ABA Therapy FAQ</a>
+        </li>
+        <li class="resource-item">
+          <span class="resource-icon">📞</span>
+          <a href="contact.html">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Have a Concern?</h2>
+      <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; line-height: 1.6; font-weight: 500;">If you have a concern about your care or experience, we want to hear from you. Your feedback helps us improve.</p>
+      <button class="btn-submit-complaint" onclick="openComplaintModal()">Submit a Concern</button>
+    </div>
+  </div>
+
+  <!-- Profile Edit (hidden panel) -->
+  <div class="tab-panel" id="panel-profile">
+    <div class="card">
+      <h2>Edit Profile</h2>
+      <div class="profile-edit-grid">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="edit-first" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="edit-last" autocomplete="family-name">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" id="edit-phone" placeholder="555-123-4567" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" id="edit-address" placeholder="123 Main St, City, State" autocomplete="street-address">
+        </div>
+        <div class="form-group" style="grid-column: 1 / -1;">
+          <label>Insurance</label>
+          <input type="text" id="edit-insurance" placeholder="Insurance provider name">
+        </div>
+      </div>
+      <button class="btn-save-profile" onclick="saveProfile()">Save Changes</button>
+      <p class="profile-saved" id="profile-saved">Profile updated successfully!</p>
+    </div>
+  </div>
+</div>
+
+<!-- Complaint Modal -->
+<div class="modal-overlay" id="complaint-modal">
+  <div class="modal-card">
+    <h2>Submit a Concern</h2>
+    <p>Please describe your concern below. All submissions are reviewed by our team and handled confidentially.</p>
+    <textarea id="complaint-text" placeholder="Describe your concern..."></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeComplaintModal()">Cancel</button>
+      <button class="btn-submit-complaint" id="complaint-submit-btn" onclick="submitComplaint()">Submit</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo.jpeg" alt="Match Care ABA Logo">
+    <span>Match Care <span style="color:var(--gold);">ABA</span></span>
+  </div>
+  <div style="max-width: 480px; text-align: center;">
+    <p class="footer-text">Match Care ABA is an independent matching service and does not provide medical or therapeutic services. All evaluations, diagnoses, and treatment decisions are handled directly by licensed providers.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="for-providers.html">For Providers</a>
+    <a href="blog.html">Blog</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // ── Configuration ─────────────────────────────────────────────
+  const API_BASE = 'https://portal.matchcareaba.com';
+  let familyData = null;
+
+  // ── Auth guard ────────────────────────────────────────────────
+  const token = localStorage.getItem('mc_token');
+  if (!token) {
+    window.location.href = 'login.html';
+  }
+
+  // ── Tab switching ─────────────────────────────────────────────
+  function switchDashTab(tab) {
+    document.querySelectorAll('.dash-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    const panel = document.getElementById('panel-' + tab);
+    if (panel) panel.classList.add('active');
+  }
+
+  document.querySelectorAll('.dash-tab').forEach(tab => {
+    tab.addEventListener('click', () => switchDashTab(tab.dataset.tab));
+  });
+
+  // ── Load dashboard data ───────────────────────────────────────
+  async function loadDashboard() {
+    try {
+      const res = await fetch(API_BASE + '/family-data', {
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+
+      if (res.status === 401) {
+        localStorage.removeItem('mc_token');
+        localStorage.removeItem('mc_user');
+        window.location.href = 'login.html';
+        return;
+      }
+
+      const data = await res.json();
+      if (!data.success) {
+        document.getElementById('loading-state').textContent = 'Error loading dashboard. Please try again.';
+        return;
+      }
+
+      familyData = data;
+      renderDashboard(data);
+    } catch {
+      document.getElementById('loading-state').textContent = 'Connection error. Please refresh the page.';
+    }
+  }
+
+  function renderDashboard(data) {
+    document.getElementById('loading-state').style.display = 'none';
+
+    // Greeting
+    document.getElementById('greeting').textContent = 'Welcome, ' + (data.profile.firstName || 'there') + '!';
+
+    // Show first tab
+    document.getElementById('panel-status').classList.add('active');
+
+    // Render status stepper
+    renderStepper(data.journey);
+
+    // Render status message
+    renderStatusMessage(data.matchStatus);
+
+    // Render provider
+    renderProvider(data.provider, data.matchStatus);
+
+    // Render journey timeline
+    renderJourney(data.journey);
+
+    // Render messages
+    renderMessages(data.messages);
+
+    // Populate profile edit fields
+    document.getElementById('edit-first').value = data.profile.firstName || '';
+    document.getElementById('edit-last').value = data.profile.lastName || '';
+    document.getElementById('edit-phone').value = data.profile.phone || '';
+    document.getElementById('edit-address').value = data.profile.address || '';
+    document.getElementById('edit-insurance').value = data.profile.insurance || '';
+  }
+
+  // ── Status Stepper ────────────────────────────────────────────
+  function renderStepper(journey) {
+    const stepper = document.getElementById('status-stepper');
+    let currentFound = false;
+
+    stepper.innerHTML = journey.map((step, i) => {
+      let cls = '';
+      if (step.complete) {
+        cls = 'completed';
+      } else if (!currentFound) {
+        cls = 'current';
+        currentFound = true;
+      }
+      const icon = step.complete ? '&#10003;' : (cls === 'current' ? (i + 1) : (i + 1));
+      const dateStr = step.date ? new Date(step.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+      return `
+        <div class="step ${cls}">
+          <div class="step-circle">${icon}</div>
+          <div class="step-label">${step.step}</div>
+          ${dateStr ? '<div class="step-date">' + dateStr + '</div>' : ''}
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ── Status Message ────────────────────────────────────────────
+  const statusMessages = {
+    pending: { label: 'Pending', class: 'status-pending', text: 'Your referral has been received and is being reviewed. We are working to find the best ABA provider for your family.' },
+    routing: { label: 'Routing', class: 'status-routing', text: 'Great news! We are actively reaching out to providers in your area. You will be notified as soon as a provider accepts your referral.' },
+    matched: { label: 'Matched', class: 'status-matched', text: 'We found you a provider! Check the "My Provider" tab for their contact information. They will be reaching out to you soon.' },
+    no_providers: { label: 'Searching', class: 'status-no_providers', text: 'We are currently expanding our provider network in your area. Our team is actively working to find a match for your family.' }
+  };
+
+  function renderStatusMessage(status) {
+    const info = statusMessages[status] || statusMessages.pending;
+    document.getElementById('status-message').innerHTML = `
+      <span class="status-label ${info.class}">${info.label}</span>
+      <p>${info.text}</p>
+    `;
+  }
+
+  // ── Provider ──────────────────────────────────────────────────
+  function renderProvider(provider, matchStatus) {
+    const card = document.getElementById('provider-card');
+    if (matchStatus !== 'matched' || !provider) {
+      card.innerHTML = `
+        <h2>My Provider</h2>
+        <div class="empty-state">
+          <div class="empty-icon">👨‍⚕️</div>
+          <h3>Not Yet Matched</h3>
+          <p>Once you are matched with a provider, their contact information will appear here. Check your Match Status tab for updates.</p>
+        </div>
+      `;
+      return;
+    }
+
+    card.innerHTML = `
+      <h2>My Provider</h2>
+      <div class="provider-info">
+        <div class="provider-field">
+          <label>Provider Name</label>
+          <span>${escapeHtml(provider.name)}</span>
+        </div>
+        <div class="provider-field">
+          <label>Clinic</label>
+          <span>${escapeHtml(provider.clinic)}</span>
+        </div>
+        <div class="provider-field">
+          <label>Phone</label>
+          <span>${provider.phone ? '<a href="tel:' + escapeHtml(provider.phone) + '" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.phone) + '</a>' : 'Not available'}</span>
+        </div>
+        <div class="provider-field">
+          <label>Email</label>
+          <span>${provider.email ? '<a href="mailto:' + escapeHtml(provider.email) + '" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.email) + '</a>' : 'Not available'}</span>
+        </div>
+      </div>
+      <button class="btn-message-provider" onclick="switchDashTab('messages'); document.getElementById('message-input').focus();">Message Provider</button>
+    `;
+  }
+
+  // ── Journey Timeline ──────────────────────────────────────────
+  function renderJourney(journey) {
+    const timeline = document.getElementById('journey-timeline');
+    let currentFound = false;
+
+    timeline.innerHTML = journey.map(step => {
+      let cls = '';
+      if (step.complete) {
+        cls = 'completed';
+      } else if (!currentFound) {
+        cls = 'current';
+        currentFound = true;
+      }
+      const dateStr = step.date ? new Date(step.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) : 'Upcoming';
+      return `
+        <div class="timeline-item ${cls}">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title">${step.step}</div>
+          <div class="timeline-date">${dateStr}</div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ── Messages ──────────────────────────────────────────────────
+  function renderMessages(messages) {
+    const container = document.getElementById('messages-container');
+    const noMessages = document.getElementById('no-messages');
+
+    if (!messages || messages.length === 0) {
+      noMessages.style.display = 'block';
+      return;
+    }
+
+    noMessages.style.display = 'none';
+    container.innerHTML = messages.map(msg => {
+      const isFamily = msg.sender === 'family';
+      const time = new Date(msg.timestamp).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+      return `
+        <div class="message-bubble ${isFamily ? 'family' : 'admin'}">
+          <div>${escapeHtml(msg.message)}</div>
+          <div class="message-meta">${isFamily ? 'You' : (msg.senderName || 'Care Team')} &middot; ${time}</div>
+        </div>
+      `;
+    }).join('');
+
+    container.scrollTop = container.scrollHeight;
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById('message-input');
+    const btn = document.getElementById('send-btn');
+    const message = input.value.trim();
+    if (!message) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(API_BASE + '/family-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify({ message, recipient: 'admin' })
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        input.value = '';
+        if (!familyData.messages) familyData.messages = [];
+        familyData.messages.push(data.message);
+        renderMessages(familyData.messages);
+      }
+    } catch { /* connection error */ }
+
+    btn.disabled = false;
+    btn.textContent = 'Send';
+  }
+
+  document.getElementById('message-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') sendMessage();
+  });
+
+  // ── Profile ───────────────────────────────────────────────────
+  async function saveProfile() {
+    const btn = document.querySelector('.btn-save-profile');
+    const saved = document.getElementById('profile-saved');
+    saved.style.display = 'none';
+
+    const updates = {
+      firstName: document.getElementById('edit-first').value.trim(),
+      lastName: document.getElementById('edit-last').value.trim(),
+      phone: document.getElementById('edit-phone').value.trim(),
+      address: document.getElementById('edit-address').value.trim(),
+      insurance: document.getElementById('edit-insurance').value.trim()
+    };
+
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+
+    try {
+      const res = await fetch(API_BASE + '/family-update', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify(updates)
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        saved.style.display = 'block';
+        familyData.profile = data.profile;
+        document.getElementById('greeting').textContent = 'Welcome, ' + (data.profile.firstName || 'there') + '!';
+        setTimeout(() => { saved.style.display = 'none'; }, 3000);
+      }
+    } catch { /* connection error */ }
+
+    btn.disabled = false;
+    btn.textContent = 'Save Changes';
+  }
+
+  // ── Complaint modal ───────────────────────────────────────────
+  function openComplaintModal() {
+    document.getElementById('complaint-modal').classList.add('open');
+    document.getElementById('complaint-text').value = '';
+    document.getElementById('complaint-text').focus();
+  }
+
+  function closeComplaintModal() {
+    document.getElementById('complaint-modal').classList.remove('open');
+  }
+
+  async function submitComplaint() {
+    const text = document.getElementById('complaint-text').value.trim();
+    if (!text) return;
+
+    const btn = document.getElementById('complaint-submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    try {
+      const res = await fetch(API_BASE + '/family-complaint', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify({ complaint: text, category: 'general' })
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        closeComplaintModal();
+        alert('Your concern has been submitted. Our team will review it promptly. Thank you for your feedback.');
+      }
+    } catch { /* connection error */ }
+
+    btn.disabled = false;
+    btn.textContent = 'Submit';
+  }
+
+  // Close modal on overlay click
+  document.getElementById('complaint-modal').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeComplaintModal();
+  });
+
+  // ── Logout ────────────────────────────────────────────────────
+  function handleLogout() {
+    localStorage.removeItem('mc_token');
+    localStorage.removeItem('mc_user');
+    window.location.href = 'index.html';
+  }
+
+  // ── Polling ───────────────────────────────────────────────────
+  let pollInterval;
+
+  async function pollFamilyData() {
+    if (document.hidden) return;
+    try {
+      const res = await fetch(API_BASE + '/family-data', {
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data.success) {
+        familyData = data;
+        renderStepper(data.journey);
+        renderStatusMessage(data.matchStatus);
+        renderProvider(data.provider, data.matchStatus);
+        renderJourney(data.journey);
+        renderMessages(data.messages);
+      }
+    } catch { /* silent fail for polling */ }
+  }
+
+  // Poll every 60 seconds when tab is visible
+  pollInterval = setInterval(pollFamilyData, 60000);
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) pollFamilyData();
+  });
+
+  // ── Helpers ───────────────────────────────────────────────────
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // ── Mobile menu ───────────────────────────────────────────────
+  function toggleMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('navLinks').classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ── Init ──────────────────────────────────────────────────────
+  loadDashboard();
+</script>
+</body>
+</html>

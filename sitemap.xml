@@ -9,6 +9,20 @@
     <priority>0.1</priority>
   </url>
 
+  <!-- Family Portal -->
+  <url>
+    <loc>https://matchcareaba.com/login.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matchcareaba.com/my-account.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Core Pages -->
   <url>
     <loc>https://matchcareaba.com/</loc>
