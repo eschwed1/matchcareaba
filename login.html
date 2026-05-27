@@ -762,7 +762,7 @@
   // TODO: Set up Google OAuth 2.0 credential at https://console.cloud.google.com/
   // Create a new OAuth 2.0 Client ID for Web application, add matchcareaba.com
   // as an authorized origin, then replace the placeholder below.
-  const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID';
+  const GOOGLE_CLIENT_ID = '926629415966-pafpon3thj9conah4a99a4kg5f4mvpt9.apps.googleusercontent.com';
 
   // ── Tab switching ─────────────────────────────────────────────
   const titles = {
@@ -938,13 +938,6 @@
 
   // ── Google OAuth ──────────────────────────────────────────────
   function initiateGoogleSignIn(mode) {
-    if (GOOGLE_CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID') {
-      const errorId = mode === 'login' ? 'login-error' : 'signup-error';
-      document.getElementById(errorId).textContent = 'Google sign-in is not yet configured.';
-      document.getElementById(errorId).style.display = 'block';
-      return;
-    }
-
     google.accounts.id.initialize({
       client_id: GOOGLE_CLIENT_ID,
       callback: (response) => handleGoogleSignIn(response, mode)
