@@ -141,64 +141,6 @@
     gap: 32px;
   }
 
-  .thank-you-card {
-    background: #FFFFFF;
-    border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(27,58,107,0.08);
-    padding: 60px 48px;
-    max-width: 560px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .thank-you-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    line-height: 1;
-  }
-
-  .thank-you-card h1 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 16px;
-    line-height: 1.3;
-  }
-
-  .thank-you-card p {
-    font-size: 1.05rem;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 12px;
-    font-weight: 600;
-  }
-
-  .thank-you-card p:last-of-type {
-    margin-bottom: 32px;
-  }
-
-  .btn-home {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--teal);
-    color: white;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 800;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(8,145,178,0.3);
-    transition: all 0.25s;
-  }
-
-  .btn-home:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(8,145,178,0.4);
-    background: var(--teal-dark);
-  }
-
   /* ===== FOOTER ===== */
   footer {
     background: var(--white);
@@ -288,64 +230,222 @@
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     .nav-hamburger.open span { background: var(--navy); }
     .nav-serving-bar p { font-size: 0.72rem; }
-    .thank-you-section { padding: 60px 20px; }
-    .thank-you-card { padding: 44px 28px; }
-    .thank-you-card h1 { font-size: 1.6rem; }
+    .thank-you-section { padding: 48px 16px; }
+    .create-account-card { padding: 32px 20px 28px; }
+    .create-account-card h1 { font-size: 1.4rem; }
     footer { flex-direction: column; text-align: center; padding: 36px 24px; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
 
-  .signup-cta {
+  /* ===== ACCOUNT CREATION (primary) ===== */
+  .create-account-card {
     background: #FFFFFF;
     border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(27,58,107,0.08);
-    padding: 44px 48px;
-    max-width: 560px;
+    box-shadow: 0 8px 40px rgba(8,145,178,0.12), 0 2px 12px rgba(27,58,107,0.06);
+    padding: 48px 48px 40px;
+    max-width: 520px;
     width: 100%;
     text-align: center;
-    border: 2px dashed var(--teal-light);
+    border: 2px solid var(--teal-light);
   }
 
-  .signup-cta h2 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.4rem;
+  .create-account-card .step-badge {
+    display: inline-block;
+    background: var(--teal);
+    color: white;
+    font-size: 0.78rem;
     font-weight: 800;
+    padding: 5px 16px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .create-account-card h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 900;
     color: var(--navy);
     margin-bottom: 10px;
+    line-height: 1.3;
   }
 
-  .signup-cta p {
+  .create-account-card .subtitle {
     font-size: 0.95rem;
     color: var(--muted);
     line-height: 1.6;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     font-weight: 600;
   }
 
-  .btn-signup-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--teal);
-    color: white;
-    padding: 14px 36px;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 800;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(8,145,178,0.3);
-    transition: all 0.25s;
+  .create-account-card .form-group {
+    text-align: left;
+    margin-bottom: 16px;
   }
 
-  .btn-signup-cta:hover {
+  .create-account-card label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .create-account-card .name-row {
+    display: flex;
+    gap: 12px;
+  }
+
+  .create-account-card .name-row .form-group {
+    flex: 1;
+  }
+
+  .create-account-card input[type="email"],
+  .create-account-card input[type="password"],
+  .create-account-card input[type="text"] {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    background: #F8FAFC;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .create-account-card input:focus {
+    border-color: var(--teal);
+    background: white;
+  }
+
+  .create-account-card .btn-create {
+    width: 100%;
+    padding: 16px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(8,145,178,0.3);
+    transition: all 0.25s;
+    margin-top: 8px;
+  }
+
+  .create-account-card .btn-create:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(8,145,178,0.4);
     background: var(--teal-dark);
   }
 
+  .create-account-card .btn-create:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .create-account-card .form-error {
+    display: none;
+    color: #EF4444;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .create-account-card .form-success {
+    display: none;
+    color: #22C55E;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .create-account-card .login-link {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  .create-account-card .login-link a {
+    color: var(--teal);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .create-account-card .login-link a:hover {
+    text-decoration: underline;
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2.5px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ===== THANK YOU (secondary) ===== */
+  .thank-you-secondary {
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(27,58,107,0.05);
+    padding: 32px 36px;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .thank-you-secondary h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .thank-you-secondary p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .thank-you-secondary .check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #ECFDF5;
+    border-radius: 50%;
+    margin-bottom: 12px;
+  }
+
+  .thank-you-secondary .check-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: #22C55E;
+  }
+
   @media (max-width: 560px) {
-    .thank-you-card { padding: 36px 20px; }
-    .signup-cta { padding: 32px 20px; }
+    .create-account-card { padding: 32px 20px 28px; }
+    .create-account-card h1 { font-size: 1.4rem; }
+    .thank-you-secondary { padding: 24px 20px; }
     footer { padding: 28px 16px; }
     .footer-links { gap: 12px; }
   }
@@ -377,18 +477,43 @@
 </nav>
 
 <section class="thank-you-section">
-  <div class="thank-you-card">
-    <div class="thank-you-icon">💙</div>
-    <h1>Thank You for Reaching Out!</h1>
-    <p>We've received your information and a member of the Match Care ABA team will be in touch shortly to help find the right ABA provider for your family.</p>
-    <p>In the meantime, feel free to explore our blog and parent resources for helpful guides on ABA therapy.</p>
-    <a href="index.html" class="btn-home">Return to Home</a>
+  <div class="create-account-card" id="create-account-card">
+    <div class="step-badge">One more step</div>
+    <h1>Track your match in real time</h1>
+    <p class="subtitle">Create your free account to see your match status, store documents and message our team.</p>
+
+    <form id="signup-form" onsubmit="handleSignup(event)">
+      <div class="name-row">
+        <div class="form-group">
+          <label for="signup-first">First name</label>
+          <input type="text" id="signup-first" autocomplete="given-name" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-last">Last name</label>
+          <input type="text" id="signup-last" autocomplete="family-name" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Email address</label>
+        <input type="email" id="signup-email" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Create a password</label>
+        <input type="password" id="signup-password" autocomplete="new-password" placeholder="At least 8 characters" required>
+      </div>
+      <div class="form-error" id="signup-error"></div>
+      <div class="form-success" id="signup-success"></div>
+      <button type="submit" class="btn-create" id="signup-btn">Create My Account</button>
+    </form>
+    <p class="login-link">Already have an account? <a href="login.html">Sign in</a></p>
   </div>
 
-  <div class="signup-cta">
-    <h2>Track Your Match in Real Time</h2>
-    <p>Create a free account to see your match status, connect with your provider, and access resources.</p>
-    <a href="login.html?tab=signup" class="btn-signup-cta">Create Your Account</a>
+  <div class="thank-you-secondary">
+    <div class="check-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h2>Your referral has been submitted</h2>
+    <p>We're already working on finding the right provider for your family. Create your account above to track progress in real time.</p>
   </div>
 </section>
 
@@ -425,6 +550,88 @@
       navLinks.classList.remove('open');
     });
   });
+
+  // Pre-fill email from URL parameter (?email=...)
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('email');
+    if (email) {
+      document.getElementById('signup-email').value = decodeURIComponent(email);
+    }
+    // If already logged in, hide the form and show a message
+    const token = localStorage.getItem('mc_token');
+    if (token) {
+      const card = document.getElementById('create-account-card');
+      card.innerHTML = '<div class="step-badge">You\'re all set</div>' +
+        '<h1>Your account is ready</h1>' +
+        '<p class="subtitle">You can track your match status, store documents and message our team from your dashboard.</p>' +
+        '<a href="my-account.html" style="display:inline-block;background:var(--teal);color:white;padding:16px 40px;border-radius:50px;font-size:1.05rem;font-weight:800;text-decoration:none;box-shadow:0 4px 14px rgba(8,145,178,0.3);transition:all 0.25s;margin-top:8px;">Go to My Dashboard</a>';
+    }
+  })();
+
+  // Signup handler
+  const SIGNUP_API = 'https://portal.matchcareaba.com';
+
+  async function handleSignup(e) {
+    e.preventDefault();
+    const firstName = document.getElementById('signup-first').value.trim();
+    const lastName = document.getElementById('signup-last').value.trim();
+    const email = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+    const errorEl = document.getElementById('signup-error');
+    const successEl = document.getElementById('signup-success');
+    const btn = document.getElementById('signup-btn');
+
+    errorEl.style.display = 'none';
+    successEl.style.display = 'none';
+
+    if (!firstName || !lastName) {
+      errorEl.textContent = 'Please enter your first and last name.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    if (!email) {
+      errorEl.textContent = 'Please enter your email address.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    if (password.length < 8) {
+      errorEl.textContent = 'Password must be at least 8 characters.';
+      errorEl.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Creating account...';
+
+    try {
+      const res = await fetch(SIGNUP_API + '/family-signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, password })
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        localStorage.setItem('mc_token', data.token);
+        localStorage.setItem('mc_user', JSON.stringify(data.user));
+        successEl.textContent = 'Account created! Redirecting to your dashboard...';
+        successEl.style.display = 'block';
+        btn.innerHTML = 'Account Created';
+        setTimeout(() => { window.location.href = 'my-account.html'; }, 1200);
+      } else {
+        errorEl.textContent = data.error || 'Signup failed. Please try again.';
+        errorEl.style.display = 'block';
+        btn.disabled = false;
+        btn.innerHTML = 'Create My Account';
+      }
+    } catch {
+      errorEl.textContent = 'Connection error. Please try again.';
+      errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.innerHTML = 'Create My Account';
+    }
+  }
 </script>
 </body>
 </html>
