@@ -130,6 +130,34 @@
 
   .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(8,145,178,0.4) !important; background: var(--teal-dark) !important; }
 
+  /* ===== WARM HEADER ===== */
+  .warm-header {
+    text-align: center;
+    padding: 48px 24px 0;
+  }
+
+  .warm-header h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .warm-header .team-line {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 0.3px;
+  }
+
+  @media (max-width: 560px) {
+    .warm-header { padding: 36px 16px 0; }
+    .warm-header h1 { font-size: 1.6rem; }
+    .warm-header .team-line { font-size: 0.9rem; }
+  }
+
   /* ===== MAIN CONTENT ===== */
   .thank-you-section {
     flex: 1;
@@ -137,7 +165,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 24px;
+    padding: 32px 24px 80px;
     gap: 32px;
   }
 
@@ -475,6 +503,11 @@
     <p>CURRENTLY SERVING: 🗽 <span style="color:#2D3748; font-weight:800;">New York</span> &nbsp;•&nbsp; 🌿 <span style="color:#2D3748; font-weight:800;">New Jersey</span> &nbsp;•&nbsp; 🌲 <span style="color:#2D3748; font-weight:800;">North Carolina</span> &nbsp;•&nbsp; 🏔️ <span style="color:#2D3748; font-weight:800;">Colorado</span> &nbsp;•&nbsp; <span style="color:#A0AEC0; font-style:italic;">&amp; Expanding Nationwide</span></p>
   </div>
 </nav>
+
+<div class="warm-header">
+  <h1>Thank You! You're in Good Hands &#x1F499;</h1>
+  <p class="team-line">The Match Care ABA Team</p>
+</div>
 
 <section class="thank-you-section">
   <div class="create-account-card" id="create-account-card">
