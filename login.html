@@ -473,6 +473,33 @@
     .benefits-grid { grid-template-columns: 1fr; }
   }
 
+  /* ===== EMAIL TIP BANNER ===== */
+  .email-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(8,145,178,0.06);
+    border: 1px solid rgba(8,145,178,0.15);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+    font-weight: 600;
+  }
+  .email-tip svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-top: 1px;
+  }
+
   /* ===== BENEFITS SECTION ===== */
   .benefits-section {
     max-width: 720px;
@@ -631,6 +658,10 @@
 
     <!-- ===== SIGNUP FORM ===== -->
     <div class="auth-form" id="form-signup">
+      <div class="email-tip">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>Tip: Use the same email for your account and your matching form so we can connect them automatically and keep your match status up to date.</span>
+      </div>
       <div class="error-msg" id="signup-error"></div>
       <div class="form-row">
         <div class="form-group">
