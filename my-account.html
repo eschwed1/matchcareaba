@@ -1271,10 +1271,7 @@
             <label>Provider Name</label>
             <span>${escapeHtml(provider.name)}</span>
           </div>
-          <div class="provider-field">
-            <label>Location</label>
-            <span>${escapeHtml(provider.clinic)}</span>
-          </div>
+          ${provider.clinic && provider.clinic !== provider.name ? '<div class="provider-field"><label>Location</label><span>' + escapeHtml(provider.clinic) + '</span></div>' : ''}
           <div class="provider-field">
             <label>Phone</label>
             <span>${provider.phone ? '<a href="tel:' + escapeHtml(provider.phone) + '" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.phone) + '</a>' : 'Not available'}</span>
@@ -1284,7 +1281,6 @@
             <span>${provider.email ? '<a href="mailto:' + escapeHtml(provider.email) + '" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.email) + '</a>' : 'Not available'}</span>
           </div>
         </div>
-        <button class="btn-message-provider" onclick="switchDashTab('messages'); document.getElementById('message-input').focus();">Message Provider</button>
         <button class="btn-request-change" onclick="requestProviderChange()">This isn't working for me</button>
       `;
       return;
