@@ -316,6 +316,7 @@
   .status-routing { background: #DBEAFE; color: #1E40AF; }
   .status-matched { background: #D1FAE5; color: #065F46; }
   .status-no_providers { background: #FEE2E2; color: #991B1B; }
+  .status-nurture { background: #E0E7FF; color: #3730A3; }
 
   /* ===== PROVIDER CARD ===== */
   .provider-info {
@@ -1245,8 +1246,9 @@
   const statusMessages = {
     pending: { label: 'In Progress', class: 'status-pending', text: 'We\'ve received your information and are working on finding the perfect match for your family. We\'ll keep you updated every step of the way.' },
     routing: { label: 'Finding Your Match', class: 'status-routing', text: 'Great news! We\'re actively reaching out to providers in your area. You\'ll be notified as soon as we find the right fit for your family.' },
-    matched: { label: 'Matched', class: 'status-matched', text: 'Wonderful news! We found a great match for your family. Check the "My Provider" tab for their contact information. They\'ll be reaching out soon.' },
-    no_providers: { label: 'Searching', class: 'status-no_providers', text: 'We\'re expanding our provider network in your area to find the best fit for your family. Our team is on it, and we\'ll update you as soon as we have a match.' }
+    matched: { label: 'Matched', class: 'status-matched', text: 'Wonderful news! We found a great provider match for your family. Check the "My Provider" tab for their contact information and reach out to them directly to get started. If it\'s not the right fit, let us know and we\'ll find another match.' },
+    no_providers: { label: 'Searching', class: 'status-no_providers', text: 'We\'re expanding our provider network in your area to find the best fit for your family. Our team is on it, and we\'ll update you as soon as we have a match.' },
+    nurture: { label: 'Getting Started', class: 'status-nurture', text: 'We\'re here to help when you\'re ready. If you need help getting a diagnosis, have insurance questions, or just want to learn more about ABA therapy, reach out to us anytime.' }
   };
 
   function renderStatusMessage(status) {
@@ -1260,40 +1262,51 @@
   // ── Provider ──────────────────────────────────────────────────
   function renderProvider(provider, matchStatus) {
     const card = document.getElementById('provider-card');
-    if (matchStatus !== 'matched' || !provider) {
+    if (matchStatus === 'matched' && provider) {
       card.innerHTML = `
         <h2>My Provider</h2>
-        <div class="empty-state">
-          <h3>We're Working on Finding Your Match</h3>
-          <p>Once we find the right provider for your family, their name, location, phone, and email will appear here. Check your Match Status tab for the latest updates.</p>
+        <p style="color:var(--muted); margin:0 0 1.2rem 0; font-size:0.97rem;">We found a provider match for you! Reach out to them directly to get started. If it's not the right fit, let us know and we'll find another match.</p>
+        <div class="provider-info">
+          <div class="provider-field">
+            <label>Provider Name</label>
+            <span>${escapeHtml(provider.name)}</span>
+          </div>
+          <div class="provider-field">
+            <label>Location</label>
+            <span>${escapeHtml(provider.clinic)}</span>
+          </div>
+          <div class="provider-field">
+            <label>Phone</label>
+            <span>${provider.phone ? '<a href="tel:' + escapeHtml(provider.phone) + '" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.phone) + '</a>' : 'Not available'}</span>
+          </div>
+          <div class="provider-field">
+            <label>Email</label>
+            <span>${provider.email ? '<a href="mailto:' + escapeHtml(provider.email) + '" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.email) + '</a>' : 'Not available'}</span>
+          </div>
         </div>
+        <button class="btn-message-provider" onclick="switchDashTab('messages'); document.getElementById('message-input').focus();">Message Provider</button>
+        <button class="btn-request-change" onclick="requestProviderChange()">This isn't working for me</button>
       `;
       return;
     }
 
-    card.innerHTML = `
-      <h2>My Provider</h2>
-      <div class="provider-info">
-        <div class="provider-field">
-          <label>Provider Name</label>
-          <span>${escapeHtml(provider.name)}</span>
+    if (matchStatus === 'nurture') {
+      card.innerHTML = `
+        <h2>My Provider</h2>
+        <div class="empty-state">
+          <h3>No Provider Match Yet</h3>
+          <p>We're here to help when you're ready. Once you have a diagnosis and are ready to start ABA therapy, we'll match you with a provider in your area. Reach out to us anytime if you have questions or need help getting started.</p>
         </div>
-        <div class="provider-field">
-          <label>Location</label>
-          <span>${escapeHtml(provider.clinic)}</span>
+      `;
+    } else {
+      card.innerHTML = `
+        <h2>My Provider</h2>
+        <div class="empty-state">
+          <h3>We're Working on Finding Your Match</h3>
+          <p>Once we find the right provider for your family, their name, location, phone, and email will appear here. You'll reach out to them directly to get started. Check your Match Status tab for the latest updates.</p>
         </div>
-        <div class="provider-field">
-          <label>Phone</label>
-          <span>${provider.phone ? '<a href="tel:' + escapeHtml(provider.phone) + '" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.phone) + '</a>' : 'Not available'}</span>
-        </div>
-        <div class="provider-field">
-          <label>Email</label>
-          <span>${provider.email ? '<a href="mailto:' + escapeHtml(provider.email) + '" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.email) + '</a>' : 'Not available'}</span>
-        </div>
-      </div>
-      <button class="btn-message-provider" onclick="switchDashTab('messages'); document.getElementById('message-input').focus();">Message Provider</button>
-      <button class="btn-request-change" onclick="requestProviderChange()">This isn't working for me</button>
-    `;
+      `;
+    }
   }
 
   // ── Journey Timeline ──────────────────────────────────────────
