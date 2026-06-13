@@ -1271,7 +1271,9 @@
             <label>Provider Name</label>
             <span>${escapeHtml(provider.name)}</span>
           </div>
+          ${provider.highlight ? '<div class="provider-field"><label>About</label><span>' + escapeHtml(provider.highlight) + '</span></div>' : ''}
           ${provider.clinic && provider.clinic !== provider.name ? '<div class="provider-field"><label>Location</label><span>' + escapeHtml(provider.clinic) + '</span></div>' : ''}
+          ${provider.website ? '<div class="provider-field"><label>Website</label><span><a href="' + (provider.website.startsWith('http') ? escapeHtml(provider.website) : 'https://' + escapeHtml(provider.website)) + '" target="_blank" rel="noopener" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.website) + '</a></span></div>' : ''}
           <div class="provider-field">
             <label>Phone</label>
             <span>${provider.phone ? '<a href="tel:' + escapeHtml(provider.phone) + '" style="color:var(--teal); text-decoration:none; font-weight:700;">' + escapeHtml(provider.phone) + '</a>' : 'Not available'}</span>
