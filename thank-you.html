@@ -492,7 +492,6 @@
       <li><a href="blog.html">Blog</a></li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="my-account.html">My Account</a></li>
       <li><a href="https://form.jotform.com/260662279796069" class="nav-cta">Get Matched Now</a></li>
     </ul>
     <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -510,6 +509,8 @@
 </div>
 
 <section class="thank-you-section">
+  <!-- Account creation card hidden while portal is under construction — re-enable later -->
+  <!--
   <div class="create-account-card" id="create-account-card">
     <div class="step-badge">One more step</div>
     <h1>Track your match in real time</h1>
@@ -540,13 +541,14 @@
     </form>
     <p class="login-link">Already have an account? <a href="login.html">Sign in</a></p>
   </div>
+  -->
 
   <div class="thank-you-secondary">
     <div class="check-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
     </div>
     <h2>Your referral has been submitted</h2>
-    <p>We're already working on finding the right provider for your family. Create your account above to track progress in real time.</p>
+    <p>We're already working on finding the right provider for your family. A member of our team will be in touch with you shortly.</p>
   </div>
 </section>
 
@@ -583,6 +585,9 @@
       navLinks.classList.remove('open');
     });
   });
+
+  /* ── Account signup disabled while portal is under construction ──
+     Uncomment to re-enable account creation on thank-you page.
 
   // Pre-fill email from URL parameter (?email=...)
   (function() {
@@ -665,6 +670,7 @@
       btn.innerHTML = 'Create My Account';
     }
   }
+  ── end disabled section ──────────────────────────────────── */
 </script>
 </body>
 </html>
