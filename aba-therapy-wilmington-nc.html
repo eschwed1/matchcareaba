@@ -338,11 +338,16 @@
   @media(max-width:768px){#chat-greeting{padding:16px 18px!important;min-width:calc(100vw - 70px)!important;max-width:calc(100vw - 56px)!important;position:relative!important;overflow:hidden!important;}#chat-greeting::before{content:'';position:absolute;top:0;left:0;right:0;height:66px;background:#f3f4f6;z-index:0;}#chat-greeting>*{position:relative;z-index:1;}#chat-window{bottom:16px!important;max-height:calc(100vh - 32px)!important;}}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:700;margin-bottom:28px;transition:color 0.2s;}
 .back-link:hover{color:var(--navy);}
-.footer-service-areas{margin-top:20px;padding-top:16px;border-top:1px solid rgba(0,0,0,0.06);text-align:center;}
-.footer-service-areas-label{font-size:0.72rem;font-weight:800;color:rgba(0,0,0,0.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
-.footer-service-areas-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;}
-.footer-service-areas-links a{font-size:0.78rem;font-weight:700;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+footer{flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:20px;padding:48px 40px;}
+.footer-logo{justify-content:center;}
+.footer-text{max-width:480px;text-align:center;}
+.footer-links{flex-wrap:wrap;justify-content:center;gap:16px 24px;}
+.footer-service-areas{width:100%;margin-top:4px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.08);text-align:center;}
+.footer-service-areas-label{font-size:0.72rem;font-weight:800;color:rgba(0,0,0,0.3);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:10px;}
+.footer-service-areas-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;}
+.footer-service-areas-links a{font-size:0.8rem;font-weight:700;color:rgba(0,0,0,0.4);text-decoration:none;transition:color 0.2s;}
 .footer-service-areas-links a:hover{color:var(--teal);}
+@media(max-width:480px){footer{padding:36px 20px;gap:18px;}.footer-service-areas-links{gap:6px 14px;}}
 </style>
 
 <div id="chat-bubble" onclick="toggleChat()" style="position:fixed;bottom:30px;right:24px;z-index:99999;cursor:pointer;display:flex;flex-direction:column;align-items:flex-end;gap:10px;">

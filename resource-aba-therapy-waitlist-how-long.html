@@ -217,11 +217,16 @@
     .bc-input-wrap { height: 40px; }
     #bcInput { font-size: 16px; }
   }
-.footer-service-areas{margin-top:20px;padding-top:16px;border-top:1px solid rgba(0,0,0,0.06);text-align:center;}
-.footer-service-areas-label{font-size:0.72rem;font-weight:800;color:rgba(0,0,0,0.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
-.footer-service-areas-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;}
-.footer-service-areas-links a{font-size:0.78rem;font-weight:700;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+footer{flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:20px;padding:48px 40px;}
+.footer-logo{justify-content:center;}
+.footer-text{max-width:480px;text-align:center;}
+.footer-links{flex-wrap:wrap;justify-content:center;gap:16px 24px;}
+.footer-service-areas{width:100%;margin-top:4px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.08);text-align:center;}
+.footer-service-areas-label{font-size:0.72rem;font-weight:800;color:rgba(0,0,0,0.3);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:10px;}
+.footer-service-areas-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;}
+.footer-service-areas-links a{font-size:0.8rem;font-weight:700;color:rgba(0,0,0,0.4);text-decoration:none;transition:color 0.2s;}
 .footer-service-areas-links a:hover{color:var(--teal);}
+@media(max-width:480px){footer{padding:36px 20px;gap:18px;}.footer-service-areas-links{gap:6px 14px;}}
 </style>
 
 <script type="application/ld+json">
