@@ -100,6 +100,13 @@
   @media(max-width:900px){.nav-main-row{padding:10px 24px;}.nav-links{display:none;}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;right:0;left:0;background:#ffffff;z-index:200;align-items:stretch;gap:0;padding:8px 0;box-shadow:0 8px 24px rgba(27,58,107,0.15);border-bottom:2px solid #e2e8f0;}.nav-links.open li{list-style:none;}.nav-links.open a{font-size:1rem;color:#1B3A6B!important;font-weight:700;display:block;padding:14px 28px;border-bottom:1px solid #f1f5f9;transition:background 0.15s;}.nav-links.open a:hover{background:#f8fafc;}.nav-links.open .nav-cta{background:#0891b2!important;color:white!important;margin:8px 20px 12px;text-align:center;border-radius:50px;padding:12px 24px!important;border-bottom:none;}.nav-hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;z-index:300;padding:4px;}.nav-hamburger span{display:block;width:24px;height:3px;background:var(--navy);border-radius:3px;transition:all 0.3s;}.nav-hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}.nav-hamburger.open span:nth-child(2){opacity:0;}.nav-hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}.nav-hamburger.open span{background:var(--navy);}.article-hero{padding:40px 24px 40px;}.article-body{padding:0 24px 80px;}.sign-card{padding:24px 22px;}.highlight-box{padding:26px 28px;}.reassurance-box{padding:22px 24px;}.inline-cta{padding:28px 24px;}.blog-cta{padding:44px 28px;margin:0 24px 80px;}footer{flex-direction:column;text-align:center;padding:36px 24px;}.footer-links{flex-wrap:wrap;justify-content:center;}}
   @media(max-width:480px){.article-hero h1{font-size:1.9rem;}.article-body h2{font-size:1.4rem;}footer{padding:28px 16px;}.footer-links{gap:12px;}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:700;margin-bottom:28px;transition:color 0.2s;}
+.back-link:hover{color:var(--navy);}
+.footer-service-areas{margin-top:20px;padding-top:16px;border-top:1px solid rgba(0,0,0,0.06);text-align:center;}
+.footer-service-areas-label{font-size:0.72rem;font-weight:800;color:rgba(0,0,0,0.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.footer-service-areas-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;}
+.footer-service-areas-links a{font-size:0.78rem;font-weight:700;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-service-areas-links a:hover{color:var(--teal);}
 </style>
 </head>
 <body>
@@ -125,6 +132,10 @@
 </nav>
 
 <div class="article-hero">
+  <a href="aba-therapy-new-york.html" class="back-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    ABA Therapy in New York
+  </a>
   <div class="article-tag">🏙️ The Bronx, NY</div>
   <h1>ABA Therapy in The Bronx: Find Trusted Providers for Your Child</h1>
   <p class="article-intro">
@@ -233,6 +244,21 @@
   <div class="footer-logo"><img src="logo.jpeg" alt="Match Care ABA Logo"><span>Match Care <span style="color:var(--gold);">ABA</span></span></div>
   <div style="max-width:480px;text-align:center;"><p class="footer-text">Match Care is an independent matching service and does not provide medical advice, diagnosis, or therapy services. All services are provided directly by licensed professionals.</p></div>
   <div class="footer-links"><a href="index.html">Home</a><a href="blog.html">Blog</a><a href="for-providers.html">For Providers</a></div>
+<div class="footer-service-areas">
+  <p class="footer-service-areas-label">Service Areas</p>
+  <div class="footer-service-areas-links">
+    <a href="aba-therapy-new-york.html">New York</a>
+    <a href="aba-therapy-new-jersey.html">New Jersey</a>
+    <a href="aba-therapy-north-carolina.html">North Carolina</a>
+    <a href="aba-therapy-colorado.html">Colorado</a>
+    <a href="aba-therapy-georgia.html">Georgia</a>
+    <a href="aba-therapy-maryland.html">Maryland</a>
+    <a href="aba-therapy-virginia.html">Virginia</a>
+    <a href="aba-therapy-indiana.html">Indiana</a>
+    <a href="aba-therapy-mississippi.html">Mississippi</a>
+    <a href="aba-therapy-washington-dc.html">Washington D.C.</a>
+  </div>
+</div>
 </footer>
 <script>
   function toggleMenu(){const h=document.getElementById('hamburger'),n=document.getElementById('navLinks');h.classList.toggle('open');n.classList.toggle('open');}
